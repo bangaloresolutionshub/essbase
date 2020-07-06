@@ -122,9 +122,21 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 ![](./images/image15_20.png "")
 
-7. Verify data loaded in to table.
+7. Browse to file location and select sample_basic_table.txt file. 
 
 ![](./images/image15_21.png "")
+
+8.Verify in Data preview screen columns are getting populated from uploaded txt file.
+
+![](./images/image15_22.png "")
+
+9. Map the columns from text file to table.  
+
+![](./images/image15_23.png "")
+
+10. Verify data loaded in to table by executing select query.
+
+![](./images/image15_24.png "")
 
 ## Part 3 - Create a Connection and Datasource for Oracle Autonomous Data Warehouse
 
@@ -134,7 +146,7 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 1. In Essbase UI from home page, click **Sources**.
 
-![](./images/image15_22.png "") 
+![](./images/image15_25.png "")
 
 2. Click **Create Connection** and select **Oracle Database**.
 
@@ -148,11 +160,11 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 7. Click **Test** to validate the connection, and if successful, click Create.
 
- ![](./images/image15_23.png "")
+![](./images/image15_26.png "")
 
 8. Verify that the connection was created successfully and appears in the list of connections. Next, you will create a Datasource for the Autonomous Data Warehouse connection.
 
-![](./images/image15_24.png "")
+![](./images/image15_27.png "")
 
 9. Click **Datasources** and click **Create Datasource**. In this step we will create two datasources which are required in next sections.
 
@@ -166,17 +178,17 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 ``Select distinct market, statename from SAMPLE_BASIC_TABLE``
 
-![](./images/image15_25.png "")
+![](./images/image15_28.png "")
 
 14. Click **Next**. If the SQL statement was correct to query an Autonomous Data Warehouse area, you should see the queried columns populated.
- 
-![](./images/image15_26.png "")
+
+![](./images/image15_29.png "")
 
 15. Leave parameters section as-is and click **Next**.
 
 16. Review the preview panel. You should see the results of the SQL query fetching columns of data from Autonomous Data Warehouse.
 
-![](./images/image15_27.png "") 
+![](./images/image15_30.png "")
 
 17. If the preview looks correct, click **Create** to finish creating the Datasource.
 
@@ -186,11 +198,11 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 ``Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE``
 
-![](./images/image15_28.png "")
+![](./images/image15_31.png "")
 
 20. Preview tab for ADW_Dataload datasource should look similar to mentioned below.
 
-![](./images/image15_29.png "")
+![](./images/image15_32.png "")
 
 ## Part 4 - Build Dimensions Using SQL Datasource with ADW
 
@@ -198,9 +210,15 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 2. In the Essbase web interface, on the Applications page, expand the Sample application, and select the cube, Basic.
 
+![](./images/image15_33.png "")
+
 3. From the Actions menu to the right of Basic, select Outline.
 
+![](./images/image15_34.png "")
+
 4. Click the Market dimension, and then click member East.
+
+![](./images/image15_35.png "")
 
 5. Click Edit to lock the outline for editing.
 
@@ -212,61 +230,73 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 9. On the Applications page, from the Actions menu to the right of Basic, launch the inspector, click Scripts, then choose the Rules tab.
 
+![](./images/image15_36.png "")
+
+![](./images/image15_37.png "")
+
 10. Click Create > Dimension Build (Regular) to begin defining new dimension build rules.
 
-11. In the Name field, enter the name of the rules file as ``MarketSQLDimbuild``. Leave the other options as-is, and click Proceed.
+![](./images/image15_38.png "")
 
-12. Click the Dimensions button.
+11. In the Name field, enter the name of the rules file as ``MarketSQLDimbuild``. In Datasource field select ADW_Datasource from dropdown.
 
-13. Click the field containing the text Select existing dimension, select Market, and click Add, then OK.
+![](./images/image15_39.png "")
 
-14. On the New Rule - ``MarketSQLDimbuild page``, click the Dimension drop-down field and select Market.
+12. Dimension columns should be automatically populated from datasource selected.
 
-15. Click the Type drop-down field and select Generation. Increment the generation number to 2.
+![](./images/image15_40.png "")
 
-16. Click the Generation Name field and type REGION.The Market dimension is generation 1, and you added a child named Region.
+13. On the New Rule - MarketSQLDimbuild page, click the Dimension drop-down field and select Market.
+
+14. Click the Type drop-down field and select Generation. Increment the generation number to 2.
+
+15. Click the Generation Name field and type REGION.
+
+![](./images/image15_41.png "")
+
+16. Click Create > Regular to create a second dimension build rule field.
+
+![](./images/image15_42.png "")
+
+17. Name the field STATE and associate it with dimension Market, at generation 3.
+
+![](./images/image15_43.png "")
+
+![](./images/image15_44.png "")
+
+18. Click the Source button to begin associating a data source with the dimension build rules.
+
+19. Keep the fields in General tab as-is.
+
+20. Back in the Edit Source dialog for your dimension build rule, in the SQL/Datasource Properties group select Datasource radio button.
+```
+Select Datasource as ADW_Datasource from dropdown.
+```
+![](./images/image15_45.png "")
+
+21. Click OK, then Verify, Save and Close. to save and close the ``MarketSQLDimbuild`` rule.
+
+22. Refresh the list of rules in the Scripts list to ensure that ``MarketSQLDimbuild`` has been added to the list of rule files for the cube Sample Basic.
+
+![](./images/image15_46.png "")
+
+23. Click Close. Next, you will use this rule file to load the members back into the Market dimension.
+
+24. Click Jobs, and click New Job > Build Dimension.
+
+25. Enter Sample as the application name, and Basic as the database name.
+
+26. For the script name, select the name of the dimension build rule file you created, ``MarketSQLDimbuild``
+
+27. Select Datasource as the load type.
+
+![](./images/image15_47.png "")
  
- ![](./images/image15_30.png "")
+28. From the Restructure Options drop-down list, select Preserve All Data.
 
-17. Click Create > Regular to create a second dimension build rule field.
- 
-![](./images/image15_31.png "")
+29. Click OK to begin the job. The dimension build begins. Click the Refresh symbol to watch the status, and when it completes, click Job Details from the Actions menu.
 
-18. Name the field STATE and associate it with dimension Market, at generation 3.
- 
-![](./images/image15_32.png "")
-
-![](./images/image15_33.png "")
-
-19. Click the Source button to begin associating a data source with the dimension build rules.
-
-20. Keep the fields in General tab as-is.
-
-21. Back in the Edit Source dialog for your dimension build rule, in the SQL/Datasource Properties group select Datasource radio button. Select Datasource as ADW_Datasource from dropdown.
- 
-![](./images/image15_34.png "")
-
-22. Click OK,, then Verify, Save and Close. to save and close the ``MarketSQLDimbuild`` rule.
-
-23. Refresh the list of rules in the Scripts list to ensure that ``MarketSQLDimbuild`` has been added to the list of rule files for the cube Sample Basic.
-
-24. Click Close. Next, you will use this rule file to load the members back into the Market dimension.
-
-25. Click Jobs, and click New Job > Build Dimension.
-
-26. Enter Sample as the application name, and Basic as the database name.
-
-27. For the script name, select the name of the dimension build rule file you created, ``MarketSQLDimbuild``
-
-28. Select Datasource as the load type.
- 
- ![](./images/image15_35.png "")
- 
-29. From the Restructure Options drop-down list, select Preserve All Data.
-
-30. Click OK to begin the job. The dimension build begins. Click the Refresh symbol to watch the status, and when it completes, click Job Details from the Actions menu.
-
-31. Inspect the outline to verify that your dimensions were built (verify that Connecticut, New Hampshire, and Massachusetts exist as children under East).
+30. Inspect the outline to verify that your dimensions were built (verify that Connecticut, New Hampshire, and Massachusetts exist as children under East).
 
 ## Part 5 - Load ADW Data to Essbase Using SQL Datasource
 
@@ -281,9 +311,9 @@ After building the dimensions, you will clear data from the cube, and then load 
 3. Connect to the Sample Basic cube from Smart View and do an ad hoc analysis.
 
 4. Notice that data was cleared. For example:
- 
- ![](./images/image15_36.png "")
 
+![](./images/image15_48.png "")
+ 
 Keep the worksheet open. Next, you will create load rules that use SQL to repopulate the Sales data from the table.
 
 5. On the Applications page, expand the Sample application, and select the cube, Basic.
@@ -298,6 +328,8 @@ Keep the worksheet open. Next, you will create load rules that use SQL to repopu
 
 10. Leave the other options as-is and click **Proceed**.
 
+![](./images/image15_49.png "")
+
 11. In ADW instance write and test a SELECT statement selecting some columns from the table ``SAMPLE_BASIC_TABLE`` : 
 
 ``Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE;``
@@ -305,8 +337,6 @@ Keep the worksheet open. Next, you will create load rules that use SQL to repopu
 12. Ensure that the SQL query is valid and returns a result in your SQL tool. If the SQL query is valid, it should return the requested table columns, PRODUCT, SCENARIO, STATENAME, MONTHS and SALES, from the database to which your SQL tool is connected.
 
 13. In Essbase, in the **New Rule** browser tab for your ``SalesSQLDataload`` rule, select Sales from the Select drop-down box.
-
- ![](./images/image15_37.png "")
 
 14. Click **Create > Regular** to continue adding fields ,you will notice build rule has automatically picked fields from datasource.
 
@@ -316,15 +346,17 @@ Keep the worksheet open. Next, you will create load rules that use SQL to repopu
 
 17. From the fourth column **Select** drop-down box, select Year (which maps to Months in your SQL query).
 
+Your load rule fields should now be arranged like this:
+
+![](./images/image15_50.png "")
+
 **Your load rule fields should now be arranged like this:**
-	 
-![](./images/image15_38.png "")
 
 18. Click the **Source** button to begin associating a data source with the load rules.
 
 19. In the **General** tab, leave fields empty. Navigate to SQL/Datasource Properties section and select Datasource radio button.
 
-![](./images/image15_39.png "") 
+![](./images/image15_51.png "")
 
 20. Verify, save, and close the SalesSQLDataload rule.
 
@@ -339,13 +371,19 @@ Keep the worksheet open. Next, you will create load rules that use SQL to repopu
 24. For the script name, select the name of the dimension build rule file you created, ``SalesSQLDataload``.
 
 25. Select **Datasource** as the load type.
- 
- ![](./images/image15_40.png "")
+
+![](./images/image15_52.png "")
  
 26. Click OK to begin the job.
 
 The data load begins. Click the Refresh symbol to watch the status, and when it completes, click **Job Details** from the Actions menu.
 
 27. Go back to the worksheet in Smart View, and refresh it to verify that the data was loaded from the table.
- 
-![](./images/image15_41.png "")
+
+28. Run Calc script to perform data aggregation.
+
+![](./images/image15_53.png "")
+
+29. Verify data load in smartview by performing data analysis.
+
+![](./images/image15_54.png "")
