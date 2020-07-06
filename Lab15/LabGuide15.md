@@ -246,15 +246,15 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 ![](./images/image15_40.png "")
 
-13. On the New Rule - MarketSQLDimbuild page, click the Dimension drop-down field and select Market.
+13. On the New Rule - ``MarketSQLDimbuild`` page, click the Dimension drop-down field and select Market.
 
 14. Click the Type drop-down field and select Generation. Increment the generation number to 2.
 
-15. Click the Generation Name field and type REGION.
+15. Click the Generation Name field and type **REGION**.
 
 ![](./images/image15_41.png "")
 
-16. Click Create > Regular to create a second dimension build rule field.
+16. Click **Create > Regular** to create a second dimension build rule field.
 
 ![](./images/image15_42.png "")
 
@@ -264,9 +264,9 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 ![](./images/image15_44.png "")
 
-18. Click the Source button to begin associating a data source with the dimension build rules.
+18. Click the **Source** button to begin associating a data source with the dimension build rules.
 
-19. Keep the fields in General tab as-is.
+19. Keep the fields in **General** tab as-is.
 
 20. Back in the Edit Source dialog for your dimension build rule, in the SQL/Datasource Properties group select Datasource radio button. Select Datasource as ADW_Datasource from dropdown.
 
@@ -278,11 +278,11 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 ![](./images/image15_46.png "")
 
-23. Click Close. Next, you will use this rule file to load the members back into the Market dimension.
+23. Click **Close**. Next, you will use this rule file to load the members back into the Market dimension.
 
-24. Click Jobs, and click New Job > Build Dimension.
+24. Click Jobs, and click **New Job > Build Dimension**.
 
-25. Enter Sample as the application name, and Basic as the database name.
+25. Enter **Sample** as the application name, and Basic as the database name.
 
 26. For the script name, select the name of the dimension build rule file you created, ``MarketSQLDimbuild``
 
@@ -304,9 +304,9 @@ After building the dimensions, you will clear data from the cube, and then load 
 
 1. Select **Clear Data** as the job type. Select application Sample and database Basic and click OK.
 
-2. Click OK to confirm that you want to clear data. The job begins. Click the Refresh symbol to watch the status, and when it completes, click **Job Details** from the Actions menu.
+2. Click **OK** to confirm that you want to clear data. The job begins. Click the **Refresh** symbol to watch the status, and when it completes, click **Job Details** from the Actions menu.
 
-3. Connect to the Sample Basic cube from Smart View and do an ad hoc analysis.
+3. Connect to the **Sample Basic cube** from Smart View and do an ad hoc analysis.
 
 4. Notice that data was cleared. For example:
 
@@ -356,7 +356,7 @@ Your load rule fields should now be arranged like this:
 
 ![](./images/image15_51.png "")
 
-20. Verify, save, and close the SalesSQLDataload rule.
+20. Verify, save, and close the ``SalesSQLDataload`` rule.
 
 21. Refresh the list of rules in the Scripts list to ensure that ``SalesSQLDataload`` has been added to the list of rule files for the cube Sample Basic, and then close the database inspector.
 
@@ -364,7 +364,7 @@ Your load rule fields should now be arranged like this:
 
 22. Click **Jobs**, and click **New Job > Load Data**.
 
-23. Enter Sample as the application name, and Basic as the database name.
+23. Enter **Sample** as the application name, and **Basic** as the database name.
 
 24. For the script name, select the name of the dimension build rule file you created, ``SalesSQLDataload``.
 
@@ -372,13 +372,13 @@ Your load rule fields should now be arranged like this:
 
 ![](./images/image15_52.png "")
  
-26. Click OK to begin the job.
+26. Click **OK** to begin the job.
 
-The data load begins. Click the Refresh symbol to watch the status, and when it completes, click **Job Details** from the Actions menu.
+The data load begins. Click the **Refresh** symbol to watch the status, and when it completes, click **Job Details** from the Actions menu.
 
 27. Go back to the worksheet in Smart View, and refresh it to verify that the data was loaded from the table.
 
-28. Run Calc script to perform data aggregation.
+28. Run **Calc script** to perform data aggregation.
 
 ![](./images/image15_53.png "")
 
