@@ -268,10 +268,8 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 19. Keep the fields in General tab as-is.
 
-20. Back in the Edit Source dialog for your dimension build rule, in the SQL/Datasource Properties group select Datasource radio button.
-```
-Select Datasource as ADW_Datasource from dropdown.
-```
+20. Back in the Edit Source dialog for your dimension build rule, in the SQL/Datasource Properties group select Datasource radio button. Select Datasource as ADW_Datasource from dropdown.
+
 ![](./images/image15_45.png "")
 
 21. Click OK, then Verify, Save and Close. to save and close the ``MarketSQLDimbuild`` rule.
