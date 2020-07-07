@@ -1,3 +1,5 @@
+# Lab 14: Essbase Feature Functionalities
+
 ## Install the Smart View Cube Designer Extension
 
 Before you perform this procedure, you must complete the steps in Create Data Source Connections to Essbase. 
