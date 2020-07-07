@@ -1,8 +1,8 @@
-** Install the Smart View Cube Designer Extension
+## Install the Smart View Cube Designer Extension
 
 Before you perform this procedure, you must complete the steps in Create Data Source Connections to Essbase. 
 
-*** Installing Cube Designer from Smart View
+### Installing Cube Designer from Smart View
 
 1.	On the ‘Smart View’ ribbon, select ‘Options’, and then ‘Extensions’. 
 1.png
@@ -15,7 +15,7 @@ Smart View checks for all extensions that your administrator has made available 
 4.	Follow the prompts to install the extension.
 
 
-*** Installing Cube Designer from Essbase
+### Installing Cube Designer from Essbase
 1.	In Essbase19c UI , click ‘Console’.
 
 2.	On the ‘Desktop Tools’ tab, to the right of Cube Designer Extension, click ‘Download’ . 
@@ -34,7 +34,7 @@ Save the file to a local directory.
 
 6.	Restart Microsoft Office applications.
 
-*** Update the Smart View Cube Designer Extension
+### Update the Smart View Cube Designer Extension
 
 If an extension is available for you to update, you can update it from Smart View Excel, on the Extensions tab of the Options dialog box. 
 To check for Cube Designer Smart View extension updates and install them: 
@@ -75,13 +75,13 @@ Once again, when you select the Essbase URL, you are prompted to log in.
 
 6.png
 
-** About the Cube Designer Ribbon
+## About the Cube Designer Ribbon
 
 Cube Designer helps you to design, create and modify application workbooks to meet their strict layout and syntax requirements. You can also use options on the Cube Designer ribbon to perform a number of cube management tasks, such as loading data, editing formulas and viewing jobs.
 
 6.png
 
-*** Cube Designer Ribbon Options
+### Cube Designer Ribbon Options
 
 *	Connections: Opens the ‘Connections’ dialog box, in which you choose the cloud service URL. 
 *	Essbase/Catalog : Opens the Essbase Files dialog box, which contains a selection of prebuilt application workbooks, from which you can build sample applications and cubes. 
@@ -100,7 +100,7 @@ Also, a catalog toolbar is available in this dialog box from which you can perfo
 *	Admin Tasks: Opens a menu from which you can delete an application, delete a cube, or view logs. Selecting one of these options opens the ‘Delete Application’ or ‘Delete Cube’ dialog box, or allows you to view server or application logs. 
 *	Server name: Shows the currently defined connection location. When you click ‘Server name’ and log in (if prompted to do so), the server name and the client and server versions are displayed. 
 
-** Creating a Cube from Tabular Data in Cube Designer 
+## Creating a Cube from Tabular Data in Cube Designer 
 
 This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About Using Tabular Data to Create Cubes. 
 
