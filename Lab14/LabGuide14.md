@@ -1,62 +1,59 @@
 # Lab 14: Essbase Feature Functionalities
 
-## Objectives -
+## Introduction
 
-* Connecting to Data Sources
+## Objectives
 
-* Describe Smart View user interface
-
-* Create ad hoc grids
+## Required Artifacts
 
 ## Part 1 - Analyzing Essbase data using Smart View Plugin
 
 ### Step 1 - Connecting to Data Sources
 
-After installing Oracle Smart View for Office, you can create connections to Essbase in cloud.
-Connections require information about the server and port. Your cloud service
-administrator should provide you with the information you need to create the
-connection. Use the quick connection method to create a private connection to the
-cloud service.
+After installing Oracle Smart View for Office, you can create connections to Essbase in cloud. Connections require information about the server and port. Your cloud service administrator should provide you with the information you need to create the connection. Use the quick connection method to create a private connection to the cloud service.
 
 To create a private connection using the quick connection method:
 
 1. In Excel, select the Smart View ribbon, and then click Panel.
 
-2. On the Smart View Panel, click the arrow on the Switch to button, and then select Private Connections from the list.
+2. On the Smart View Panel, click the arrow on the Switch to button, and then select **Private Connections** from the list.
 
 3. In the text box that opens, enter the URL for the data source to which you want to connect.
 
 The URL syntax: ``https://server/essbase/smartview``
 
-4. Click Go, or press Enter. (You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using Essbase 19c deployment with demo certificate. Once in post deployment / production instance we replace demo certificate with paid SSL certificate we will not get this alert. For instance, click yes on alert to continue with lab exercise.)
+4. Click Go, or press **Enter**. 
 
-5. On the login window, enter your login credentials
+``Note: You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using Essbase 19c deployment with demo certificate. Once in post deployment / production instance we replace demo certificate with paid SSL certificate we will not get this alert. For instance, click yes on alert to continue with lab exercise.``
+
+5. On the login window, enter your login credentials. 
 
 After successful login, you can now begin working with data in Oracle Analytics Cloud - Essbase. 
 
-5. Expand ‘EssbaseCluster’, navigate to ‘DynamicCorp’ application. Double click on ‘Sales’ database.
+6. Expand `EssbaseCluster`, navigate to `DynamicCorp` application. Double click on ‘Sales’ database.
 
-You will be presented with option to create Ad hoc grid. Click on Ad hoc analysis.
+You will be presented with option to create Ad hoc grid. Click on **Ad hoc analysis**.
 
-Smart View: Excel User Interface
+### Step2 - Smart View: Excel User Interface
 
-Smart View Ribbon
+**Smart View Ribbon - ** 
 
 The Smart View ribbon option enables you to set Smart View options and perform commands that are common for all data source providers.
 
-Essbase Ribbon
+**Essbase Ribbon -**
 
 The Essbase ribbon contains commands that enable you to view, navigate, and analyze Essbase data.
 
-POV Toolbar
+**POV Toolbar -**
 
 Dimensions that are not displayed in columns or rows of a data grid are displayed on POV toolbar, which identifies a slice of the database for a grid. For default ad hoc grids, all database dimensions are displayed on the POV toolbar at the dimension level
 
-Smart View Panel 
+**Smart View Panel -**
 
 You use Smart View panel to connect to your smart view data sources and manage connections.
 
-Ad hoc Analysis using Smart View 
+**Ad hoc Analysis using Smart View**
+
 1. Bring up Excel. Click Smart View – Panel – Private Connections. Enter the provided Smart View URL. Supply the credentials.
 
 2. In the Connection Manager panel to your right, click ‘DynamicCorp’ – ‘Sales’. Click Connect. Click Ad hoc Analysis. 
@@ -72,11 +69,11 @@ To zoom in on a member, perform one of the following actions:
 * Select the member and then, on the Essbase ribbon, click Zoom In.
 * Double-click the member.
 
-Double Click (or Click Zoom in): Measures – Profit – Margins – Sales. Go to Sales. Click Keep Only. Now you are analyzing only Sales numbers and you have removed the rest from your sheet. 
+Double Click (or Click Zoom in): Measures – Profit – Margins – Sales. Go to Sales. Click **Keep Only**. Now you are analyzing only Sales numbers and you have removed the rest from your sheet. 
 
 In the Smart View ribbon click Undo. Undo reverses the last change you made to the data. 
 
-In the Smart View ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’. 
+In the Smart View ribbon click `Redo`. It will take you back to the sheet prior to the `Undo`. 
 
 Pivot to POV: Click on ‘POV’ in ‘Essbase’ ribbon. 
 
