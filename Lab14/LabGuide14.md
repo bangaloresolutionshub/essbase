@@ -24,7 +24,7 @@ To create a private connection using the quick connection method:
 
 3. In the text box that opens, enter the URL for the data source to which you want to connect.
 
-The URL syntax: [https://server/essbase/smartview]
+The URL syntax: (https://server/essbase/smartview)
 
 4. Click Go, or press Enter. (You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using Essbase 19c deployment with demo certificate. Once in post deployment / production instance we replace demo certificate with paid SSL certificate we will not get this alert. For instance, click yes on alert to continue with lab exercise.)
 
