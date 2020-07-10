@@ -1,14 +1,14 @@
 # Lab 14: Essbase Feature Functionalities
 
-Analyzing Essbase data using Smart View Plugin
-
-Objectives -
+## Objectives -
 
 •	Connecting to Data Sources
 •	Describe Smart View user interface
 •	Create ad hoc grids
 
-Connecting to Data Sources
+## Part 1 - Analyzing Essbase data using Smart View Plugin
+
+### Step 1 - Connecting to Data Sources
 
 After installing Oracle Smart View for Office, you can create connections to Essbase in cloud.
 Connections require information about the server and port. Your cloud service
@@ -19,40 +19,28 @@ cloud service.
 To create a private connection using the quick connection method:
 
 1. In Excel, select the Smart View ribbon, and then click Panel.
-2. On the Smart View Panel, click the arrow on the Switch to button, and then select Private Connections from the list.
-3. In the text box that opens, enter the URL for the data source to
-which you want to connect.
 
-The URL syntax: https://server/essbase/smartview
+2. On the Smart View Panel, click the arrow on the Switch to button, and then select Private Connections from the list.
+
+3. In the text box that opens, enter the URL for the data source to which you want to connect.
+
+The URL syntax: [https://server/essbase/smartview]
 
 4. Click Go, or press Enter. (You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using Essbase 19c deployment with demo certificate. Once in post deployment / production instance we replace demo certificate with paid SSL certificate we will not get this alert. For instance, click yes on alert to continue with lab exercise.)
 
 5. On the login window, enter your login credentials
 
-	 
-
 After successful login, you can now begin working with data in Oracle Analytics Cloud - Essbase. 
 
 5. Expand ‘EssbaseCluster’, navigate to ‘DynamicCorp’ application. Double click on ‘Sales’ database.
-
- 
 
 You will be presented with option to create Ad hoc grid. Click on Ad hoc analysis.
 
 Smart View: Excel User Interface
 
-
- 
-
-
-
-
- 
-
 Smart View Ribbon
 
 The Smart View ribbon option enables you to set Smart View options and perform commands that are common for all data source providers.
-
 
 Essbase Ribbon
 
@@ -66,75 +54,39 @@ Smart View Panel
 
 You use Smart View panel to connect to your smart view data sources and manage connections.
 
-
-
 Ad hoc Analysis using Smart View 
-1.	Bring up Excel. Click Smart View – Panel – Private Connections. Enter the provided Smart View URL. Supply the credentials.
-2.	 In the Connection Manager panel to your right, click ‘DynamicCorp’ – ‘Sales’. Click Connect. Click Ad hoc Analysis. 
+1. Bring up Excel. Click Smart View – Panel – Private Connections. Enter the provided Smart View URL. Supply the credentials.
 
- 
+2. In the Connection Manager panel to your right, click ‘DynamicCorp’ – ‘Sales’. Click Connect. Click Ad hoc Analysis. 
 
-3.	After connecting to an Essbase server and opening a worksheet, you can initiate ad hoc reports against databases on the connected server. A report initiated at the database level on an empty worksheet returns data from the top levels of each database dimension.
+3. After connecting to an Essbase server and opening a worksheet, you can initiate ad hoc reports against databases on the connected server. A report initiated at the database level on an empty worksheet returns data from the top levels of each database dimension.
 
- 
-
-
-4.	Double click or zoom in to Measures and Year. You will now see the measures broken down by Quarters.
-
-		 	
-	
-																						 		
-
-
+4. Double click or zoom in to Measures and Year. You will now see the measures broken down by Quarters.
 
 5.Go to Year. Click on Zoom In – All levels. You will now see the numbers broken down to leaf level Months. ‘Zoom in’ drills down to display details.
 
 To zoom in on a member, perform one of the following actions:
-•	Select the member and then, on the Essbase ribbon, click Zoom In.
-•	Double-click the member.
 
-			
-	 	
+* Select the member and then, on the Essbase ribbon, click Zoom In.
+* Double-click the member.
 
- 
- 
 Double Click (or Click Zoom in): Measures – Profit – Margins – Sales. Go to Sales. Click Keep Only. Now you are analyzing only Sales numbers and you have removed the rest from your sheet. 
 
- 
- 
 In the Smart View ribbon click Undo. Undo reverses the last change you made to the data. 
-
- 
 
 In the Smart View ribbon click ‘Redo’. It will take you back to the sheet prior to the ‘Undo’. 
 
-
 Pivot to POV: Click on ‘POV’ in ‘Essbase’ ribbon. 
 
- 
-Click on down arrow next to Market. Select New York.
-
- 
-
- 
+Click on down arrow next to Market. Select New York. 
 
 You can now select New York in the POV toolbar, click Refresh to see the figures refreshed in the sheet for New York. 
 
- 
-
-
-Member Selection: Drag Scenario from POV tool bar to the sheet. 
-
- 
+Member Selection: Drag Scenario from POV tool bar to the sheet.  
 
 Click on Scenario
 
 Click on Member Selection in the Essbase ribbon. Select Actual.
-
- 
-
-
- 
 
 Free Form processing: You can free form type a member combination on a sheet. Click Refresh. The sheet will be updated to show the results of the query in your free form sheet. 
 
@@ -142,49 +94,49 @@ Start with creating smartview analysis report.
 
 Create report by zooming into Year & Measures dimension.
 
- 
-
-
 You can directly enter Sales account member in place of Profit to visualize sales data across year without needing to perform member selection.
 
 Click on Profit cell and replace with Sales, hit refresh.
-
  
 Audit Trail
 Enable Audit trail: 
 Data is updated in Essbase by Submitting data, adding/changing LRO (Linked Reporting Objects) and Data load. Essbase has the capability to let certain users go back and view the Audit Trail of the changes that were made to the data. 
-Users who have one of the following roles on the application can view the processed audit records for the cubes in that application: Application Manager, Database manager, Database Update role. Only those records where the user name requesting the audit trail matches the user name registered in the audit records, will be returned. Enable Audit Trail 
-1.	The Service Administrator and Power User have the permissions to enable Audit Trail in the Essbase Application. 
-2.	Log in to Essbase UI. Click on Application DynamicCorp. Click on hamburger icon. Click on inspect.
-	
-	 	
+Users who have one of the following roles on the application can view the processed audit records for the cubes in that application: Application Manager, Database manager, Database Update role. Only those records where the user name requesting the audit trail matches the user name registered in the audit records, will be returned. 
+
+Enable Audit Trail 
+
+1. The Service Administrator and Power User have the permissions to enable Audit Trail in the Essbase Application. 
+
+2. Log in to Essbase UI. Click on Application DynamicCorp. Click on hamburger icon. Click on inspect.	 	
  
 3.Click on configuration.
-4. Click on Add + to your right.
 
- 
+4. Click on Add + to your right.
 
 5.Click + to select ‘AUDITTRAIL’ property.  Enter ‘DATA’ in value field. Click ‘Apply and Restart’ to restart application. 
 
- 
-
- 
-
-
 Exercise 1-2	Submit Data and Audit Trail
-1.	Log in to Smart View and connect to application DynamicCorp/Sales. Click on Connect. Click on Ad hoc Analysis. 
-2.	Click on Year. Click on Zoom In – All levels. 
-3.	Change data for Jan. Click ‘Smart View’ – ‘Submit Data’
-4.	Click ‘More’ under ‘Ad hoc Analysis’. Click on ‘Audit Trail’.
-	 
-5.	Notice an Audit Trail table that contains records of changes made to the cube. The record contains Timestamp, New Value, Data cell POV where change was made. Below the table, notice a detailed description of the change in the Audit record. 
 
- 
+1. Log in to Smart View and connect to application DynamicCorp/Sales. Click on Connect. Click on Ad hoc Analysis. 
+
+2. Click on Year. Click on Zoom In – All levels. 
+
+3. Change data for Jan. Click ‘Smart View’ – ‘Submit Data’
+
+4. Click ‘More’ under ‘Ad hoc Analysis’. Click on ‘Audit Trail’.
+	 
+5. Notice an Audit Trail table that contains records of changes made to the cube. The record contains Timestamp, New Value, Data cell POV where change was made. 
+
+Below the table, notice a detailed description of the change in the Audit record. 
 
 Exercise 1-3	Linked Reporting Objects and Audit Trail
+
 1.	Click on cell cell B3. Click ‘Essbase’ – ‘Linked Objects’. Click drop down next to ‘Attach’. Click ‘Cell Note’. Add a cell note "Figures are too high".
+
 2.	Click on cell B7. Click ‘Essbase’ – ‘Linked Objects’. Click drop down next to ‘Attach’. Click ‘File’. Browse and attach a file. Enter a file description. 
+
 3.	Click on cell B11. ‘Essbase’ – ‘Linked Objects’. Click drop down next to ‘Attach’. Click ‘URL’. Enter URL http://cnn.com and enter "Breaking news!". Make a few more such updates. 
+
 4.	Click ‘Audit Trail’ menu. You will see the table populated with all the changes you made. Each record in the audit trail represents one of two changes - change to data (New Value) or change to LRO (LRO)
  
 Exercise 1-4	Audit Trail Table 
@@ -197,9 +149,6 @@ Exercise 1-4	Audit Trail Table
 4.	Then, if you want to do further analysis on the POV for this record, select the icon at the bottom of the Audit table titled "Adhoc for selected POV", it will land you on a sheet called "Audit_adhoc", with the POV and refreshed data value. This is the starting point and it is a live sheet where you can start doing analysis and rest of Smart View operations.  
  
 5.	This is a shared sheet for landing from Audit record. When you click on subsequent audit records, and click on Adhoc for selected POV, it will land you in this same sheet.
- 
-
-
 
 ## Install the Smart View Cube Designer Extension
 
