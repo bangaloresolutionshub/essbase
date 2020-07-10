@@ -2,9 +2,11 @@
 
 ## Objectives -
 
-•	Connecting to Data Sources
-•	Describe Smart View user interface
-•	Create ad hoc grids
+* Connecting to Data Sources
+
+* Describe Smart View user interface
+
+* Create ad hoc grids
 
 ## Part 1 - Analyzing Essbase data using Smart View Plugin
 
