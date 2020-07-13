@@ -338,9 +338,14 @@ c. Click Next.
 
 10. On the Review page, review the information that you provided, and click Create. The Job Information tab in Oracle Resource Manager shows the status until the job finishes and the stack is created.
 11. Check for any log errors. If you have any, see Troubleshoot Deployment Errors.
+
+**Note: The deployment takes around 25 minutes.
+
 12. If the job is executed without any errors we can see the Job Successful state in green color as below.
 
 ![](./images/image13_43.png "")
+
+**Note: Refresh the current page
 
 13. From the Application Information page, the value for essbase_url is used in the browser to access Essbase. The essbase node public ip is for accessing SSH.
 14. After you deploy the stack, now complete the post-deployment tasks, including update your created Identity Cloud Service application, test connectivity to Essbase, and others.
