@@ -83,6 +83,9 @@ To overcome these limitations and to proceed with an efficient and precise multi
 
 With the above stated benefits, it’s certainly worthwhile to understand the nitty-gritty of Essbase, its benefits, features and applications. This lab intends towards providing a holistic view of Essbase, its features, and applications.
 
+
+Note: The steps going forward will have to followed in a windows operating system
+
 ### Step 1 - Installing Smartview Plugin 
 
 #### Smart View Prerequisites
