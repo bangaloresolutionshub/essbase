@@ -259,7 +259,7 @@ oci kms crypto encrypt --key-id Key_OCID --endpoint Cryptographic_Endpoint_URL -
 ```
 "ciphertext": "Encrypted_Password"
 ```
-*Note* You also use KMS encryption to encrypt your Database Password and your Client Secret. 
+*Note*  You must use KMS encryption to encrypt your Database Password and your Client Secret as shown above.
 
 Reference : (Click here)[https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/encrypt-values-using-kms.html]
 
