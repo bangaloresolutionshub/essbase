@@ -178,7 +178,7 @@ Alternatively, the IDCS Instance GUID is at the front of the IDCS URL in the bro
 4. When done, click Create.
 5. Create one more policy , this time for the Dynamic Group we have created , so that dynamic group will have permissions to initiate tasks automatically during procurement process . Repeat the 3rd & 4th steps as above to add all policies as listed [here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/set-policies.html)
 
-Note: Create policies each for both Admin groups and Dynamic groups, with all policy statements as given [here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/set-policies.html)
+**Note: Create policies each for both Admin groups and Dynamic groups, with all policy statements as given [here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/set-policies.html)
 
 6. We will have two policy groups as below at the end of this part-6.
 ![](./images/image13_27.png "")
@@ -226,7 +226,7 @@ Keys need to be encrypted for the following fields:
 
 ![](./images/image13_32.png "")
 
-Note: that Essbase uses the same key to decrypt all passwords for a single domain.
+**Note: that Essbase uses the same key to decrypt all passwords for a single domain.
 
 #### Step 2: To encrypt your Oracle Essbase Administrator password:
 
@@ -239,7 +239,7 @@ For example, we can use the cloud shell option from the Cloud Console UI as belo
 ```
 echo -n 'OracleEssbase_Password' | base64
 ```
-Note: The password for the Essbase system administrator, encrypted with the provided KMS key. Use a password that starts with a letter, is between 8 and 30 characters long, contains at least one number, and, optionally, any number of the special characters ($ # _). *For example, Ach1z0#d*
+**Note: The password for the Essbase system administrator, encrypted with the provided KMS key. Use a password that starts with a letter, is between 8 and 30 characters long, contains at least one number, and, optionally, any number of the special characters ($ # _). *For example, Ach1z0#d*
 
 ![](./images/image13_33.png "")
 ![](./images/image13_34.png "")
