@@ -97,8 +97,8 @@ Before deploying the Essbase stack, create a confidential application in Oracle 
 
 	* Select the following allowed grant types: Client Credentials and Authorization Code. 
 	* Select allow non-HTTPS URLs. 
-		1. For the Essbase Redirect URL, enter a temporary/mock redirection URL (it ends with _uri): http://ip/essbase
-		2. For the Essbase Post Logout Redirect URL, enter a temporary/mock URL: http://ip/essbase
+		1. For the Essbase Redirect URL, enter a temporary/mock redirection URL (it ends with _uri): https://ip/essbase
+		2. For the Essbase Post Logout Redirect URL, enter a temporary/mock URL: https://ip/essbase
 
 ![](./images/image13_13.png "")
 
