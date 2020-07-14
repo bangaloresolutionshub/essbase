@@ -22,11 +22,9 @@ To create a private connection using the quick connection method:
 
 4. Click Go, or press **Enter**. 
 
-``Note: You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using Essbase 19c deployment with demo certificate. Once in post deployment / production instance we replace demo certificate with paid SSL certificate we will not get this alert. For instance, click yes on alert to continue with lab exercise.``
+*Note:* You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using Essbase 19c deployment with demo certificate. Once in post deployment / production instance we replace demo certificate with paid SSL certificate we will not get this alert. For instance, click yes on alert to continue with lab exercise.
 
-5. On the login window, enter your login credentials. 
-
-After successful login, you can now begin working with data in Oracle Analytics Cloud - Essbase. 
+5. On the login window, enter your login credentials. After successful login, you can now begin working with data in Oracle Analytics Cloud - Essbase. 
 
 6. Expand `EssbaseCluster`, navigate to `DynamicCorp` application. Double click on ‘Sales’ database.
 
@@ -50,7 +48,7 @@ Dimensions that are not displayed in columns or rows of a data grid are displaye
 
 You use Smart View panel to connect to your smart view data sources and manage connections.
 
-**Ad hoc Analysis using Smart View**
+### Step 3 - Ad hoc Analysis using Smart View
 
 1. Bring up Excel. Click Smart View – Panel – Private Connections. Enter the provided Smart View URL. Supply the credentials.
 
@@ -60,42 +58,43 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 4. Double click or zoom in to Measures and Year. You will now see the measures broken down by Quarters.
 
-5.Go to Year. Click on Zoom In – All levels. You will now see the numbers broken down to leaf level Months. ‘Zoom in’ drills down to display details.
+5. Go to Year. Click on Zoom In – All levels. You will now see the numbers broken down to leaf level Months. ‘Zoom in’ drills down to display details.
 
 To zoom in on a member, perform one of the following actions:
 
 * Select the member and then, on the Essbase ribbon, click Zoom In.
 * Double-click the member.
 
-Double Click (or Click Zoom in): Measures – Profit – Margins – Sales. Go to Sales. Click **Keep Only**. Now you are analyzing only Sales numbers and you have removed the rest from your sheet. 
+6. Double Click (or Click Zoom in): Measures – Profit – Margins – Sales. Go to Sales. Click **Keep Only**. Now you are analyzing only Sales numbers and you have removed the rest from your sheet. 
 
-In the Smart View ribbon click Undo. Undo reverses the last change you made to the data. 
+7. In the Smart View ribbon click Undo. Undo reverses the last change you made to the data. 
 
-In the Smart View ribbon click `Redo`. It will take you back to the sheet prior to the `Undo`. 
+8. In the Smart View ribbon click `Redo`. It will take you back to the sheet prior to the `Undo`. 
 
-Pivot to POV: Click on ‘POV’ in ‘Essbase’ ribbon. 
+9. Pivot to POV: Click on ‘POV’ in ‘Essbase’ ribbon. 
 
-Click on down arrow next to Market. Select New York. 
+10. Click on down arrow next to Market. Select New York. 
 
-You can now select New York in the POV toolbar, click Refresh to see the figures refreshed in the sheet for New York. 
+11. You can now select New York in the POV toolbar, click Refresh to see the figures refreshed in the sheet for New York. 
 
-Member Selection: Drag Scenario from POV tool bar to the sheet.  
+12. Member Selection: Drag Scenario from POV tool bar to the sheet.  
 
-Click on Scenario
+13. Click on Scenario
 
-Click on Member Selection in the Essbase ribbon. Select Actual.
+14. Click on Member Selection in the Essbase ribbon. Select Actual.
 
-Free Form processing: You can free form type a member combination on a sheet. Click Refresh. The sheet will be updated to show the results of the query in your free form sheet. 
+15. Free Form processing: You can free form type a member combination on a sheet. Click Refresh. The sheet will be updated to show the results of the query in your free form sheet. 
 
-Start with creating smartview analysis report.
+16. Start with creating smartview analysis report.
 
-Create report by zooming into Year & Measures dimension.
+17. Create report by zooming into Year & Measures dimension.
 
-You can directly enter Sales account member in place of Profit to visualize sales data across year without needing to perform member selection.
+18. ou can directly enter Sales account member in place of Profit to visualize sales data across year without needing to perform member selection.
 
-Click on Profit cell and replace with Sales, hit refresh.
+19. Click on Profit cell and replace with Sales, hit refresh.
  
-Audit Trail
+### Audit Trail
+
 Enable Audit trail: 
 Data is updated in Essbase by Submitting data, adding/changing LRO (Linked Reporting Objects) and Data load. Essbase has the capability to let certain users go back and view the Audit Trail of the changes that were made to the data. 
 Users who have one of the following roles on the application can view the processed audit records for the cubes in that application: Application Manager, Database manager, Database Update role. Only those records where the user name requesting the audit trail matches the user name registered in the audit records, will be returned. 
@@ -106,13 +105,13 @@ Enable Audit Trail
 
 2. Log in to Essbase UI. Click on Application DynamicCorp. Click on hamburger icon. Click on inspect.	 	
  
-3.Click on configuration.
+3. Click on configuration.
 
 4. Click on Add + to your right.
 
-5.Click + to select ‘AUDITTRAIL’ property.  Enter ‘DATA’ in value field. Click ‘Apply and Restart’ to restart application. 
+5. Click + to select ‘AUDITTRAIL’ property.  Enter ‘DATA’ in value field. Click ‘Apply and Restart’ to restart application. 
 
-Exercise 1-2	Submit Data and Audit Trail
+Exercise 1-2 Submit Data and Audit Trail
 
 1. Log in to Smart View and connect to application DynamicCorp/Sales. Click on Connect. Click on Ad hoc Analysis. 
 
