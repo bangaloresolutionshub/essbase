@@ -18,9 +18,7 @@ To create a private connection using the quick connection method:
 
 2. On the Smart View Panel, click the arrow on the Switch to button, and then select **Private Connections** from the list.
 
-3. In the text box that opens, enter the URL for the data source to which you want to connect.
-
-The URL syntax: ``https://server/essbase/smartview``
+3. In the text box that opens, enter the URL for the data source to which you want to connect. The URL syntax: ``https://server/essbase/smartview``
 
 4. Click Go, or press **Enter**. 
 
@@ -36,7 +34,7 @@ You will be presented with option to create Ad hoc grid. Click on **Ad hoc analy
 
 ### Step2 - Smart View: Excel User Interface
 
-**Smart View Ribbon - ** 
+**Smart View Ribbon -** 
 
 The Smart View ribbon option enables you to set Smart View options and perform commands that are common for all data source providers.
 
