@@ -188,7 +188,7 @@ You are prompted to log in after you click on existing Essbase server URL’s.
 If an update is available, the ‘Update Available’ icon is displayed in the Cube Designer row. 
 
 *Note:*
-This process uses a server locations list, which was created by previous Smart View connections . If there are connection definitions that are no longer valid, you receive errors when the process tries to connect to those servers. See (Delete Smart View Connection URLs)[https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/delete-smart-view-connection-urls.html]. 
+This process uses a server locations list, which was created by previous Smart View connections . If there are connection definitions that are no longer valid, you receive errors when the process tries to connect to those servers. See [Delete Smart View Connection URLs](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/delete-smart-view-connection-urls.html)
 
 3.	Click Remove to uninstall the extension.
 4.	Close Excel.
