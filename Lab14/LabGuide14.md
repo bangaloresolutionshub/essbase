@@ -124,34 +124,37 @@ Data is updated in Essbase by Submitting data, adding/changing LRO (Linked Repor
 
 Users who have one of the following roles on the application can view the processed audit records for the cubes in that application: Application Manager, Database manager, Database Update role. Only those records where the user name requesting the audit trail matches the user name registered in the audit records, will be returned. 
 
-1.	The Service Administrator and Power User have the permissions to enable Audit Trail in the Essbase Application. 
-2.	Log in to Essbase UI. Click on Application DynamicCorp. Click on hamburger icon. Click on inspect.
-3.      Click on configuration.
-4.      Click on Add + to your right.
-5.Click + to select ‘AUDITTRAIL’ property.  Enter ‘DATA’ in value field. Click ‘Apply and Restart’ to restart application. 
+1. The Service Administrator and Power User have the permissions to enable Audit Trail in the Essbase Application. 
+2. Log in to Essbase UI. Click on Application DynamicCorp. Click on hamburger icon. Click on inspect.
+3. Click on configuration.
+4. Click on Add + to your right.
+5. Click + to select ‘AUDITTRAIL’ property.  Enter ‘DATA’ in value field. Click ‘Apply and Restart’ to restart application. 
 
 **Step 2 - Submit Data and Audit Trail**
 
-1.	Log in to Smart View and connect to application DynamicCorp/Sales. Click on Connect. Click on Ad hoc Analysis. 
-2.	Click on Year. Click on Zoom In – All levels. 
-3.	Change data for Jan. Click ‘Smart View’ – ‘Submit Data’
-4.	Click ‘More’ under ‘Ad hoc Analysis’. Click on ‘Audit Trail’.
-5.	Notice an Audit Trail table that contains records of changes made to the cube. The record contains Timestamp, New Value, Data cell POV where change was made. Below the table, notice a detailed description of the change in the Audit record. 
+1. Log in to Smart View and connect to application DynamicCorp/Sales. Click on Connect. Click on Ad hoc Analysis. 
+2. Click on Year. Click on Zoom In – All levels. 
+3. Change data for Jan. Click ‘Smart View’ – ‘Submit Data’
+4. Click ‘More’ under ‘Ad hoc Analysis’. Click on ‘Audit Trail’.
+5. Notice an Audit Trail table that contains records of changes made to the cube. The record contains Timestamp, New Value, Data cell POV where change was made. 
 
-**Step 3 - Exercise 1-3	Linked Reporting Objects and Audit Trail**
+Below the table, notice a detailed description of the change in the Audit record. 
+
+**Step 3 - Linked Reporting Objects and Audit Trail**
 
 1.	Click on cell cell B3. Click ‘Essbase’ – ‘Linked Objects’. Click drop down next to ‘Attach’. Click ‘Cell Note’. Add a cell note "Figures are too high".
 2.	Click on cell B7. Click ‘Essbase’ – ‘Linked Objects’. Click drop down next to ‘Attach’. Click ‘File’. Browse and attach a file. Enter a file description. 
 3.	Click on cell B11. ‘Essbase’ – ‘Linked Objects’. Click drop down next to ‘Attach’. Click ‘URL’. Enter URL http://cnn.com and enter "Breaking news!". Make a few more such updates. 
 4.	Click ‘Audit Trail’ menu. You will see the table populated with all the changes you made. Each record in the audit trail represents one of two changes - change to data (New Value) or change to LRO (LRO)
 
-**Step 4 - Exercise 1-4	Audit Trail Table**
+**Step 4 - Audit Trail Table**
 
 1.	There are three icons at the bottom of the audit table: "Export logs to sheet", "Refresh audit log list", "Adhoc for selected POV. The columns in the Audit trail table can be sorted by clicking the arrow at the heading. 
 2.	Audit records can be exported to an excel file by clicking on icon at the bottom of Audit table called "Export logs to sheet". 
 3.	When you click on an audit record, you can see the description of the audit record change in the description section at the bottom of the table.
 4.	Then, if you want to do further analysis on the POV for this record, select the icon at the bottom of the Audit table titled "Adhoc for selected POV", it will land you on a sheet called "Audit_adhoc", with the POV and refreshed data value. This is the starting point and it is a live sheet where you can start doing analysis and rest of Smart View operations.  
 5.	This is a shared sheet for landing from Audit record. When you click on subsequent audit records, and click on Adhoc for selected POV, it will land you in this same sheet.
+
 ## Part 3 - Install the Smart View Cube Designer Extension
 ## Part 4 - About the Cube Designer Ribbon
 ## Part 5 - Creating a Cube from Tabular Data in Cube Designer 
