@@ -41,10 +41,10 @@ This concludes the creation of sample app from the “Catalog” in the Essabase
 
 In this lab, we will be doing the following - 
 
-*	Connecting to Data Sources
-*	Describe Smart View user interface
-*	Create ad hoc grids
-*       Audit Trail
+* Connecting to Data Sources
+* Describe Smart View user interface
+* Create ad hoc grids
+* Audit Trail
 
 ### Section 1 - Connecting to Data Sources 
 
