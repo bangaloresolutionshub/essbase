@@ -239,7 +239,79 @@ Also, a catalog toolbar is available in this dialog box from which you can perfo
 **Server name:** Shows the currently defined connection location. When you click ‘Server name’ and log in (if prompted to do so), the server name and the client and server versions are displayed.
 
 ## Part 5 - Creating a Cube from Tabular Data in Cube Designer 
+
+This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About [Using Tabular Data to Create Cubes](https://docs.oracle.com/en/cloud/paas/analytics-cloud/esugc/using-tabular-data-create-cubes.html)
+
+1.	In Excel, on the ‘Cube Designer’ ribbon, click ‘Catalog’.
+
+2.	On the Cloud Files dialog box, under Catalog, go to ‘gallery/Technical/Table Format’ as shown below, then select a sample tabular data file: `Unstr_Hints.xlsx: Intrinsic headers`
+
+3.	Double click on the above directed file.
+
+4.	On the `Cube Designer` ribbon, select `Transform Data`
+
+5.	On the `Transform Data` dialog box, enter an application and cube name, if you want to change the default names that are prepopulated. 
+
+The application name is based on the source file name without the extension and the cube name is based on the worksheet name.
+
+`Unstr_Hints.xlsx: Application name is Unstr_Hints and the cube name is SpendHistory`
+
+6.	Press `Preview Data` The workbook is sent to Essbase19c for analysis and the relationships are returned for viewing. 
+
+7.	When you are ready to create the cube, click `Run`
+
+8.	  (Optional) When asked if you want to see the cube job status, click `Yes`
+
+The newly created application and cube are listed on the Applications home page in the cloud service and are available in Cube Designer. Now that the cube has been created from the tabular data, you can export the cube to an application workbook. 
+
+9.	On the `Cube Designer` ribbon, select `Private / Local` , then select `Export Cube to Application Workbook`
+
+10.	On the `Export Cube to Application Workbook` dialog box, select the application and cube, and then select `Run`
+
+To create a cube in the cloud service, see Creating a Cube from Tabular Data. 
+
+With this, we saw how a normal flat file excel sheet is converted into an Essbase Application and a Cube. We could get the DBX (Design by Example) file in a matter of seconds with the dynamic capabilities of Essbase powered by Cube Designer plugin.
+
 ## Part 6 - Updating Cubes Incrementally in Cube Designer
+
+Updating a cube is how you load dimensions and members to a cube outline using a data source and a rules file. You can also use the cloud service to add dimensions and members manually. Here in an existing cube, you can update a dimension, or add a new one. 
+
+*Note:* You cannot use Cube Designer to delete dimension in an existing cube. 
+
+After making changes to the metadata such as adding a new dimension, members etc. in the Cube.Generations sheet.
+
+        a. We will be adding a new member “Week” to the “Calendar” dimension.
+        b. We will be adding a new dimension “Sales” with one member as “Measures”.
+
+13.png
+14.png
+
+1. In Excel, on the Cube Designer ribbon, select Build Cube. . 
+
+Note : Before executing next step change the Application name & the Database name in the Essbase.Cube sheet of DBX file as below.
+ 
+2. Choose `Update Cube – Retain all data` option from the Build Option menu and click RUN. 
+
+When an outline is changed by a dimension build, the database may be restructured. Each of these options specifies how data values are handled during restructures:
+
+**a. Update Cube - Retain All Data**
+All data values are preserved.
+
+**b. Update Cube - Retain Input Data**
+All blocks (both upper-and lower-level) that contain loaded data are preserved. 
+
+*Note:* This option applies only to block storage cubes. 
+
+**c. Update Cube - Retain Leaf Data**
+Only leaf (level 0) values are preserved. If all data is required for calculation resides in leaf members, then you should select this option. If selected, then all upper-level blocks are deleted before the cube is restructured. Therefore, the disk space required for restructuring is reduced, and calculation time is improved. When the cube is recalculated, the upper-level blocks are re-created.
+
+**d. Update Cube - Remove All Data**
+All data values are cleared. 
+
+`Note: This option applies only to block storage cubes.`
+
+`Note: Dimension build definitions are contained within the application workbook and automatically generate the necessary rules files. You do not select a rules file when building dimensions in Cube Designer.`
+
 ## Part 7 - Overview of the WEB-UI
 ## Part 8 - Data Load to Cube
 ## Part 9 - Calculating Essbase Cube
