@@ -290,11 +290,11 @@ If an extension is available for you to update, you can update it from Smart Vie
 
 1. From the ‘Smart View’ ribbon, select ‘Options’ and then ‘Extensions’.
 
-![](./images/image14_42.png "") 
+![](./images/image14_38.png "") 
 
 2. Click the ‘Check for Updates, New Installs, and Uninstalls’ link to check for updates.
 
-![](./images/image14_43.png "") 
+![](./images/image14_39.png "") 
 
 You are prompted to log in after you click on existing Essbase server URL’s.
 
@@ -303,7 +303,7 @@ If an update is available, the ‘Update Available’ icon is displayed in the C
 *Note:*
 This process uses a server locations list, which was created by previous Smart View connections . If there are connection definitions that are no longer valid, you receive errors when the process tries to connect to those servers. See [Delete Smart View Connection URLs](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/delete-smart-view-connection-urls.html)
 
-![](./images/image14_44.png "") 
+![](./images/image14_42.png "") 
 
 3.	Click Remove to uninstall the extension.
 4.	Close Excel.
@@ -315,13 +315,13 @@ This process uses a server locations list, which was created by previous Smart V
 10.	Open Excel.
 11.	Ensure that the Cube Designer ribbon is displayed in Excel. 
 
-![](./images/image14_45.png "") 
+![](./images/image14_43.png "") 
 
 ## Part 4 - About the Cube Designer Ribbon
 
 Cube Designer helps you to design, create and modify application workbooks to meet their strict layout and syntax requirements. You can also use options on the Cube Designer ribbon to perform a number of cube management tasks, such as loading data, editing formulas and viewing jobs.
 
-![](./images/image14_45.png "") 
+![](./images/image14_43.png "") 
 
 ### Cube Designer Ribbon Options
 
@@ -365,7 +365,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 2.	On the Cloud Files dialog box, under Catalog, go to ‘gallery/Technical/Table Format’ as shown below, then select a sample tabular data file: `Unstr_Hints.xlsx: Intrinsic headers`
 
-![](./images/image14_46.png "") 
+![](./images/image14_44.png "") 
 
 3.	Double click on the above directed file.
 
@@ -373,7 +373,7 @@ This workflow uses two sample tabular data Excel files to demonstrate the concep
 
 5.	On the `Transform Data` dialog box, enter an application and cube name, if you want to change the default names that are prepopulated. 
 
-![](./images/image14_47.png "") 
+![](./images/image14_45.png "") 
 
 The application name is based on the source file name without the extension and the cube name is based on the worksheet name.
 
@@ -385,17 +385,17 @@ The application name is based on the source file name without the extension and 
 
 8.	  (Optional) When asked if you want to see the cube job status, click `Yes`
 
-![](./images/image14_49.png "") 
+![](./images/image14_47.png "") 
 
 The newly created application and cube are listed on the Applications home page in the cloud service and are available in Cube Designer. Now that the cube has been created from the tabular data, you can export the cube to an application workbook. 
 
 9.	On the `Cube Designer` ribbon, select `Private / Local` , then select `Export Cube to Application Workbook`
 
-![](./images/image14_50.png "") 
+![](./images/image14_48.png "") 
 
 10.	On the `Export Cube to Application Workbook` dialog box, select the application and cube, and then select `Run`
 
-![](./images/image14_51.png "") 
+![](./images/image14_49.png "") 
 
 To create a cube in the cloud service, see Creating a Cube from Tabular Data. 
 
@@ -412,13 +412,13 @@ After making changes to the metadata such as adding a new dimension, members etc
         a. We will be adding a new member “Week” to the “Calendar” dimension.
         b. We will be adding a new dimension “Sales” with one member as “Measures”.
         
-![](./images/image14_52.png "") 
+![](./images/image14_50.png "") 
 
-![](./images/image14_53.png "") 
+![](./images/image14_51.png "") 
 
 1. In Excel, on the Cube Designer ribbon, select Build Cube. 
 
-![](./images/image14_54.png "") 
+![](./images/image14_52.png "") 
 
 Note : Before executing next step change the Application name & the Database name in the Essbase.Cube sheet of DBX file as below.
  
@@ -449,67 +449,68 @@ All data values are cleared.
 ### 1. Applications:
 Applications tab gives us the information about the Essbase applications and the cubes built under them.
 
-![](./images/image14_55.png "") 
+
+![](./images/image14_53.png "") 
 
 Here, we will also find options to explore the features available under each application & cube using the inspect option as below. The Application specific audit/logs, Application specific configuration files etc are available in the ‘Applications’ tab under ‘Inspect’ option.
 as below.
 
-![](./images/image14_56.png "") 
-![](./images/image14_57.png "") 
+![](./images/image14_54.png "") 
+![](./images/image14_55.png "") 
 
 We can access the outline of the cube and the specific files under it using the “Inspect” option as below on cube as well.
 
-![](./images/image14_58.png "") 
-![](./images/image14_59.png "") 
+![](./images/image14_56.png "") 
+![](./images/image14_57.png "") 
 
 Outline Analysis : Outline option is equivalent to EAS console on Essbase on-prem, this is where we can add new dimensions or members under dimensions on any level as required and can make changes to existing cubes quickly using ‘Edit’ option. 
 Select the ‘Outline’ option for the ‘SpendHistory’ cube. [ or any cube that is already LIVE on the Essbase 19c UI ].
 
-![](./images/image14_60.png "") 
-![](./images/image14_61.png "")
+![](./images/image14_58.png "") 
+![](./images/image14_59.png "")
 
 Here, add a new child called ‘TotalA’ under ‘Measures’ dimension member as shown below. Let us now assign an ‘Ignore’ - ‘Consolidation operator’ to the ‘TotalA’ member. The operator defines the way in which the new member rolls up across the hierarchy.
 
-![](./images/image14_62.png "") 
-![](./images/image14_63.png "") 
+![](./images/image14_60.png "") 
+![](./images/image14_61.png "") 
 
 We now have to add a formula to this new dimension using the pencil icon under the ‘formula’ tab as shown. We are adding ‘Spend’ and ‘Invoice’
 Once added, we need to verify the formula and then select ‘Apply and Close’ .
 
-![](./images/image14_64.png "") 
+![](./images/image14_62.png "") 
 
 We can also specify other options such as ‘Data storage’ type and ‘Sort/Inspect’ of members in a dimension using the options in UI. We can use ‘Skip’ option to skip missing values as below and ‘Save’ all the changes we made.
 
-![](./images/image14_65.png "") 
+![](./images/image14_63.png "") 
 
 ### 2. Jobs:
 Jobs tab has all information about the jobs that are executed on Essbase UI. It is like an Audit of the tasks done on Essbase web-UI. 
 
 Here we can create / run New jobs on applications and cubes using this tab as shown below.
 
-![](./images/image14_66.png "") 
+![](./images/image14_64.png "") 
 
 Now we will execute a ‘Build Dimension’ job by selecting the application and cube as below, ‘Script’ file is the rule[.rul] file where the dimension build script exists , so let us select the pre-existing ‘DimBuild.rul’ file and its corresponding ‘DimensionsCSV.txt’ pair as the Data File and execute the job.
 
-![](./images/image14_67.png "") 
+![](./images/image14_65.png "") 
 
 Once done, we can see the status of the job back in the UI and also the job details under actions across the job executed if needed .
 
-![](./images/image14_68.png "") 
+![](./images/image14_66.png "") 
 
 ### 3. Files:
  Files tab is equivalent to the file directory of Essbase, this is where we find all the files related to applications and cubes under “applications” folder.
 
-![](./images/image14_69.png "") 
+![](./images/image14_67.png "") 
 
 In files tab we can upload the artifacts/files related to Essbase such as script files, rule files, load files etc existing on local systems directly into the cube of our choice using the ‘Upload Files’ option under the corresponding cube path. [ here in the image below application name is ‘Sample’ and cube name is ‘Basic’]
 
-![](./images/image14_70.png "") 
+![](./images/image14_68.png "") 
 
 ‘Gallery’ folder in ‘Files’ tab has industry wide sample templates in dbx format that are ready to use. They help us kickstart the process of building cubes related to that specific industry very quickly. 
 
-![](./images/image14_71.png "") 
-![](./images/image14_72.png "") 
+![](./images/image14_69.png "") 
+![](./images/image14_70.png "") 
 
 ### 4. Scenarios:
 ‘Scenarios’ tab is where we create scenario modeling on the applications for ‘What-If’ analysis, which empowers the users to analyze the data and get insights from the data. [ More on this will be covered in upcoming lab ]
@@ -519,13 +520,13 @@ In files tab we can upload the artifacts/files related to Essbase such as script
 
 We can add new users/groups by clicking on ‘Add Role’ option. 
 
-![](./images/image14_73.png "") 
+![](./images/image14_71.png "") 
 
 ### 6. Sources:
 Many cube operations require connection information to access remote source data or hosts. You can define ‘Connections’ and ‘Datasources’ once and reuse them in various operations, so that you don’t have to specify the details each time you perform a task.
 A connection stores login credentials required to access an external source. Essbase19c allows connections to following datasources shown below. A Datasource points to an external source of information.
 
-![](./images/image14_74.png "") 
+![](./images/image14_72.png "") 
 
 ### 7. Console:
 Console tab is one stop place for Essbase Administrator tools such as 
@@ -536,18 +537,18 @@ Console tab is one stop place for Essbase Administrator tools such as
 * Migration Utility :  This utility tool is used for migrating Essbase artifacts b/w Essbase instances and environments accordingly.
 This tab also contains the download links for ‘Smartview’ & ‘Cube-Designer’ plugins. Extensions and Essbase Client tools such as MaxL, JAPI etc... under Desktop Tools section are also available
 
-![](./images/image14_75.png "") 
+![](./images/image14_73.png "") 
 
 ‘Console’ tab also holds the information regarding session login by users, settings of the Essbase environment, email configuration settings etc…
 The ‘Global configuration’ file of Essbase is available directly from the Essbase Web-UI as shown, where we can add new variable property settings with corresponding values using ‘Add’ option.
 
-![](./images/image14_76.png "") 
+![](./images/image14_74.png "") 
 
  
 ### 8. Academy: 
 This tab contains all the information and documentation links related to Essbase19c 
 
-![](./images/image14_77.png "") 
+![](./images/image14_75.png "") 
 
 ## Part 8 - Data Load to Cube
 DataCorp IT group stores data in an Oracle Data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
