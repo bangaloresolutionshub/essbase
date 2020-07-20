@@ -558,7 +558,7 @@ Create rules file that is based on sample file from the data warehouse.\
 
 1.	Create rules file.
 
-![](./images/image14_76 "") 
+![](./images/image14_76.png "") 
 
 2.	Set the rules file to ignore extra fields.
 3.	Define the data load properties.
@@ -717,7 +717,7 @@ This exercise will introduce how to automate tasks using OAC Essbase Command Lin
 
 Before you start, copy the provided file Sample_Basic.xlsx to your CLI directory.
 
-![](./images/image14_89 "")
+![](./images/image14_89.png "")
 
 The file Sample_Basic.xlsx will be imported using CLI and form the starting point for the rest of the exercise   
 
