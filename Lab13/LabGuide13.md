@@ -247,8 +247,8 @@ Note: The password for the Essbase system administrator, encrypted with the prov
 
 2. In the similar way please run the encrypt oci command using Oracle Cloud Infrastructure command line interface. Provide the following parameters: 
 
-* Key's OCID (already noted in step-1 of part-7 : can we give a redirect here)
-* Vault's Cryptographic Endpoint URL (already noted as above)
+* Key's OCID (already noted in step-1 of part-7 )
+* Vault's Cryptographic Endpoint URL (already noted in step-1 of part-7)
 * base64-encoded password (generated using “echo” command as above)
 
 ```
@@ -260,7 +260,7 @@ oci kms crypto encrypt --key-id Key_OCID --endpoint Cryptographic_Endpoint_URL -
 ```
 "ciphertext": "Encrypted_Password"
 ```
-*Note* You also use KMS encryption to encrypt your Database Password and your Client Secret. 
+*Important* You must use KMS encryption to encrypt your Database Password and your Client Secret in the similar way as mentioned above. 
 
 Reference : (Click here)[https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/encrypt-values-using-kms.html]
 
@@ -339,7 +339,10 @@ c. Click Next.
 
 10. On the Review page, review the information that you provided, and click Create. The Job Information tab in Oracle Resource Manager shows the status until the job finishes and the stack is created.
 11. Check for any log errors. If you have any, see Troubleshoot Deployment Errors.
-12. If the job is executed without any errors we can see the Job Successful state in green color as below.
+
+**Note: The approximate time for the job completion is around 25 minutes.
+
+12. If the job is executed without any errors we can see the Job Successful state in green color as below. (Refresh the page to see the changes.)
 
 ![](./images/image13_43.png "")
 
