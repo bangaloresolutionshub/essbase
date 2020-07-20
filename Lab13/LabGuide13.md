@@ -186,11 +186,11 @@ Note: Create policies each for both Admin groups and Dynamic groups, with all po
 
 7. The policy statements of the corresponding groups will look like the images shown below.
 
-Dynamic group policy statements
+**Dynamic group policy statements**
 
 ![](./images/image13update1.png "")
 
-Adminstrators group policy statements
+**Adminstrators group policy statements**
 
 ![](./images/image13update2.png "")
 
