@@ -16,6 +16,7 @@ This lab walks you through the overview of Essbase on OCI architecture followed 
 * The following lab requires an Oracle Public Cloud account with IDCS & OCI Administrator Access for the whole process of deployment of Essbase19c on OCI without any hassles.
 * The estimated time to complete this lab is 45 minutes.
 
+**Note : Whenever there is a “Name” being assigned for any resource creation in this lab please follow the naming convention as “<Resource_Name>_<FIRST_NAME>” to avoid duplication.
 
 ## Part 1 - Essbase 19C - Basic Topology
 
@@ -97,8 +98,8 @@ Before deploying the Essbase stack, create a confidential application in Oracle 
 
 	* Select the following allowed grant types: Client Credentials and Authorization Code. 
 	* Select allow non-HTTPS URLs. 
-		1. For the Essbase Redirect URL, enter a temporary/mock redirection URL (it ends with _uri): http://ip/essbase
-		2. For the Essbase Post Logout Redirect URL, enter a temporary/mock URL: http://ip/essbase
+		1. For the Essbase Redirect URL, enter a temporary/mock redirection URL (it ends with _uri): https://ip/essbase
+		2. For the Essbase Post Logout Redirect URL, enter a temporary/mock URL: https://ip/essbase
 
 ![](./images/image13_13.png "")
 
