@@ -184,6 +184,16 @@ Note: Create policies each for both Admin groups and Dynamic groups, with all po
 6. We will have two policy groups as below at the end of this part-6.
 ![](./images/image13_27.png "")
 
+7. The policy statements of the corresponding groups will look like the images shown below.
+
+Dynamic group policy statements
+
+![](./images/image13update1.png "")
+
+Adminstrators group policy statements
+
+![](./images/image13update2.png "")
+
 ### Step 7: Encrypt Values Using KMS
 
 Key Management (KMS) enables you to manage sensitive information when creating a server domain. 
