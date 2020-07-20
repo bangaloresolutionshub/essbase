@@ -557,6 +557,9 @@ Loading data is the process of adding data values to a cube from any number of d
 Create rules file that is based on sample file from the data warehouse.\
 
 1.	Create rules file.
+
+![](./images/image14_76 "") 
+
 2.	Set the rules file to ignore extra fields.
 3.	Define the data load properties.
 4.	Validate and save the rules file as LoadCorp.
@@ -572,22 +575,36 @@ Create rules file that is based on sample file from the data warehouse.\
 3.	On the home page, expand the DynamicCorp application, and select the Sales cube.
 4.	Now create the load rule.
 
-        a.	From the Actions menu to the right of the Sales cube, launch the inspector.
-        b.	Select Scripts tab, and then Rules. The Rules editor is displayed, showing currently defined rules.
-        c.	Click Create and select Data Load to define the load data rule.
-        d.	In the New Rule dialog box, enter LoadCorp as the name of the rule.
-        e.	Enter Measures as the data dimension.
-        f.	Under Preview Data, select File for flat file input.
-        g.	Click the browse icon to locate the file data-basic.txt that you downloaded, and click Open to select it.
-        h.	As you saw earlier, the first row of the flat file doesn't contain header values. Deselect the Header Row check box if it is selected. When the header row is present, the columns are mapped automatically.
-        i.	Select Comma as the Delimiter value, based on the file format.
-        j.	Click Proceed.
+      a.	From the Actions menu to the right of the Sales cube, launch the inspector.
+      
+      ![](./images/image14_77.png "") 
+      
+      b.	Select Scripts tab, and then Rules. The Rules editor is displayed, showing currently defined rules.
+      c.	Click Create and select Data Load to define the load data rule.
+      
+      ![](./images/image14_78.png "") 
+      
+      d.	In the New Rule dialog box, enter LoadCorp as the name of the rule.
+      e.	Enter Measures as the data dimension.
+      f.	Under Preview Data, select File for flat file input.
+      g.	Click the browse icon to locate the file data-basic.txt that you downloaded, and click Open to select it.
+      h.	As you saw earlier, the first row of the flat file doesn't contain header values. Deselect the Header Row check box if it is selected. When the header row is present, the columns are mapped automatically.
+      i.	Select Comma as the Delimiter value, based on the file format.
+      j.	Click Proceed.
+      
+      ![](./images/image14_79.png "") 
+      
+      You can now see the preview of the data in the Rules editor, based on the input flat file.
+      
+      ![](./images/image14_80.png "")
 
 5.	The Global options toolbar, on the top right of the Rules editor allows you to modify file properties or the data source and to see the results in the Rules editor. The Field options toolbar on the left side of the Rules editor allows you map fields in the rule.
 6.	Because there were no headers in the input file, you need to map each column to the appropriate dimensions and members.
 7.	In the Rules editor, you can now set up the rule fields.
 
-        a.	Click Create drop-down menu, and start setting the field names.
+ ![](./images/image14_81.png "")
+
+        a. Click Create drop-down menu, and start setting the field names.
         Set Field (column) 1 to Product.
         Set Field 2 to Market.
         Set Field 3 to Year.
@@ -600,24 +617,29 @@ Create rules file that is based on sample file from the data warehouse.\
         Set Field 10 to Opening Inventory.
         Set Field 11 to Additions.
         All dimensions must be represented in the load data rule before any data can be loaded.
-        b.	When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
-        c.	After syntax is validated, click Save and Close.
-        d.	Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then clicking Proceed.
-        e.	Click Close to return to the Applications home page.
+        b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
+        c. After syntax is validated, click Save and Close.
+        d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then clicking Proceed.
+        e. Click Close to return to the Applications home page.
 
 Next, create a job to load the data using the rule.
 
 8.	On the home page, select Jobs, and then New Job.
 
-        a.	Select Load Data.
-        b.	In the Load Data dialog box, from the Application menu, select the DynamicCorp application.
-        c.	In the Database list, select the Sales cube.
-        d.	In the Script list, select the load data rule that you created, LoadCorp.rul.
-        e.	For Load Type, select File.
-        f.	Select the file Data-basic.txt from the Data File list. This file is located in the DataCorp > Sales folder.
-        g.	Optional: select the Abort on error check box if you want the load to stop if an error occurs.
-        h.	Click OK. The load data job is executed.
-        i.	On the Jobs page, click Refresh to monitor the job status.
+      a. Select Load Data.
+      b. In the Load Data dialog box, from the Application menu, select the DynamicCorp application.
+      c. In the Database list, select the Sales cube.
+      d. In the Script list, select the load data rule that you created, LoadCorp.rul.
+      e. For Load Type, select File.
+      f. Select the file Data-basic.txt from the Data File list. This file is located in the DataCorp > Sales folder.
+      g. Optional: select the Abort on error check box if you want the load to stop if an error occurs.
+      h. Click OK. The load data job is executed.
+        
+     ![](./images/image14_82.png "")
+        
+      i. On the Jobs page, click Refresh to monitor the job status.
+      
+      ![](./images/image14_83.png "")
         
 9.	After the job is completed, verify that the input records were processed and loaded.
 
@@ -641,7 +663,13 @@ You create calculation scripts using a script editor in the Essbase web interfac
 Calculation scripts do not apply to aggregate storage applications.
 1.	On the Application page, expand the application.
 2.	From the Actions menu, to the right of the cube name, launch the inspector.
+
+![](./images/image14_84.png "")
+
 3.	Select the Scripts tab, and then select the Calculation Scripts tab.
+
+![](./images/image14_85.png "")
+
 4.	Click Add   to create a new calculation script.
 5.	If member names are required in your calculation script, drill into the Member Tree to find the members you want to add.
 Right-click dimension or member names to insert them into the script.
@@ -655,6 +683,8 @@ ENDFIX
 
 In the name field of script editor give the name to script as CalcActual
 
+![](./images/image14_86.png "")
+
 8.	Click Validate before saving your script.
 Validating a script verifies the script syntax. For example, incorrectly spelled function names and omitted end-of-line semicolons are identified. Validation also verifies dimension names and member names.
 9.	Correct any validation errors.
@@ -667,8 +697,14 @@ After creating and saving calculation scripts, you use the Jobs page to execute 
 1.	Create your calculation script, or upload an existing calculation script.
 2.	In Essbase, click Jobs.
 3.	On the Jobs page, click New Job and select Run Calculation.
+
+![](./images/image14_87.png "")
+
 4.	On the Run Calculation dialog box, select the application - DynamicCorp and cube – Sales.
 5.	Select the script – CalcActual.
+
+![](./images/image14_88.png "")
+
 6.	Click OK to start the calculation.
 7.	Click Refresh to see the status of your calculation.
 
@@ -681,66 +717,86 @@ This exercise will introduce how to automate tasks using OAC Essbase Command Lin
 
 Before you start, copy the provided file Sample_Basic.xlsx to your CLI directory.
 
+![](./images/image14_89 "")
+
 The file Sample_Basic.xlsx will be imported using CLI and form the starting point for the rest of the exercise   
 
 1. Next deploy the the Sample cube using the Sample_Basic.xlsx file.  Call the application Sample01
 Command:  esscs.bat deploy --help
 Command:  esscs.bat deploy -a Sample01 -db Basic -file Sample_Basic.xlsx
 
+![](./images/image14_90.png "")
+
 2. Next, review the newly create cube from the Web UI.
+
+![](./images/image14_91.png "")
 
 ### LcmExport: Back Up Cube Files:
 
-LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. 
-To export Sample application deployed in last step use command.
-Syntax:
-lcmExport [-verbose] -application appname [-zipfilename filename] [-localDirectory path] [-threads threadscount] [-skipdata] [-overwrite] [-generateartifactlist] [-include-server-level]
-esscs lcmExport -application Sample -zipfilename Sample.zip
+* LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. 
+* To export Sample application deployed in last step use command.
 
+**Syntax:**
+
+`lcmExport [-verbose] -application appname [-zipfilename filename] [-localDirectory path] [-threads threadscount] [-skipdata] [-overwrite] [-generateartifactlist] [-include-server-level]
+esscs lcmExport -application Sample -zipfilename Sample.zip`
+
+![](./images/image14_92.png "")
 
 ### LcmImport: Restore Cube Files
 
-Restores cube artifacts from a Lifecycle Management (LCM) .zip file. 
-Syntax : lcmImport [-verbose] -zipfilename filename [-overwrite] [-targetappName targetApplicationName] [-artifactlist artifactList]
-Command example : esscs lcmImport -z  C:/cli/Sample.zip -o
+* Restores cube artifacts from a Lifecycle Management (LCM) .zip file. 
+
+**Syntax:**
+
+`lcmImport [-verbose] -zipfilename filename [-overwrite] [-targetappName targetApplicationName] [-artifactlist artifactList]
+Command example : esscs lcmImport -z  C:/cli/Sample.zip -o`
 
 *NOTE:* The mentioned path should not contain spaces.
+
+![](./images/image14_93.png "")
 
 ## Part 11 - REST APIs
 
 Using the REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over secured HTTP.
 
 You can view a list of all REST Endpoints.
-Explore the Swagger Interface
+
+**Explore the Swagger Interface**
+
 The Swagger interface for Essbase REST enables you to try out REST requests in a visual interface, even before you have set up cURL or another API implementation method.
 To use the Swagger interface,
-1.	In a web browser, enter the URL for the Essbase web interface. 
-For example: https://ip/essbase/jet
-2.	Log in.
-3.	In your browser address bar, select all of the URL string that immediately follows essbase, and replace it with /rest/doc/. 
-For example, change the URL to:  https://ip/essbase/rest/doc/
-4.	On Swagger UI, you will be presented with number of different REST APIs.  
-Download Application Logs using REST APIs –
-1.	Under Application logs, click on the second GET button (Download All Logs).
- 
 
- 
+1. In a web browser, enter the URL for the Essbase web interface. 
+For example: https://ip/essbase/jet
+2. Log in.
+3. In your browser address bar, select all of the URL string that immediately follows essbase, and replace it with /rest/doc/. 
+
+`For example, change the URL to:  https://ip/essbase/rest/doc/`
+
+4. On Swagger UI, you will be presented with number of different REST APIs.  
+
+**Download Application Logs using REST APIs –**
+
+1.	Under Application logs, click on the second GET button (Download All Logs).
+
+![](./images/image14_94.png "")
+
+![](./images/image14_95.png "")
 
 2.	Click the Try it Out button.
 
- 
+![](./images/image14_96.png "")
 
 3.	Enter the name of application. 
 
-
- 
-
+![](./images/image14_97.png "")
 
 4.	Click the Execute button.
 
 5.	Look under the Server Response section. If the request was successful, then you should see a 200 response with a body such as the following:
 
- 
+![](./images/image14_98.png "")
 
 6.	Click on the Download File link to download zip file containing application log.
 
