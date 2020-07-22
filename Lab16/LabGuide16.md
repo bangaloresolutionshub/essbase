@@ -88,7 +88,8 @@ Questions:
 Do you see Data for the sandboxes (sb#)?
 Is there a variance between any of the sb# members and Base?
 If the loaded file contained no references to any sb# members how did the data get there?
-Takeaway:  By default, all created Sandboxes will have the same values as the data loaded into the base.  The data in the sandbox is dynamically queried and will not use any extra storage disk space.  Only values that are modified as part of a scenario will be stored.  This makes creating and using most scenarios a very light weight operation. 
+
+**Takeaway:  By default, all created Sandboxes will have the same values as the data loaded into the base.  The data in the sandbox is dynamically queried and will not use any extra storage disk space.  Only values that are modified as part of a scenario will be stored.  This makes creating and using most scenarios a very light weight operation. 
 
 ## Exercise 1-5	Model Data
 
