@@ -1,7 +1,10 @@
 
-Scenario Management: 
+# Lab 13: Scenario Management
+
 Using scenario management, scenario participants can perform what-if analysis to model data in their own private work areas. These scenarios can optionally be subject to an approval workflow which includes a scenario owner and one or more approvers. In the workflow, scenario owners merge scenario data with the final cube data only after it is approved.
-Topics: 
+
+## Topics: 
+
 •	Scenario Management Overview
 •	Creating a cube with Sandboxes	
 •	Creating a Scenario	
@@ -9,15 +12,20 @@ Topics:
 •	Changing Sandbox Data	
 •	Scenario Workflow
  
-Overview – Understand Scenario
+## Overview – Understand Scenario
+
 The exercises contained within this lesson will allow the user to get acquainted with different aspects of Scenario Management.  The different aspects include the lightweight nature of sandboxes on the cube; the process involved with initiating Scenario Management and adding sandboxes; as well as, the workflow supported by Scenario Management.  
 Scenarios are private work areas in which users can model different assumptions within the data and see the effect on aggregated results, without affecting the existing data.
 Each scenario is a virtual slice of a cube in which one or more users can model data and then commit or discard the changes.
 
-Exercise 1-1	Sandbox Data
+## Exercise 1-1	Sandbox Data
+
 In the following exercises, the lightweight nature of a sandbox will be on display.  In this exercise we are going to learn about the sandbox dimension that is created when sandboxing is enabled in an application.
-Exercise 1-2	Create a Scenario-Enabled Sample cube
+
+## Exercise 1-2	Create a Scenario-Enabled Sample cube
+
 You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
+
 1.	In the Essbase web interface, click Import.
  
 
@@ -35,7 +43,8 @@ Naviagte to All Files > gallery > Applications > Demo Samples > Block Storage
  
 
  
-Exercise 1-3	Creating a Scenario
+## Exercise 1-4	Creating a Scenario
+
 Adding a Scenario to a Sandbox enabled cube
 To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
 1.	In Essbase, login as a user with database update (or higher) permission to at least one application.
@@ -71,7 +80,8 @@ Is there a variance between any of the sb# members and Base?
 If the loaded file contained no references to any sb# members how did the data get there?
 Takeaway:  By default, all created Sandboxes will have the same values as the data loaded into the base.  The data in the sandbox is dynamically queried and will not use any extra storage disk space.  Only values that are modified as part of a scenario will be stored.  This makes creating and using most scenarios a very light weight operation. 
 
-Exercise 1-5	Model Data
+## Exercise 1-5	Model Data
+
 As a scenario user, you can model data slices in your own scenario.
 1.	In Essbase, click Scenario.
 2.	On the Scenarios page, locate the scenario in which you want to model data.
@@ -90,7 +100,8 @@ Make changes to sandbox member sb0 Actual data and submit data.
 
 You will notice updated data will reflect only against sb0 dimension intersection.
 
-Exercise 1-6	Scenario Workflow
+## Exercise 1-6	Scenario Workflow
+
 Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. In the real case, the scenario flow that we will simulate is:
 •	Participant user is submitting the data for approval
 •	Approver user can review the data and decides to approve
@@ -114,7 +125,8 @@ Tip:  If you don’t have an Approver assigned for the scenario the Action Submi
  
 You should see the changes have been applied to the Base.
 
-Understand Scenario User Roles and Workflow
+## Understand Scenario User Roles and Workflow
+
 You can review a scenario using an optional approval workflow.
 Scenario user role assignments determine the workflow for scenarios. You must have at least one approver to enable the scenario workflow. Without an approver, participants do not have the option to submit the scenario for approval, for example, and there is no option to approve or reject the scenario.
 The only action for scenarios without at least one approver is Apply. Without an approver, the scenario owner can still change data values in the scenario and apply data changes to the cube (or reject them), without going through an approval process.
