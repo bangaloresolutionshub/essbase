@@ -152,5 +152,5 @@ Approvers monitor the process, and approve or reject scenarios. They must have D
 Participants and approvers with the Database Access user role cannot write to a scenario until they are granted write access through a filter.
 Participants and approvers are not mandatory. The scenario owner can change data values in the scenario and commit data changes to the cube (or reject them) without designating participants or approvers.
 
- ![](./images/image16_14.png "")
+ ![](./images/image16_14..png "")
 
