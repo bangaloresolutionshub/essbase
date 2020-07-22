@@ -43,7 +43,7 @@ Naviagte to All Files > gallery > Applications > Demo Samples > Block Storage
  
 
  
-## Exercise 1-4	Creating a Scenario
+## Exercise 1-3	Creating a Scenario
 
 Adding a Scenario to a Sandbox enabled cube
 To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
@@ -66,7 +66,9 @@ To create a scenario, you specify general information about your scenario, inclu
 Scenario user roles determine the workflow for the scenario.
  
 12.	Save your change.
-Exercise 1-4	Lightweight Sandboxes
+
+## Exercise 1-4	Lightweight Sandboxes
+
 Show that sandboxes are lightweight
 In this exercise you will be introduced to the concept that creating sandboxes has little impact on resource usage such as disk space.
 Connect to Sample_Scenario-Basic in smartview analysis.
