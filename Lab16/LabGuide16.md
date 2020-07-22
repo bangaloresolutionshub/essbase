@@ -1,5 +1,5 @@
 
-# Lab 13: Scenario Management
+# Lab 16: Scenario Management
 
 Using scenario management, scenario participants can perform what-if analysis to model data in their own private work areas. These scenarios can optionally be subject to an approval workflow which includes a scenario owner and one or more approvers. In the workflow, scenario owners merge scenario data with the final cube data only after it is approved.
 
@@ -27,10 +27,12 @@ In the following exercises, the lightweight nature of a sandbox will be on displ
 You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
 
 1.	In the Essbase web interface, click Import.
- 
+
+![](./images/image16_1.png "") 
 
 2.	Click Catalog.
  
+![](./images/image16_2.png "")
 
 3.	Drill down into the Gallery, Cubes, and General folders.
 Naviagte to All Files > gallery > Applications > Demo Samples > Block Storage
