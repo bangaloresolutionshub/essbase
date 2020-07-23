@@ -154,13 +154,18 @@ You should see the changes have been applied to the Base.
 
 ## Understand Scenario User Roles and Workflow
 
-You can review a scenario using an optional approval workflow.
-Scenario user role assignments determine the workflow for scenarios. You must have at least one approver to enable the scenario workflow. Without an approver, participants do not have the option to submit the scenario for approval, for example, and there is no option to approve or reject the scenario.
-The only action for scenarios without at least one approver is Apply. Without an approver, the scenario owner can still change data values in the scenario and apply data changes to the cube (or reject them), without going through an approval process.
-Participants can participate in a what-if analysis. They must have Database Update or Database Access user role. Adding participants is not mandatory.
+* You can review a scenario using an optional approval workflow.
+
+* Scenario user role assignments determine the workflow for scenarios. You must have at least one approver to enable the scenario workflow. Without an approver, participants do not have the option to submit the scenario for approval, for example, and there is no option to approve or reject the scenario.
+
+* The only action for scenarios without at least one approver is Apply. Without an approver, the scenario owner can still change data values in the scenario and apply data changes to the cube (or reject them), without going through an approval process.
+
+* Participants can participate in a what-if analysis. They must have Database Update or Database Access user role. Adding participants is not mandatory.
 Approvers monitor the process, and approve or reject scenarios. They must have Database Access or higher role. Scenarios can have multiple approvers, in which case each one must approve the scenario before it can be submitted.
-Participants and approvers with the Database Access user role cannot write to a scenario until they are granted write access through a filter.
-Participants and approvers are not mandatory. The scenario owner can change data values in the scenario and commit data changes to the cube (or reject them) without designating participants or approvers.
+
+* Participants and approvers with the Database Access user role cannot write to a scenario until they are granted write access through a filter.
+
+* Participants and approvers are not mandatory. The scenario owner can change data values in the scenario and commit data changes to the cube (or reject them) without designating participants or approvers.
 
  ![](./images/image16_14.png "")
 
