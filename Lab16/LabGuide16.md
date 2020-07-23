@@ -5,24 +5,26 @@ Using scenario management, scenario participants can perform what-if analysis to
 
 ## Topics: 
 
-•	Scenario Management Overview
-•	Creating a cube with Sandboxes	
-•	Creating a Scenario	
-•	Lightweight Sandboxes		
-•	Changing Sandbox Data	
-•	Scenario Workflow
+*	Scenario Management Overview
+*	Creating a cube with Sandboxes	
+*	Creating a Scenario	
+*	Lightweight Sandboxes		
+*	Changing Sandbox Data	
+*	Scenario Workflow
  
 ## Overview – Understand Scenario
 
-The exercises contained within this lesson will allow the user to get acquainted with different aspects of Scenario Management.  The different aspects include the lightweight nature of sandboxes on the cube; the process involved with initiating Scenario Management and adding sandboxes; as well as, the workflow supported by Scenario Management.  
-Scenarios are private work areas in which users can model different assumptions within the data and see the effect on aggregated results, without affecting the existing data.
-Each scenario is a virtual slice of a cube in which one or more users can model data and then commit or discard the changes.
+* The exercises contained within this lesson will allow the user to get acquainted with different aspects of Scenario Management.  The different aspects include the lightweight nature of sandboxes on the cube; the process involved with initiating Scenario Management and adding sandboxes; as well as, the workflow supported by Scenario Management. 
 
-## Exercise 1-1	Sandbox Data
+* Scenarios are private work areas in which users can model different assumptions within the data and see the effect on aggregated results, without affecting the existing data.
+
+* Each scenario is a virtual slice of a cube in which one or more users can model data and then commit or discard the changes.
+
+## Part 1 -	Sandbox Data
 
 In the following exercises, the lightweight nature of a sandbox will be on display.  In this exercise we are going to learn about the sandbox dimension that is created when sandboxing is enabled in an application.
 
-## Exercise 1-2	Create a Scenario-Enabled Sample cube
+## Part 2 -	Create a Scenario-Enabled Sample cube
 
 You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
 
@@ -46,7 +48,7 @@ Naviagte to All Files > gallery > Applications > Demo Samples > Block Storage
 
  ![](./images/extrasmall_1.png "")
  
-## Exercise 1-3	Creating a Scenario
+## Part 3	- Creating a Scenario
 
 Adding a Scenario to a Sandbox enabled cube
 To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
@@ -73,7 +75,7 @@ Scenario user roles determine the workflow for the scenario.
 
 12.	Save your change.
 
-## Exercise 1-4	Lightweight Sandboxes
+## Part 4	- Lightweight Sandboxes
 
 Show that sandboxes are lightweight
 In this exercise you will be introduced to the concept that creating sandboxes has little impact on resource usage such as disk space.
@@ -91,7 +93,7 @@ If the loaded file contained no references to any sb# members how did the data g
 
 **Takeaway:  By default, all created Sandboxes will have the same values as the data loaded into the base.  The data in the sandbox is dynamically queried and will not use any extra storage disk space.  Only values that are modified as part of a scenario will be stored.  This makes creating and using most scenarios a very light weight operation. 
 
-## Exercise 1-5	Model Data
+## Part 5 -	Model Data
 
 As a scenario user, you can model data slices in your own scenario.
 1.	In Essbase, click Scenario.
@@ -112,7 +114,7 @@ Make changes to sandbox member sb0 Actual data and submit data.
 
 You will notice updated data will reflect only against sb0 dimension intersection.
 
-## Exercise 1-6	Scenario Workflow
+## Part 6 -	Scenario Workflow
 
 Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. In the real case, the scenario flow that we will simulate is:
 •	Participant user is submitting the data for approval
@@ -153,5 +155,5 @@ Approvers monitor the process, and approve or reject scenarios. They must have D
 Participants and approvers with the Database Access user role cannot write to a scenario until they are granted write access through a filter.
 Participants and approvers are not mandatory. The scenario owner can change data values in the scenario and commit data changes to the cube (or reject them) without designating participants or approvers.
 
- ![](./images/image16_14..png "")
+ ![](./images/image16_14.png "")
 
