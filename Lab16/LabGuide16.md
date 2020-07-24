@@ -24,11 +24,9 @@ To understand the following -
 
 * Each scenario is a virtual slice of a cube in which one or more users can model data and then commit or discard the changes.
 
-## Part 1 -	Sandbox Data
-
 In the following exercises, the lightweight nature of a sandbox will be on display.  In this exercise we are going to learn about the sandbox dimension that is created when sandboxing is enabled in an application.
 
-## Part 2 -	Create a Scenario-Enabled Sample cube
+## Part 1 -	Create a Scenario-Enabled Sample cube
 
 You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
 
@@ -52,7 +50,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
  ![](./images/extrasmall_1.png "")
  
-## Part 3	- Creating a Scenario
+## Part 2	- Creating a Scenario
 
 **Adding a Scenario to a Sandbox enabled cube:** To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
 
@@ -78,7 +76,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 12.	Save your change.
 
-## Part 4	- Lightweight Sandboxes
+## Part 3	- Lightweight Sandboxes
 
 **Show that sandboxes are lightweight** - 
 
@@ -99,7 +97,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 By default, all created Sandboxes will have the same values as the data loaded into the base.  The data in the sandbox is dynamically queried and will not use any extra storage disk space.  Only values that are modified as part of a scenario will be stored.  This makes creating and using most scenarios a very light weight operation. 
 
-## Part 5 -	Model Data
+## Part 4 -	Model Data
 
 As a scenario user, you can model data slices in your own scenario.
 1.	In Essbase, click Scenario.
@@ -120,7 +118,7 @@ Or you can make use of provided smartview analysis xls to perform what if analys
 
 7. You will notice updated data will reflect only against sb0 dimension intersection.
 
-## Part 6 -	Scenario Workflow
+## Part 5 -	Scenario Workflow
 
 Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. In the real case, the scenario flow that we will simulate is:
 
@@ -156,7 +154,7 @@ Tip:  If you don’t have an Approver assigned for the scenario the Action Submi
  
 You should see the changes have been applied to the Base.
 
-## Understand Scenario User Roles and Workflow
+## Part 6 - Understand Scenario User Roles and Workflow
 
 * You can review a scenario using an optional approval workflow.
 
