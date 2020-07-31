@@ -1,4 +1,4 @@
-# Lab 14: Essbase Feature Functionalities
+# Lab 14: Essbase Features 
 
 ## Introduction
 
@@ -7,7 +7,6 @@ This lab walks you through the major features of Essbase-19c and their functiona
 ## Objectives
 
 *	Understand the Essbase 19c Plugins. (Smartview and Cube designer)
-*	Learn how to use the major aspects of plugins effectively.
 *	Learn the Essbase 19c Web-UI overview.
 *	Learn how to build rules/calculations and run corresponding jobs.
 *	Learn the MIGRATION process between Cloud environments.
@@ -17,7 +16,6 @@ This lab walks you through the major features of Essbase-19c and their functiona
 
 *	The following lab requires an Oracle Public Cloud account - Essbase 19c Instance with Service Administrator role .
 *	Windows Operating System is preferred for proper working of Essbase Plugins
-*	The estimated time to complete this lab is 30 minutes. 
 
 `NOTE: Whenever there is a “Name” being assigned to any Resource / Application / Cube or to any database in this lab please follow the naming convention as “Sample_<FIRST_NAME>” to avoid duplication.`
 
@@ -187,70 +185,6 @@ c. Create report by zooming into Year & Measures dimension.
 
 ![](./images/image14_27.png "")
 
-### Secrtion 4 - Audit Trail
-
-**Step 1 - Enable Audit trail:**
-
-Data is updated in Essbase by Submitting data, adding/changing LRO (Linked Reporting Objects) and Data load. Essbase has the capability to let certain users go back and view the Audit Trail of the changes that were made to the data. 
-
-Users who have one of the following roles on the application can view the processed audit records for the cubes in that application: Application Manager, Database manager, Database Update role. Only those records where the user name requesting the audit trail matches the user name registered in the audit records, will be returned. 
-
-1. The Service Administrator and Power User have the permissions to enable Audit Trail in the Essbase Application. 
-2. Log in to Essbase UI. Click on Application DynamicCorp. Click on hamburger icon. Click on inspect.
-
-![](./images/image14_28.png "")
-
-3. Click on configuration.
-4. Click on Add + to your right.
-
-![](./images/image14_29.png "")
-
-5. Click + to select ‘AUDITTRAIL’ property.  Enter ‘DATA’ in value field. Click ‘Apply and Restart’ to restart application.
-
-![](./images/image14_30.png "")
-
-![](./images/image14_31.png "")
-
-**Step 2 - Submit Data and Audit Trail**
-
-1. Log in to Smart View and connect to application DynamicCorp/Sales. Click on Connect. Click on Ad hoc Analysis. 
-2. Click on Year. Click on Zoom In – All levels. 
-3. Change data for Jan. Click ‘Smart View’ – ‘Submit Data’
-4. Click ‘More’ under ‘Ad hoc Analysis’. Click on ‘Audit Trail’.
-
-![](./images/image14_32.png "")
-
-5. Notice an Audit Trail table that contains records of changes made to the cube. The record contains Timestamp, New Value, Data cell POV where change was made. 
-Below the table, notice a detailed description of the change in the Audit record.
-
-![](./images/image14_33.png "") 
-
-**Step 3 - Linked Reporting Objects and Audit Trail**
-
-1.	Click on cell cell B3. Click `Essbase` – `Linked Objects`. Click drop down next to `Attach`. Click `Cell Note`. Add a cell note "Figures are too high".
-2.	Click on cell B7. Click `Essbase` – `Linked Objects`. Click drop down next to `Attach`. Click `File`. Browse and attach a file. Enter a file description. 
-3.	Click on cell B11. `Essbase` – `Linked Objects`. Click drop down next to `Attach`. Click `URL`. Enter URL http://cnn.com and enter "Breaking news!". Make a few more such updates. 
-4.	Click `Audit Trail` menu. You will see the table populated with all the changes you made. Each record in the audit trail represents one of two changes - change to data (New Value) or change to LRO (LRO)
-
-**Step 4 - Audit Trail Table**
-
-1.	There are three icons at the bottom of the audit table: "Export logs to sheet", "Refresh audit log list", "Adhoc for selected POV. The columns in the Audit trail table can be sorted by clicking the arrow at the heading. 
-
-![](./images/image14_34.png "") 
-
-2.	Audit records can be exported to an excel file by clicking on icon at the bottom of Audit table called "Export logs to sheet". 
-
-![](./images/image14_35.png "") 
-
-3.	When you click on an audit record, you can see the description of the audit record change in the description section at the bottom of the table.
-
-![](./images/image14_36.png "") 
-
-4.	Then, if you want to do further analysis on the POV for this record, select the icon at the bottom of the Audit table titled "Adhoc for selected POV", it will land you on a sheet called "Audit_adhoc", with the POV and refreshed data value. This is the starting point and it is a live sheet where you can start doing analysis and rest of Smart View operations.  
-
-![](./images/image14_37.png "") 
-
-5.	This is a shared sheet for landing from Audit record. When you click on subsequent audit records, and click on Adhoc for selected POV, it will land you in this same sheet.
 
 ## Part 3 - Install the Smart View Cube Designer Extension
 
@@ -317,47 +251,9 @@ This process uses a server locations list, which was created by previous Smart V
 
 ![](./images/image14_43.png "") 
 
-## Part 4 - About the Cube Designer Ribbon
 
-Cube Designer helps you to design, create and modify application workbooks to meet their strict layout and syntax requirements. You can also use options on the Cube Designer ribbon to perform a number of cube management tasks, such as loading data, editing formulas and viewing jobs.
 
-![](./images/image14_43.png "") 
-
-### Cube Designer Ribbon Options
-
-**Connections:** Opens the ‘Connections’ dialog box, in which you choose the cloud service URL. 
-
-**Essbase/Catalog:** Opens the Essbase Files dialog box, which contains a selection of prebuilt application workbooks, from which you can build sample applications and cubes. 
-
-Also, a catalog toolbar is available in this dialog box from which you can perform many file operations within the catalog, such as upload, download, cut, copy, paste, delete, rename, and create a new folder.
-
-**Local:** Provides a drop-down menu with options to open or save an application workbook locally, or to export a cube to an application workbook. 
-
-**Designer Panel:** Opens the Designer Panel, a series of panels in which you can design and edit application workbooks. 
-
-**Formula Editor:** Opens the Formula Editor, which provides an interface in which to develop member formulas, with assistance for developing correct syntax. 
-
-**Hierarchy Viewer:** Opens the Dimension Hierarchy dialog box, in which you can view the hierarchy for the selected dimension worksheet in an application workbook, and perform tasks, such as renaming members and changing storage settings. See Work with Dimension Worksheets in Cube Designer. 
-
-**Build Cube:** Opens the ‘Build Cube’ dialog box, where you can build a cube from the active application workbook. In this dialog box, cube designer automatically detects existing data and calculation worksheets, and then pre-selects options to load the data and run the worksheets. 
-
-**Load Data:** Opens the Load Data dialog box, which contains options to clear all data and to load data. 
-
-**Calculate:** Opens the Calculate Data dialog box, in which you can select an application, a cube, and a calculation script to execute. 
-
-**Analyze:** Provides a drop-down menu with options to create a Smart View ad hoc grid, or connect application workbook query worksheets (Query.query_name worksheets) to Smart View. 
-
-**View Jobs:** Opens the Job Viewer dialog box, in which you can monitor the status of jobs, such as data loads, calculations, imports, and exports. 
-
-**Transform Data:** Opens the Transform Data dialog box, which lets you build a cube from tabular data. 
-
-**Options:** Provides options to specify the default working folder and to activate the cube designer log. 
-
-**Admin Tasks:** Opens a menu from which you can delete an application, delete a cube, or view logs. Selecting one of these options opens the ‘Delete Application’ or ‘Delete Cube’ dialog box, or allows you to view server or application logs. 
-
-**Server name:** Shows the currently defined connection location. When you click ‘Server name’ and log in (if prompted to do so), the server name and the client and server versions are displayed.
-
-## Part 5 - Creating a Cube from Tabular Data in Cube Designer 
+## Part 4 - Creating a Cube from Tabular Data in Cube Designer 
 
 This workflow uses two sample tabular data Excel files to demonstrate the concepts of intrinsic and forced-designation headers. See About [Using Tabular Data to Create Cubes](https://docs.oracle.com/en/cloud/paas/analytics-cloud/esugc/using-tabular-data-create-cubes.html)
 
@@ -401,50 +297,8 @@ To create a cube in the cloud service, see Creating a Cube from Tabular Data.
 
 With this, we saw how a normal flat file excel sheet is converted into an Essbase Application and a Cube. We could get the DBX (Design by Example) file in a matter of seconds with the dynamic capabilities of Essbase powered by Cube Designer plugin.
 
-## Part 6 - Updating Cubes Incrementally in Cube Designer
 
-Updating a cube is how you load dimensions and members to a cube outline using a data source and a rules file. You can also use the cloud service to add dimensions and members manually. Here in an existing cube, you can update a dimension, or add a new one. 
-
-*Note:* You cannot use Cube Designer to delete dimension in an existing cube. 
-
-After making changes to the metadata such as adding a new dimension, members etc. in the Cube.Generations sheet.
-
-        a. We will be adding a new member “Week” to the “Calendar” dimension.
-        b. We will be adding a new dimension “Sales” with one member as “Measures”.
-        
-![](./images/image14_50.png "") 
-
-![](./images/image14_51.png "") 
-
-1. In Excel, on the Cube Designer ribbon, select Build Cube. 
-
-![](./images/image14_52.png "") 
-
-Note : Before executing next step change the Application name & the Database name in the Essbase.Cube sheet of DBX file as below.
- 
-2. Choose `Update Cube – Retain all data` option from the Build Option menu and click RUN. 
-
-When an outline is changed by a dimension build, the database may be restructured. Each of these options specifies how data values are handled during restructures:
-
-**a. Update Cube - Retain All Data**
-All data values are preserved.
-
-**b. Update Cube - Retain Input Data**
-All blocks (both upper-and lower-level) that contain loaded data are preserved. 
-
-*Note:* This option applies only to block storage cubes. 
-
-**c. Update Cube - Retain Leaf Data**
-Only leaf (level 0) values are preserved. If all data is required for calculation resides in leaf members, then you should select this option. If selected, then all upper-level blocks are deleted before the cube is restructured. Therefore, the disk space required for restructuring is reduced, and calculation time is improved. When the cube is recalculated, the upper-level blocks are re-created.
-
-**d. Update Cube - Remove All Data**
-All data values are cleared. 
-
-`Note: This option applies only to block storage cubes.`
-
-`Note: Dimension build definitions are contained within the application workbook and automatically generate the necessary rules files. You do not select a rules file when building dimensions in Cube Designer.`
-
-## Part 7 - Overview of the WEB-UI
+## Part 5 - Overview of the WEB-UI
 
 ### 1. Applications:
 Applications tab gives us the information about the Essbase applications and the cubes built under them.
@@ -550,7 +404,7 @@ This tab contains all the information and documentation links related to Essbase
 
 ![](./images/image14_75.png "") 
 
-## Part 8 - Data Load to Cube
+## Part 6 - Data Load to Cube
 DataCorp IT group stores data in an Oracle Data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
 Loading data is the process of adding data values to a cube from any number of data sources or SQL database. Since data sources seldom are configured solely to support Essbase dimension build and data load processes, a rule file is generally used to create Essbase-compatible directives to be applied to the data source.
 
@@ -651,7 +505,7 @@ Next, create a job to load the data using the rule.
 
 You have now completed loading data using a rule.
         
-## Part 9 - Calculating Essbase Cube
+## Part 7 - Calculating Essbase Cube
 
 A cube contains two types of values: values that you enter, called input data, and values that are calculated from input data.
 
@@ -708,7 +562,7 @@ After creating and saving calculation scripts, you use the Jobs page to execute 
 6.	Click OK to start the calculation.
 7.	Click Refresh to see the status of your calculation.
 
-## Part 10 - Migration Utilities
+## Part 8 - Migration Utilities
 
 ### Import Essbase application using CLI:
 
@@ -756,7 +610,7 @@ Command example : esscs lcmImport -z  C:/cli/Sample.zip -o`
 
 ![](./images/image14_93.png "")
 
-## Part 11 - REST APIs
+## Part 9 - REST APIs
 
 Using the REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over secured HTTP.
 
