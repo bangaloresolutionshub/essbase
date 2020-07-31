@@ -32,7 +32,7 @@ Above is the basic topology of Essbase19c architecture on Oracle Cloud Infrastru
 * The Essbase19c instance procured will manage its users using the IDCS of Oracle Cloud & metadata gets stored in the ATP-Autonomous Database.
 * Essbase backups gets stored in the Object storage of the OCI & the connectivity to this is established by the service gateway.
 
-## Part 2 - Procurement of Essbase 19c - Prerequisites
+## Part 2 - Deployment of Essbase 19c - Prerequisites
 
 ### Step 1: Sign in to Oracle Cloud
 
