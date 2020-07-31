@@ -38,7 +38,7 @@ This lab will require the following -
 
 • We can use Essbase to collect collaborative data, create scenarios, and perform what-if analysis using Smart View.
 
-## Part 2 - Essbase 19c VM Architecture 
+## Part 2 - Essbase Architecture on OCI
 
 ![](./images/Architecture.png "")
 
@@ -46,16 +46,11 @@ This lab will require the following -
 
 During our workshop we will help a fictitious company Dynamic Corporation to perform financial analysis. Dynamic Corp. is a high-tech manufacturer of hard disk drives. It is headquartered in California, Bay Area. Dynamic Corp., has its operations spread across multiple regions. Various departments within Dynamic Corp. performs financial analysis.
 
-Financial analysis develop number of reports as follows:
-
-*1. Sales department*
+While doing financial analysis the number of reports developed are as follows:
 
 * Monthly sales revenues by product , by customer
 * Current year actual, budget , forecast data
-* Customer sales by region
-
-*2. Finance department*
-			
+* Customer sales by region			
 * Current year actual and budget data
 * Monthly product development reports 
 * Details of company cost structures
