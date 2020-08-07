@@ -4,23 +4,22 @@
 
 Oracle Essbase is a business analytics solution that uses a proven, flexible, best-in-class architecture for analysis, reporting, and collaboration. Essbase delivers instant value and greater productivity for your business users, analysts, modelers, and decision-makers, across all lines of business within your organization.
 
-Oracle Essbase on cloud helps you to build your company’s cloud strategy efficiently by avoiding data and business process fragmentation. Oracle Essbase can be easily deployed on Oracle Cloud Infrastructure, which can then be widely used to solve simple to complex business analytics use cases across all industries. It is designed to help you model business performance levels and deliver what-if analyses for varying conditions. Using Oracle Identity Cloud Service, Essbase can utilize enterprise-wide user profiles to work and integrate with Oracle Cloud.
+Oracle Essbase helps you to build your company’s cloud strategy efficiently by avoiding data and business process fragmentation. Oracle Essbase can be easily deployed on Oracle Cloud Infrastructure, which can then be widely used to solve simple to complex business analytics use cases across all industries. It is designed to help you model business performance levels and deliver what-if analyses for varying conditions. Using Oracle Identity Cloud Service, Essbase can utilize enterprise-wide user profiles to work and integrate with Oracle Cloud.
 
 ## Objective
 
 * Getting introducted to Essbase
 * Understanding the Essbase architecture
-* Installing SmartView and Cube Designer plugins
+* Installing Smart View and Cube Designer plugins
 
 ## Required Artifacts
 
 This lab will require the following -
 
-1. An Oracle public cloud tenancy where you have the resources available to provision an ADW instance with 2 OCPUs, an Essbase instance with 2 OCPUs
+1. An Oracle public cloud tenancy where you have the resources available to provision an ATP instance with 1 OCPU, an Essbase instance with 1 OCPU.
 
 2. [Smartview Plugin](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/download-and-run-smart-view-installer.html) (Steps provided in this lab)
 
-3. [Cube Designer Plugin](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/install-smart-view-cube-designer-extension.html) (Steps provided in this lab)
 
 ## Part 1 - Features of Oracle Essbase
 
@@ -32,7 +31,7 @@ This lab will require the following -
 
 • Oracle Essbase, is a multi-dimensional engine that allows you to extract data from any source, handle real-time data and collaborate easily.
 
-• With Essbase on cloud you can create and manage Essbase applications from Microsoft Excel by using Cube Designer.
+• With Essbase you can create and manage Essbase applications from Microsoft Excel by using Cube Designer.
 
 • Create connections and data sources for drill-through, data loads, and dimension builds.
 
@@ -54,6 +53,7 @@ While doing financial analysis the number of reports developed are as follows:
 * Current year actual and budget data
 * Monthly product development reports 
 * Details of company cost structures
+* Write back for what-if analysis
 
 Dynamic Corp. extensively use Microsoft Excel application for Financial reporting. Financial analyst at Dynamic Corp. are well versed with use of Excel. But with growing business they find it difficult to manage reporting with excel. They found out Excel is a widely used tool for two dimensional data analysis, but presents enlisted limitations when used for multidimensional data analysis -
 
@@ -72,14 +72,10 @@ To overcome these limitations and to proceed with an efficient and precise multi
 
 • Security – the administrator can apply security to certain dimensions and members, giving users access to only the data that they are responsible for. This allows more participation from the field in the budget process.
 
-• Workflow - the administrator can completely control the workflow and approval process. Planning Units must be reviewed and approved before going up to the next approval level.
-
-• Easy to consolidate – Hyperion Planning data is stored in a Hyperion Essbase OLAP database using hierarchies that make the consolidation process effortless.
-
 With the above stated benefits, it’s certainly worthwhile to understand the nitty-gritty of Essbase, its benefits, features and applications. This lab intends towards providing a holistic view of Essbase, its features, and applications.
 
 
-Note: The steps going forward will have to followed in a windows operating system
+Note: The steps going forward will have to followed in a Windows operating system
 
 ### Step 1 - Installing Smartview Plugin 
 
@@ -100,15 +96,6 @@ Note: The steps going forward will have to followed in a windows operating syste
 9. If you are upgrading an installation of Smart View, then the installer defaults to the folder where you previously installed Smart View.
 10. When the installation is complete, click OK.
 
-### Step 2 - Installing Cube Designer
-
-1. On the Smart View ribbon, select Options, and then Extensions.
-2. Click the Check for updates link.
-3. Smart View checks for all extensions that your administrator has made available to you.
-4. Locate the extension named Oracle Cube Designer and click Install to start the installer.
-5. Follow the prompts to install the extension.
-
-![](./images/image1.png "")
 
 ## Part 4 - Register for Free Oracle Trial Account
 * Bookmark this page for future reference.
@@ -117,4 +104,4 @@ Note: The steps going forward will have to followed in a windows operating syste
 
 * Soon after requesting your trial you will receive an activation email. Once that email is received and you have logged in to your environment you can begind the lab.
 
-Access the essbase labs using our web-friendly interface [here](https://bangaloresolutionshub.github.io/essbase-workshop) 
+Access the Essbase labs using our web-friendly interface [here](https://bangaloresolutionshub.github.io/essbase-workshop) 
