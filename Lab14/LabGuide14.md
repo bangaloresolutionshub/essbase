@@ -2,40 +2,43 @@
 
 ## Introduction
 
-This lab walks you through the major features of Essbase-19c and their functionalities across the platform along with Overview of the Essbase 19c Web UI on the whole.
+This lab walks you through the major features of Essbase-19c and their functionalities across the platform along with Overview of the Essbase 19c Web interface.
 
 ## Objectives
 
-*	Understand the Essbase 19c Plugins. (Smartview and Cube designer)
-*	Learn the Essbase 19c Web-UI overview.
+*	Understand the Essbase 19.3 Plugins (Smart View and Cube designer)
+*	Understand the 19.3 Web-UI overview.
 *	Learn how to build rules/calculations and run corresponding jobs.
-*	Learn the MIGRATION process between Cloud environments.
+*	Learn the migration process between Cloud environments.
 *	Understand the Essbase REST API functionality.
 
 ## Required Artifacts
 
-*	The following lab requires an Oracle Public Cloud account - Essbase 19c Instance with Service Administrator role .
-*	Windows Operating System is preferred for proper working of Essbase Plugins
+This lab requires 
+
+*       An Oracle Public Cloud account-Essbase 19.3 instance
+*	Service administrator role
+*	Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 
 `NOTE: Whenever there is a “Name” being assigned to any Resource / Application / Cube or to any database in this lab please follow the naming convention as “Sample_<FIRST_NAME>” to avoid duplication.`
 
 ## Part 1 - Creating a Sample App in Essbase19c
 
-1.	Login to the Essbase 19c UI using the corresponding Essbase endpoints. i.e. https://ip/essbase/jet
+1.	Login to the Essbase 19.3 web interface  using the corresponding Essbase endpoints. i.e. https://ip/essbase/jet
 
-2.	Now in the Applications tab click on “Import” option from the UI as shown below.
+2.	On the Applications tab click on “Import” option from the UI as shown below.
 
 ![](./images/image14_1.png "")
 
-3.	 From the pop-up window that’s displayed click on the “Catalog” as below.
+3.	 From the Import dialog box, click Catalog.
 
 ![](./images/image14_2.png "")
 
-4.	Now as mentioned in the path below , please select “Sample_Basic.xlsx” file. [ from Catalog -> All Files -> Gallery Templates ]
+4.	Select “Sample_Basic.xlsx” file  from Catalog -> All Files -> Gallery Templates. 
 
 ![](./images/image14_3.png "")
 
-5.	Let us give the name of the Application as “DynamicCorp” and Cube i.e. Database name as “Sales” as below and then click OK.
+5.	Name the application “DynamicCorp,” and name the cube (database) “Sales” and click OK.
 
 ![](./images/image14_4.png "")
 
@@ -43,21 +46,21 @@ This lab walks you through the major features of Essbase-19c and their functiona
 
 ![](./images/image14_5.png "")
 
-This concludes the creation of sample app from the “Catalog” in the Essabase 19c UI.
+This concludes the creation of sample application from the “Catalog” in the Essabase 19.3 User Interface.
 
-## Part 2 - Analyzing Essbase data using Smart View Plugin
+## Part 2 - Analyzing Essbase data using Smart View Add-ins
 
-In this lab, we will be doing the following - 
+In this section, we will be doing the following - 
 
-* Connecting to Data Sources
-* Describe Smart View user interface
+* Connect to Data Sources
+* Explore the Smart View interface
 * Create ad hoc grids
-* Audit Trail
+* Use Audit Trail
 
 ### Section 1 - Connecting to Data Sources 
 
-After installing Oracle Smart View for Office, you can create connections to Essbase in cloud. Connections require information about the server and port. Your cloud service administrator should provide you with the information you need to create the connection. Use the quick connection method to create a private connection to 
-the cloud service.
+After installing Oracle Smart View for Office, you can create connections to Essbase. Connections require information about the server and port. Your administrator should provide you with the information you need to create the connection. Use the quick connection method to create a private connection to 
+Essbase.
 
 To create a private connection using the quick connection method:
 
@@ -69,19 +72,19 @@ To create a private connection using the quick connection method:
 
 3. In the text box that opens, enter the URL for the data source to which you want to connect. The URL syntax: `https://ip/essbase/smartview`
 
-4. Click Go, or press Enter. (You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using Essbase 19c deployment with demo certificate. Once in post deployment / production instance we replace demo certificate with paid SSL certificate we will not get this alert. For instance, click yes on alert to continue with lab exercise.)
+4. Click Go, or press Enter. (You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using an Essbase 19.3 deployment with a demo certificate. Once you're in a post deployment / production instance we replace the demo certificate with a paid SSL certificate and you wont get this alert. For instance, click yes on the alert to continue with this lab exercise.)
 
 5. On the login window, enter your login credentials. 
 
 ![](./images/image14_7.png "")
 
-After successful login, you can now begin working with data in Oracle Analytics Cloud - Essbase. 
+After successful login, you can now begin working with data in Essbase. 
 
-6. Expand ‘EssbaseCluster’, navigate to ‘DynamicCorp’ application. Double click on ‘Sales’ database.
+6. Expand ‘EssbaseCluster,’ navigate to the ‘DynamicCorp’ application. Double click on the ‘Sales’ database.
 
 ![](./images/image14_8.png "")
 
-You will be presented with option to create Ad hoc grid. Click on Ad hoc analysis.
+You will be presented with the option to create ad hoc grid. Click Ad hoc analysis.
 
 ### Section 2 - Describe Smart View user interface
 
@@ -106,7 +109,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 1. Bring up Excel. Click Smart View – Panel – Private Connections. Enter the provided Smart View URL. Supply the credentials.
 
-2. In the Connection Manager panel to your right, click ‘DynamicCorp’ – ‘Sales’. Click Connect. Click Ad hoc Analysis. 
+2. In the Connection Manager panel to your right, click ‘DynamicCorp’ – ‘Sales’. Click Connect. Click Ad hoc analysis. 
 
 ![](./images/image14_11.png "")
 
@@ -120,7 +123,7 @@ You use Smart View panel to connect to your smart view data sources and manage c
 
 ![](./images/image14_14.png "")
 
-5. Go to Year. Click on Zoom In – All levels. You will now see the numbers broken down to leaf level Months. ‘Zoom in’ drills down to display details. To zoom in on a member, perform one of the following actions:
+5. Go to Year. Click on Zoom in – All levels. You will now see the numbers broken down to leaf level Months. ‘Zoom in’ drills down to display details. To zoom in on a member, perform one of the following actions:
 
         a. Select the member and then, on the Essbase ribbon, click Zoom In.
         b. Double-click the member.
@@ -145,13 +148,13 @@ a. Click on ‘POV’ in ‘Essbase’ ribbon.
         
 ![](./images/image14_19.png "")
 
-b. Click on down arrow next to Market. Select New York. 
+b. Click the down arrow next to Market. Select New York. 
         
 ![](./images/image14_20.png "")
 
 ![](./images/image14_21.png "")
         
-c. You can now select New York in the POV toolbar, click Refresh to see the figures refreshed in the sheet for New York. 
+c. Select New York in the POV toolbar, and click Refresh to see the figures refreshed in the sheet for New York. 
 
 ![](./images/image14_22.png "")
 
@@ -173,15 +176,15 @@ c. Click on Member Selection in the Essbase ribbon. Select Actual.
 
 a. You can free form type a member combination on a sheet. Click Refresh. The sheet will be updated to show the results of the query in your free form sheet. 
 
-b. Start with creating smart view analysis report.
+b. Start by creating smart view analysis report.
 
-c. Create report by zooming into Year & Measures dimension.
+c. Create report by zooming into the Year & Measures dimension.
 
 ![](./images/image14_26.png "")
 
 12. You can directly enter Sales account member in place of Profit to visualize sales data across year without needing to perform member selection.
 
-13. Click on Profit cell and replace with Sales, hit refresh.
+13. Click the Profit cell, replace with Sales, hit and select refresh.
 
 ![](./images/image14_27.png "")
 
@@ -205,7 +208,7 @@ Before you perform this procedure, you must complete the steps in Create Data So
 
 ### Step 2 - Installing Cube Designer from Essbase
 
-1. In Essbase19c UI , click ‘Console’.
+1. In Essbase 19.3 web interface , click ‘Console’.
 2. On the ‘Desktop Tools’ tab, to the right of Cube Designer Extension, click ‘Download’. 
 
 ![](./images/image14_40.png "") 
@@ -217,40 +220,6 @@ Before you perform this procedure, you must complete the steps in Create Data So
 4. Close all Microsoft Office applications and make sure Microsoft Office applications are not running in the background.
 5. Double click the ‘CubeDesignerInstaller.svext’ file we downloaded to local directory.
 6. Restart Microsoft Office applications.
-
-### Step 3 - Update the Smart View Cube Designer Extension
-
-If an extension is available for you to update, you can update it from Smart View Excel, on the Extensions tab of the Options dialog box. To check for Cube Designer Smart View extension updates and install them: 
-
-1. From the ‘Smart View’ ribbon, select ‘Options’ and then ‘Extensions’.
-
-![](./images/image14_38.png "") 
-
-2. Click the ‘Check for Updates, New Installs, and Uninstalls’ link to check for updates.
-
-![](./images/image14_39.png "") 
-
-You are prompted to log in after you click on existing Essbase server URL’s.
-
-If an update is available, the ‘Update Available’ icon is displayed in the Cube Designer row. 
-
-*Note:*
-This process uses a server locations list, which was created by previous Smart View connections . If there are connection definitions that are no longer valid, you receive errors when the process tries to connect to those servers. See [Delete Smart View Connection URLs](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/delete-smart-view-connection-urls.html)
-
-![](./images/image14_42.png "") 
-
-3.	Click Remove to uninstall the extension.
-4.	Close Excel.
-5.	Restart Excel.
-6.	From the ‘Smart View’ ribbon, select ‘Options’ and then ‘Extensions’.
-7.	Click ‘Check for Updates, New Installs, and Uninstalls’. Once again, when you select the Essbase URL, you are prompted to log in.
-8.	In the Cube Designer row, click Install.
-9.	Close Excel.
-10.	Open Excel.
-11.	Ensure that the Cube Designer ribbon is displayed in Excel. 
-
-![](./images/image14_43.png "") 
-
 
 
 ## Part 4 - Creating a Cube from Tabular Data in Cube Designer 
@@ -275,7 +244,7 @@ The application name is based on the source file name without the extension and 
 
 `Unstr_Hints.xlsx: Application name is Unstr_Hints and the cube name is SpendHistory`
 
-6.	Press `Preview Data` The workbook is sent to Essbase19c for analysis and the relationships are returned for viewing. 
+6.	Click `Preview Data` The workbook is sent to Essbase 19.3 for analysis and the relationships are returned for viewing. 
 
 7.	When you are ready to create the cube, click `Run`
 
@@ -292,13 +261,13 @@ The newly created application and cube are listed on the Applications home page 
 10.	On the `Export Cube to Application Workbook` dialog box, select the application and cube, and then select `Run`
 
 ![](./images/image14_49.png "") 
+To create a cube in Essbase the cloud service, see Creating a Cube from Tabular Data. 
 
-To create a cube in the cloud service, see Creating a Cube from Tabular Data. 
-
-With this, we saw how a normal flat file excel sheet is converted into an Essbase Application and a Cube. We could get the DBX (Design by Example) file in a matter of seconds with the dynamic capabilities of Essbase powered by Cube Designer plugin.
+In this exercise, you saw how a normal flat file Excel sheet can be converted into an Essbase application and a cube. You could get the application workbook DBX (Design by Example) file in a matter of seconds with the dynamic capabilities of Essbase powered by the Cube Designer add-ins.
 
 
-## Part 5 - Overview of the WEB-UI
+
+## Part 5 - Overview of the WEB-User Interface
 
 ### 1. Applications:
 Applications tab gives us the information about the Essbase applications and the cubes built under them.
@@ -307,100 +276,104 @@ Applications tab gives us the information about the Essbase applications and the
 ![](./images/image14_53.png "") 
 
 Here, we will also find options to explore the features available under each application & cube using the inspect option as below. The Application specific audit/logs, Application specific configuration files etc are available in the ‘Applications’ tab under ‘Inspect’ option.
-as below.
+
+By choosing the Inspect option for each application, you can see application specific logs, audit files, configuration files, etc.
 
 ![](./images/image14_54.png "") 
 ![](./images/image14_55.png "") 
 
-We can access the outline of the cube and the specific files under it using the “Inspect” option as below on cube as well.
+You can access outlines and specific cube options by choosing the Inspect menu item for each cube.
 
 ![](./images/image14_56.png "") 
 ![](./images/image14_57.png "") 
 
-Outline Analysis : Outline option is equivalent to EAS console on Essbase on-prem, this is where we can add new dimensions or members under dimensions on any level as required and can make changes to existing cubes quickly using ‘Edit’ option. 
-Select the ‘Outline’ option for the ‘SpendHistory’ cube. [ or any cube that is already LIVE on the Essbase 19c UI ].
+Outline Analysis: The Outline option is equivalent to the EAS console on in Essbase on-premises. This is where you can add new dimensions or members under dimensions on at any level, as required, and can make changes to existing cubes quickly using the ‘Edit’ option. Select the ‘Outline’ option for the ‘SpendHistory’ cube. [or any cube that is already LIVE on the Essbase 19.3 web interface ].
 
 ![](./images/image14_58.png "") 
 ![](./images/image14_59.png "")
 
-Here, add a new child called ‘TotalA’ under ‘Measures’ dimension member as shown below. Let us now assign an ‘Ignore’ - ‘Consolidation operator’ to the ‘TotalA’ member. The operator defines the way in which the new member rolls up across the hierarchy.
+Here, add a new child called ‘TotalA’ under the ‘Measures’ dimension member as shown below. Let us now assign an ‘Ignore’ Consolidation operator to the ‘TotalA’ member. The operator defines the way in which the new member rolls up across the hierarchy.
 
 ![](./images/image14_60.png "") 
 ![](./images/image14_61.png "") 
 
 We now have to add a formula to this new dimension using the pencil icon under the ‘formula’ tab as shown. We are adding ‘Spend’ and ‘Invoice’
-Once added, we need to verify the formula and then select ‘Apply and Close’ .
+Once added, we need to verify the formula and then select Apply and Close.
 
 ![](./images/image14_62.png "") 
 
-We can also specify other options such as ‘Data storage’ type and ‘Sort/Inspect’ of members in a dimension using the options in UI. We can use ‘Skip’ option to skip missing values as below and ‘Save’ all the changes we made.
+You can also specify other options such as Data storage type and ‘Sort/Inspect’ of members in a dimension using the options in the web interface. You can use the ‘Skip’ option to skip missing values as shown below. Save all the changes you made.
 
 ![](./images/image14_63.png "") 
 
 ### 2. Jobs:
-Jobs tab has all information about the jobs that are executed on Essbase UI. It is like an Audit of the tasks done on Essbase web-UI. 
 
-Here we can create / run New jobs on applications and cubes using this tab as shown below.
+The Jobs tab displays all the information about the jobs that have been executed on in the Essbase web interface. The display of Jobs serves as an Audit of all the tasks done on the Essbase web interface. 
+You can create and run new jobs on applications and cubes using this tab, as shown below.
+
 
 ![](./images/image14_64.png "") 
 
-Now we will execute a ‘Build Dimension’ job by selecting the application and cube as below, ‘Script’ file is the rule[.rul] file where the dimension build script exists , so let us select the pre-existing ‘DimBuild.rul’ file and its corresponding ‘DimensionsCSV.txt’ pair as the Data File and execute the job.
+Execute a Build Dimension job by selecting the application and cube, as shown below. The ‘Script’ file is the rule[.rul] file where the dimension build script exists. Select the pre-existing ‘DimBuild.rul’ file and its corresponding ‘DimensionsCSV.txt’ pair as the Data File and execute the job.
 
 ![](./images/image14_65.png "") 
 
-Once done, we can see the status of the job back in the UI and also the job details under actions across the job executed if needed .
+Once the job is running, you can see the status of the job in the Essbase web interface. You can view the job details under Actions  for the job executed.
 
 ![](./images/image14_66.png "") 
 
 ### 3. Files:
- Files tab is equivalent to the file directory of Essbase, this is where we find all the files related to applications and cubes under “applications” folder.
+
+The Files tab is equivalent to the file directory of Essbase. This is where you find all the files related to applications and cubes under the “applications” folder.
 
 ![](./images/image14_67.png "") 
 
-In files tab we can upload the artifacts/files related to Essbase such as script files, rule files, load files etc existing on local systems directly into the cube of our choice using the ‘Upload Files’ option under the corresponding cube path. [ here in the image below application name is ‘Sample’ and cube name is ‘Basic’]
+On the Files tab you can upload the artifacts/files related to Essbase, such as script files, rule files, load files etc. existing on local systems directly into the cube of our choice using the ‘Upload Files’ option under the corresponding cube path. [In the image below, the application name is ‘Sample’ and the cube name is ‘Basic’]
 
 ![](./images/image14_68.png "") 
 
-‘Gallery’ folder in ‘Files’ tab has industry wide sample templates in dbx format that are ready to use. They help us kickstart the process of building cubes related to that specific industry very quickly. 
+The ‘Gallery’ folder on the ‘Files’ tab has industry wide sample templates in dbx format that are ready to use. They help you kickstart the process of building cubes related to that specific industry very quickly. 
 
 ![](./images/image14_69.png "") 
 ![](./images/image14_70.png "") 
 
 ### 4. Scenarios:
-‘Scenarios’ tab is where we create scenario modeling on the applications for ‘What-If’ analysis, which empowers the users to analyze the data and get insights from the data. [ More on this will be covered in upcoming lab ]
+
+The ‘Scenarios’ tab is where you create scenario modeling on the applications for ‘What-If’ analysis, which empowers the users to analyze the data and get insights from the data. [More on this will be covered in an upcoming lab. ]
 
 ### 5. Security:
-‘Security’ tab holds the information about the users in Essbase and the role they are assigned. Here we can change the level of access assigned to a particular user.
 
-We can add new users/groups by clicking on ‘Add Role’ option. 
+The ‘Security’ tab holds the information about the users in Essbase and the roles they’re assigned. You can change the level of access assigned to a particular user.
+You can add new users/groups by clicking on the ‘Add Role’ option. 
+
 
 ![](./images/image14_71.png "") 
 
 ### 6. Sources:
-Many cube operations require connection information to access remote source data or hosts. You can define ‘Connections’ and ‘Datasources’ once and reuse them in various operations, so that you don’t have to specify the details each time you perform a task.
-A connection stores login credentials required to access an external source. Essbase19c allows connections to following datasources shown below. A Datasource points to an external source of information.
+
+Many cube operations require connection information to access remote source data or hosts. You can define ‘Connections’ and ‘Datasources’ once and reuse them in various operations, so that you don’t have to specify the details each time you perform a task. A connection stores login credentials required to access an external source. Essbase 19c allows connections to the Datasources shown below. A Datasource points to an external source of information.
 
 ![](./images/image14_72.png "") 
 
 ### 7. Console:
-Console tab is one stop place for Essbase Administrator tools such as 
 
-* Export Utility : Command-Line tool for exporting the outline of a cube and other related elements into a DBX template.
-* LCM : Life-Cycle Management tool is used for back-up and restoring the Essbase artifacts
-* Command-Line Tool : CLI utility for Cloud Essbase platform
-* Migration Utility :  This utility tool is used for migrating Essbase artifacts b/w Essbase instances and environments accordingly.
-This tab also contains the download links for ‘Smartview’ & ‘Cube-Designer’ plugins. Extensions and Essbase Client tools such as MaxL, JAPI etc... under Desktop Tools section are also available
+The Console tab is one stop place for Essbase Administrator tools such as: 
+*	Export Utility: Command-Line tool for exporting the outline of a cube and other related elements into a DBX template an application workbook.
+*	LCM: Life-Cycle Management tool is used for backing up and restoring the Essbase artifacts
+*	Command-Line Tool: CLI utility for Cloud Essbase platform
+*	Migration Utility: This utility is used for migrating Essbase artifacts  between Essbase instances and environments. This tab also contains the download links for Smart View and Cube Designer add-ins. Extensions and Essbase Client tools such as MaxL, Java API, and othersnder are also available in the Desktop Tools section.
+
 
 ![](./images/image14_73.png "") 
 
 ‘Console’ tab also holds the information regarding session login by users, settings of the Essbase environment, email configuration settings etc…
-The ‘Global configuration’ file of Essbase is available directly from the Essbase Web-UI as shown, where we can add new variable property settings with corresponding values using ‘Add’ option.
+The ‘Global configuration’ file of Essbase is available directly from the Essbase Web-user interface as shown, where we can add new variable property settings with corresponding values using ‘Add’ option.
 
 ![](./images/image14_74.png "") 
 
  
 ### 8. Academy: 
-This tab contains all the information and documentation links related to Essbase19c 
+This tab contains all the information and documentation links related to Essbase 19.3 
 
 ![](./images/image14_75.png "") 
 
@@ -408,15 +381,15 @@ This tab contains all the information and documentation links related to Essbase
 DataCorp IT group stores data in an Oracle Data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
 Loading data is the process of adding data values to a cube from any number of data sources or SQL database. Since data sources seldom are configured solely to support Essbase dimension build and data load processes, a rule file is generally used to create Essbase-compatible directives to be applied to the data source.
 
-Create rules file that is based on sample file from the data warehouse.\
+Create a rule file that is based on sample file from the data warehouse.\
 
 1.	Create rules file.
 
 ![](./images/image14_76.png "") 
 
-2.	Set the rules file to ignore extra fields.
+2.	Set the rule file to ignore extra fields.
 3.	Define the data load properties.
-4.	Validate and save the rules file as LoadCorp.
+4.	Validate and save the rule file as LoadCorp.
 5.	Load data to Sales and specify the following options.
 
         a. Data Source: Data-Basic.txt
@@ -433,7 +406,7 @@ Create rules file that is based on sample file from the data warehouse.\
       
       ![](./images/image14_77.png "") 
       
-      b.	Select Scripts tab, and then Rules. The Rules editor is displayed, showing currently defined rules.
+      b.	Select the Scripts tab, and then Rules. The Rules editor is displayed, showing currently defined rules.
       c.	Click Create and select Data Load to define the load data rule.
       
       ![](./images/image14_78.png "") 
@@ -500,7 +473,7 @@ Next, create a job to load the data using the rule.
         a.	On the Applications home page, click Actions to the right of the Sales cube in the DynamicCorp application.
         b.	Select Job Details to check the load data job details.
         c.	Click Close when done.
-        d.	On the Applications home page again, open the Actions inspector for the Sample cube.
+        d.	On the Applications page, click the Actions menu on the cube row to the right of the Sample cube, and click Inspect.
         e.	Select Statistics to view the resulting statistics for the Sales cube.
 
 You have now completed loading data using a rule.
@@ -566,8 +539,8 @@ After creating and saving calculation scripts, you use the Jobs page to execute 
 
 ### Import Essbase application using CLI:
 
-This exercise will introduce how to automate tasks using OAC Essbase Command Line Interface.
-* Import base cube using DBX structures sheet from CLI
+This exercise will introduce how to automate tasks using Essbase Command Line Interface.
+* Import base cube using Application Workbook structures sheet from CLI
 
 Before you start, copy the provided file Sample_Basic.xlsx to your CLI directory.
 
@@ -581,13 +554,13 @@ Command:  esscs.bat deploy -a Sample01 -db Basic -file Sample_Basic.xlsx
 
 ![](./images/image14_90.png "")
 
-2. Next, review the newly create cube from the Web UI.
+2. Next, review the newly create cube from the Essbase Web Interface.
 
 ![](./images/image14_91.png "")
 
 ### LcmExport: Back Up Cube Files:
 
-* LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. 
+* The LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. 
 * To export Sample application deployed in last step use command.
 
 **Syntax:**
