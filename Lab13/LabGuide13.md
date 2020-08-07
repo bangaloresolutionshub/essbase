@@ -309,7 +309,7 @@ As the Oracle Cloud Infrastructure administrator, you use Oracle Cloud Infrastru
 
 5. In General Settings, on the Configure Variables page, you configure variables for the infrastructure resources that the stack creates. 
 
-* [Optional] Enter Resource Display Name Prefix value to use to identify all generated resources, for example essbase_<userid>. If not entered, a prefix is assigned. The target compartment you previously selected is shown.	
+* [Optional] Enter Resource Display Name Prefix value to use to identify all generated resources, for example Essbase_<userid>. If not entered, a prefix is assigned. The target compartment you previously selected is shown.	
 * Enter values for KMS Key OCID and KMS Service Crypto Endpoint for encrypting credentials during provisioning.
 * [Optional] Select Show Advanced Options if you want to enable additional network configuration options under Network Configuration. Use this if you plan to create a new virtual cloud network (VCN) or subnets.
 
@@ -356,7 +356,7 @@ c. Click Next.
 
 ![](./images/image13_43.png "")
 
-13. From the Application Information page, the value for essbase_url is used in the browser to access Essbase. The essbase node public ip is for accessing SSH.
+13. From the Application Information page, the value for Essbase_url is used in the browser to access Essbase. The Essbase node public ip is for accessing SSH.
 14. After you deploy the stack, now complete the post-deployment tasks, including update your created Identity Cloud Service application, test connectivity to Essbase, and others.
 
 ![](./images/image13_44.png "")	
