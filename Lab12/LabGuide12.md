@@ -39,7 +39,7 @@ This lab will require the following -
 
 ## Part 2 - Essbase Architecture on OCI
 
-![](./images/Architecture.png "")
+![](./images/notionalarchitecture.png "")
 
 ## Part 3 - Working with Essbase
 
