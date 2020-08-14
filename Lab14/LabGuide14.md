@@ -6,8 +6,8 @@ This lab walks you through the major features of Essbase-19c and their functiona
 
 ## Objectives
 
-*	Understand the Essbase 19C Plugins (Smart View and Cube designer)
-*	Understand the 19C Web-UI overview.
+*	Understand the Essbase 19c Plugins (Smart View and Cube designer)
+*	Understand the 19c Web-UI overview.
 *	Learn how to build rules/calculations and run corresponding jobs.
 *	Learn the migration process between Cloud environments.
 *	Understand the Essbase REST API functionality.
@@ -16,7 +16,7 @@ This lab walks you through the major features of Essbase-19c and their functiona
 
 This lab requires 
 
-*       An Oracle Public Cloud account-Essbase 19C instance
+*       An Oracle Public Cloud account-Essbase 19c instance
 *	Service administrator role
 *	Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 
@@ -24,7 +24,7 @@ This lab requires
 
 ## Part 1 - Creating a Sample App in Essbase19c
 
-1.	Login to the Essbase 19C web interface  using the corresponding Essbase endpoints. i.e. https://ip/essbase/jet
+1.	Login to the Essbase 19c web interface  using the corresponding Essbase endpoints. i.e. https://ip/essbase/jet
 
 2.	On the Applications tab click on “Import” option from the UI as shown below.
 
@@ -46,7 +46,7 @@ This lab requires
 
 ![](./images/image14_5.png "")
 
-This concludes the creation of sample application from the “Catalog” in the Essabase 19C User Interface.
+This concludes the creation of sample application from the “Catalog” in the Essabase 19c User Interface.
 
 ## Part 2 - Analyzing Essbase data using Smart View Add-ins
 
@@ -72,7 +72,7 @@ To create a private connection using the quick connection method:
 
 3. In the text box that opens, enter the URL for the data source to which you want to connect. The URL syntax: `https://ip/essbase/smartview`
 
-4. Click Go, or press Enter. (You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using an Essbase 19C deployment with a demo certificate. Once you're in a post deployment / production instance we replace the demo certificate with a paid SSL certificate and you wont get this alert. For instance, click yes on the alert to continue with this lab exercise.)
+4. Click Go, or press Enter. (You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using an Essbase 19c deployment with a demo certificate. Once you're in a post deployment / production instance we replace the demo certificate with a paid SSL certificate and you wont get this alert. For instance, click yes on the alert to continue with this lab exercise.)
 
 5. On the login window, enter your login credentials. 
 
@@ -207,7 +207,7 @@ Before you perform this procedure, you must complete the steps in Create Data So
 
 ### Step 2 - Installing Cube Designer from Essbase
 
-1. In Essbase 19.3 web interface , click ‘Console’.
+1. In Essbase 19c web interface , click ‘Console’.
 2. On the ‘Desktop Tools’ tab, to the right of Cube Designer Extension, click ‘Download’. 
 
 ![](./images/image14_40.png "") 
@@ -243,7 +243,7 @@ The application name is based on the source file name without the extension and 
 
 `Unstr_Hints.xlsx: Application name is Unstr_Hints and the cube name is SpendHistory`
 
-6.	Click `Preview Data` The workbook is sent to Essbase 19.3 for analysis and the relationships are returned for viewing. 
+6.	Click `Preview Data` The workbook is sent to Essbase 19c for analysis and the relationships are returned for viewing. 
 
 7.	When you are ready to create the cube, click `Run`
 
@@ -286,7 +286,7 @@ You can access outlines and specific cube options by choosing the Inspect menu i
 ![](./images/image14_56.png "") 
 ![](./images/image14_57.png "") 
 
-Outline Analysis: The Outline option is equivalent to the EAS console on in Essbase on-premises. This is where you can add new dimensions or members under dimensions on at any level, as required, and can make changes to existing cubes quickly using the ‘Edit’ option. Select the ‘Outline’ option for the ‘SpendHistory’ cube. [or any cube that is already LIVE on the Essbase 19.3 web interface ].
+Outline Analysis: The Outline option is equivalent to the EAS console on in Essbase on-premises. This is where you can add new dimensions or members under dimensions on at any level, as required, and can make changes to existing cubes quickly using the ‘Edit’ option. Select the ‘Outline’ option for the ‘SpendHistory’ cube. [or any cube that is already LIVE on the Essbase 19c web interface ].
 
 ![](./images/image14_58.png "") 
 ![](./images/image14_59.png "")
@@ -372,7 +372,7 @@ The ‘Global configuration’ file of Essbase is available directly from the Es
 
  
 ### 8. Academy: 
-This tab contains all the information and documentation links related to Essbase 19.3 
+This tab contains all the information and documentation links related to Essbase 19c 
 
 ![](./images/image14_75.png "") 
 
