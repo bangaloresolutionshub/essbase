@@ -94,7 +94,7 @@ Before deploying the Essbase stack, create a confidential application in Oracle 
 
 4. In the Client step, Select the option Configure this application as a client now. 
 
-* In the Authorization section, 
+   In the Authorization section, 
 
 	* Select the following allowed grant types: Client Credentials and Authorization Code. 
 	* Select allow non-HTTPS URLs. 
@@ -110,10 +110,10 @@ Before deploying the Essbase stack, create a confidential application in Oracle 
 6. Scroll to the top of the page and click Next until you reach the Authorization section. Click Finish.
 7. From the "Application Added" popup window, record the following Identity Cloud Service details: 
 
-* IDCS Application Client ID 
-* IDCS Application Client Secret. 
+	* IDCS Application Client ID 
+	* IDCS Application Client Secret. 
 
-Record these values to use during your Essbase deployment.
+   Record these values to use during your Essbase deployment.
 
 ![](./images/image13_15.png "")
 
