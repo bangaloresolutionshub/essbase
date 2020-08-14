@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab walks you through the overview of Essbase on OCI architecture followed by steps to create an IDCS confidential application, which we will be using to monitor the Essbase19c that we are going to deploy by the end of this session and we will use IDCS login to access Essbase UI (front-end).
+This lab provides detailed instructions for deploying Essbase on OCI using the Marketplace listing. It includes details of how-to setup users/groups and corresponding policies and compartments on OCI. It also provides details of the network topology for the deployment. Following OCI components will be deployed/configured – IDCS, OCI Vault, OCI VMs, ATP, storage, VCNs, Load Balancer, etc. Once the deployment is complete, you should be able to access Essbase on the Web UI.
 
 ## Objectives
 
@@ -13,12 +13,12 @@ This lab walks you through the overview of Essbase on OCI architecture followed 
 
 
 ## Required Artifacts
-* The following lab requires an Oracle Public Cloud account with IDCS & OCI Administrator Access for the whole process of deployment of Essbase19c on OCI without any hassles.
+* The following lab requires an Oracle Public Cloud account with IDCS and OCI Administrator Access for the whole process of deployment of Essbase19c on OCI without any hassles.
 * The estimated time to complete this lab is 45 minutes.
 
 **Note : Whenever there is a “Name” being assigned for any resource creation in this lab please follow the naming convention as “<Resource_Name>_<FIRST_NAME>” to avoid duplication.
 
-## Part 1 - Essbase 19C - Basic Topology
+## Part 1 - Essbase 19c - Basic Topology
 
 ![](./images/image13_1.png "")
 
@@ -26,11 +26,11 @@ This lab walks you through the overview of Essbase on OCI architecture followed 
 
 Above is the basic topology of Essbase19c architecture on Oracle Cloud Infrastructure.
 
-* Essbase19c VM resides in the Application subnet as shown in the above figure which is configured automatically with Block Volumes – Configuration Volume & Data Volume. 
+* Essbase19c VM resides in the Application subnet as shown in the above figure which is configured automatically with Block Volumes – Configuration Volume and Data Volume. 
 * The connections to this application subnet are dependent on the Security List rules associated with the Application subnet and in this topology we will have ingress rules on    the application subnet for SSH Connectivity and for HTTPS - Web UI connectivity to the Essbase19c VM via the Internet Gateway.
-* SSH connectivity is first required during the procurement process for the Resource Manager to configure & install the Essbase19c in the compute instance automatically with no manual work from our end and secondly after the procurement SSH connectivity enables the users to login to the backend Essbase19c instance and for corresponding access.
-* The Essbase19c instance procured will manage its users using the IDCS of Oracle Cloud & metadata gets stored in the ATP-Autonomous Database.
-* Essbase backups gets stored in the Object storage of the OCI & the connectivity to this is established by the service gateway.
+* SSH connectivity is first required during the procurement process for the Resource Manager to configure and install the Essbase19c in the compute instance automatically with no manual work from our end and secondly after the procurement SSH connectivity enables the users to login to the backend Essbase19c instance and for corresponding access.
+* The Essbase19c instance procured will manage its users using the IDCS of Oracle Cloud and metadata gets stored in the ATP-Autonomous Database.
+* Essbase backups gets stored in the Object storage of the OCI and the connectivity to this is established by the service gateway.
 
 ## Part 2 - Deployment of Essbase 19c - Prerequisites
 
@@ -88,7 +88,7 @@ Before deploying the Essbase stack, create a confidential application in Oracle 
 
 ![](./images/image13_11.png "")
 
-3. Enter "Essbase19c" in the name & description section for the Essbase Application and click Next.
+3. Enter "Essbase19c" in the name and description section for the Essbase Application and click Next.
 
 ![](./images/image13_12.png "")
 
@@ -121,7 +121,7 @@ Record these values to use during your Essbase deployment.
 
 ![](./images/image13_16.png "")
 
-9. Now click on users tab of this application toolbar & add the current user to the application using "Assign" option.
+9. Now click on users tab of this application toolbar and add the current user to the application using "Assign" option.
 
 ![](./images/image13_17.png "")
 
@@ -159,7 +159,7 @@ Alternatively, the IDCS Instance GUID is at the front of the IDCS URL in the bro
 
 3. Select “ANY OF THE FOLLOWING RULES” as rules for match.
 4. Select “Match Instances in Compartment ID” as attribute.
-5. Now paste the Compartment OCID noted before & click on Add Rule.
+5. Now paste the Compartment OCID noted before and click on Add Rule.
 
 ![](./images/image13_24.png "")
 
@@ -177,11 +177,11 @@ Alternatively, the IDCS Instance GUID is at the front of the IDCS URL in the bro
 ![](./images/image13_26.png "")
 
 4. When done, click Create.
-5. Create one more policy , this time for the Dynamic Group we have created , so that dynamic group will have permissions to initiate tasks automatically during procurement process . Repeat the 3rd & 4th steps as above to add all policies as listed [here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/set-policies.html)
+5. Create one more policy , this time for the Dynamic Group we have created , so that dynamic group will have permissions to initiate tasks automatically during procurement process . Repeat the 3rd and 4th steps as above to add all policies as listed [here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/set-policies.html)
 
 Note: Create policies each for both Admin groups and Dynamic groups, with all policy statements as given [here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/set-policies.html)
 
-6. We will have two policy groups as below at the end of this part-6.
+6. We will have two policy groups as shown below.
 ![](./images/image13_27.png "")
 
 7. The policy statements of the corresponding groups will look like the images shown below.
@@ -194,7 +194,7 @@ Note: Create policies each for both Admin groups and Dynamic groups, with all po
 
 ![](./images/image13update2.png "")
 
-### Step 7: Encrypt Values Using KMS
+### Step 7: Encrypt Values Using OCI Virtual Vault
 
 Key Management (KMS) enables you to manage sensitive information when creating a server domain. 
 
@@ -206,7 +206,7 @@ Keys need to be encrypted for the following fields:
 2. IDCS application client secret
 3. Database system administrator password
 
-#### Step 1 : Creation of KMS Vaults & Keys.
+#### Step 1 : Creation of KMS Vaults and Keys.
 
 1. Sign in to the Oracle Cloud Infrastructure console. 
 2. In the navigation menu, select Security, and click Vault.
@@ -274,7 +274,7 @@ oci kms crypto encrypt --key-id Key_OCID --endpoint Cryptographic_Endpoint_URL -
 
 Reference : (Click here)[https://docs.oracle.com/en/database/other-databases/essbase/19.3/essad/encrypt-values-using-kms.html]
 
-## Part 3 - Procurement of Essbase19c - Deploy Oracle Essbase
+## Part 3 -  Provision Essbase using Marketplace listing
 
 ### Step 1: Deploy Oracle Essbase from Oracle Cloud Marketplace. 
 
@@ -371,7 +371,7 @@ You can modify the created resources and configure variables later. Logs are cre
 
 ![](./images/image13_45.png "")	
 
-3. Once we have the outputs generated & job executed successfully, we need to update these endpoints i.e. Essbase Redirect URL and Essbase Post Logout Redirect URL back in the Essbase IDCS Confidential Application, where we fed temporary URL’s as below.
+3. Once we have the outputs generated and job executed successfully, we need to update these endpoints i.e. Essbase Redirect URL and Essbase Post Logout Redirect URL back in the Essbase IDCS Confidential Application, where we fed temporary URL’s as below.
 
 ![](./images/image13_46.png "")	
 ![](./images/image13_47.png "")	
