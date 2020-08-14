@@ -6,8 +6,8 @@ This lab walks you through the major features of Essbase-19c and their functiona
 
 ## Objectives
 
-*	Understand the Essbase 19.3 Plugins (Smart View and Cube designer)
-*	Understand the 19.3 Web-UI overview.
+*	Understand the Essbase 19C Plugins (Smart View and Cube designer)
+*	Understand the 19C Web-UI overview.
 *	Learn how to build rules/calculations and run corresponding jobs.
 *	Learn the migration process between Cloud environments.
 *	Understand the Essbase REST API functionality.
@@ -16,7 +16,7 @@ This lab walks you through the major features of Essbase-19c and their functiona
 
 This lab requires 
 
-*       An Oracle Public Cloud account-Essbase 19.3 instance
+*       An Oracle Public Cloud account-Essbase 19C instance
 *	Service administrator role
 *	Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 
@@ -24,7 +24,7 @@ This lab requires
 
 ## Part 1 - Creating a Sample App in Essbase19c
 
-1.	Login to the Essbase 19.3 web interface  using the corresponding Essbase endpoints. i.e. https://ip/essbase/jet
+1.	Login to the Essbase 19C web interface  using the corresponding Essbase endpoints. i.e. https://ip/essbase/jet
 
 2.	On the Applications tab click on “Import” option from the UI as shown below.
 
@@ -46,7 +46,7 @@ This lab requires
 
 ![](./images/image14_5.png "")
 
-This concludes the creation of sample application from the “Catalog” in the Essabase 19.3 User Interface.
+This concludes the creation of sample application from the “Catalog” in the Essabase 19C User Interface.
 
 ## Part 2 - Analyzing Essbase data using Smart View Add-ins
 
@@ -72,7 +72,7 @@ To create a private connection using the quick connection method:
 
 3. In the text box that opens, enter the URL for the data source to which you want to connect. The URL syntax: `https://ip/essbase/smartview`
 
-4. Click Go, or press Enter. (You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using an Essbase 19.3 deployment with a demo certificate. Once you're in a post deployment / production instance we replace the demo certificate with a paid SSL certificate and you wont get this alert. For instance, click yes on the alert to continue with this lab exercise.)
+4. Click Go, or press Enter. (You will receive alert for certificate error. This is expected behavior as for the purpose of this tutorial we are using an Essbase 19C deployment with a demo certificate. Once you're in a post deployment / production instance we replace the demo certificate with a paid SSL certificate and you wont get this alert. For instance, click yes on the alert to continue with this lab exercise.)
 
 5. On the login window, enter your login credentials. 
 
