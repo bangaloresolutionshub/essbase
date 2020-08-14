@@ -88,9 +88,8 @@ You will be presented with the option to create ad hoc grid. Click Ad hoc analys
 
 ### Section 2 - Describe Smart View user interface
 
-![](./images/image14_9.png "")
+![](./images/smarview.png "")
 
-![](./images/image14_10.png "")
 
 **Smart View Ribbon**
 
