@@ -82,10 +82,4 @@ After you create Essbase connections, you can use those connections to create da
 8.	Now we can quickly see the distribution of sales across different states as below using MAP visualization.
 [ Convert the default MAP BACKGROUND settings ]
 
-9.	In the similar fashion we can visualize an intriguing analysis summary of data possesses by creating a canvas .
- 
-
-
-
-
-
+9.	In the similar fashion we can visualize an intriguing analysis summary of data possesses by creating a canvas.
