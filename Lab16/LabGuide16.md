@@ -1,4 +1,4 @@
-# Lab 15: Essbase and ADW
+# Lab 16: Essbase and ADW
 
 ## Introduction 
 
