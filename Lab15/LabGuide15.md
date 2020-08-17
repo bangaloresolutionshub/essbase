@@ -405,10 +405,18 @@ After defining the connection and data source, the next step to define the repor
 ![](./images/image15_55.png "")
  
 5.	Select Datasource type drill through report:
+
 a.	Enter a name for the report.
+
 b.	Select the data source that we created earlier – ADW_Dataload. 
+
 c.	Select the columns that you want in the report, map them to dimensions, and designate the appropriate generation or level. 
-d.	Select PRODUCT, map it to Product, and select Level0. Repeat for more columns: MONTHS/Year/Months, SCENARIO/Scenario/Level0. Select SALES and STATENAME but leave them mapped to None.
+
+d.	Select PRODUCT, map it to Product, and select Level0. Repeat for more columns: 
+
+``MONTHS/Year/Months, SCENARIO/Scenario/Level0``
+
+Select SALES and STATENAME but leave them mapped to None.
  
 ![](./images/image15_56.png "")
 
@@ -427,7 +435,7 @@ Now that you have set up an application and cube for drill through, and created 
 
 1.	Use the Sample Smart View analysis file provided below.
  
-![](./images/image15_58 "")
+![](./images/image15_58.png "")
  
 2.	Drill through one of the cells to see the data source for the cell, for example, select a cell D3 and click Drill Through. Select the drill-through you created.
 
