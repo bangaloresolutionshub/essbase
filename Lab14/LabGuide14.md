@@ -6,8 +6,8 @@ This lab walks you through the major features of Essbase-19c and their functiona
 
 ## Objectives
 
-*	Understand the Essbase 19c Plugins (Smart View and Cube designer)
-*	Understand the 19c Web-UI overview.
+*	Understand the Essbase 19c add-ins (Smart View and Cube designer)
+*	Understand the 19c Web-interface overview.
 *	Learn how to build rules/calculations and run corresponding jobs.
 *	Learn the migration process between Cloud environments.
 *	Understand the Essbase REST API functionality.
@@ -22,11 +22,11 @@ This lab requires
 
 `NOTE: Whenever there is a “Name” being assigned to any Resource / Application / Cube or to any database in this lab please follow the naming convention as “Sample_<FIRST_NAME>” to avoid duplication.`
 
-## Part 1 - Creating a Sample App in Essbase19c
+## Part 1 - Creating a Sample Application in Essbase19c
 
 1.	Login to the Essbase 19c web interface  using the corresponding Essbase endpoints. i.e. https://ip/essbase/jet
 
-2.	On the Applications tab click on “Import” option from the UI as shown below.
+2.	On the Applications tab click on “Import” option from the Essbase web interface as shown below.
 
 ![](./images/image14_1.png "")
 
@@ -357,7 +357,7 @@ Many cube operations require connection information to access remote source data
 ### 7. Console:
 
 The Console tab is one stop place for Essbase Administrator tools such as: 
-*	Export Utility: Command-Line tool for exporting the outline of a cube and other related elements into a DBX template an application workbook.
+*	Export Utility: Command-Line tool for exporting the outline of a cube and other related elements into a application workbook.
 *	LCM: Life-Cycle Management tool is used for backing up and restoring the Essbase artifacts
 *	Command-Line Tool: CLI utility for Cloud Essbase platform
 *	Migration Utility: This utility is used for migrating Essbase artifacts  between Essbase instances and environments. This tab also contains the download links for Smart View and Cube Designer add-ins. Extensions and Essbase Client tools such as MaxL, Java API, and othersnder are also available in the Desktop Tools section.
@@ -600,7 +600,7 @@ For example: https://ip/essbase/jet
 
 `For example, change the URL to:  https://ip/essbase/rest/doc/`
 
-4. On Swagger UI, you will be presented with number of different REST APIs.  
+4. On Swagger web interface, you will be presented with number of different REST APIs.  
 
 **Download Application Logs using REST APIs –**
 
