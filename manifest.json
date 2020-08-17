@@ -18,22 +18,22 @@
                 {
             "title": "Lab 15: Advanced Essbase Feature Functionalities",
             "publisheddate": "04/13/2020",
-            "filename": "./Lab14/LabGuide14.md"
+            "filename": "./Lab14/LabGuide15.md"
         },
         {
             "title": "Lab 16: Essbase and ADW",
             "publisheddate": "04/13/2020",
-            "filename": "./Lab15/LabGuide15.md"
+            "filename": "./Lab15/LabGuide16.md"
         },
         {
             "title": "Lab 17: User and Scenario Management",
             "publisheddate": "04/13/2020",
-            "filename": "./Lab16/LabGuide16.md"
+            "filename": "./Lab16/LabGuide17.md"
         },
         {
             "title": "Lab 18: Essbase and Data Visualization",
             "publisheddate": "04/13/2020",
-            "filename": "./Lab17/LabGuide17.md"
+            "filename": "./Lab17/LabGuide18.md"
         }
      ]
 }
