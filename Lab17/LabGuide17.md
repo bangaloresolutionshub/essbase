@@ -1,117 +1,180 @@
-# Lab 17: Essbase and Data Visualization 
+
+# Lab 17: Scenario Management
 
 ## Introduction
 
-Essbase users are familiar with performing data analysis using Smart View for Office. Oracle Analytics Cloud - Data Visualization (DV) enables Essbase users to visualize data on top of Essbase cubes with the help of different intuitive graphs & dashboards. OAC – DV along with Essbase sourced data empowers the users with quick yet powerful insights the data is capable of.  
-
-*Note :* The Data Visualization service in Oracle Analytics Cloud provides a direct connection for Essbase
+Using scenario management, scenario participants can perform what-if analysis to model data in their own private work areas. These scenarios can optionally be subject to an approval workflow, which includes a scenario owner and one or more approvers. In the workflow, scenario owners merge scenario data with the final cube data only after it is approved.
 
 ## Objective
 
-* Getting introduced to OAC-DV with Essbase as data-source
-* Understanding the connection process
-* Creating intuitive dashboards on top of Essbase cubes 
+To understand the following:
 
-## Required Artifacts
-
-This lab will require the following -
-
-  1.	An Oracle public cloud tenancy with OAC-DV & Essbase19c Instances of at least 1 OCPU up & running.
-  2.	Approximate time to complete this lab is 20 mins. 
-
-
-## Create a Direct Connection in Data Visualizer
-
-1. In OAC, create a new connection.
-
-![](./images/image17_1.png "")
+*	Scenario Management Overview
+*	Creating a cube with Sandboxes	
+*	Creating a Scenario	
+*	Lightweight Sandboxes		
+*	Changing Sandbox Data	
+*	Scenario Workflow
  
-2. Select 'Oracle Essbase' as the connection type.
+## Overview – Understand Scenario
+
+The exercises contained within this lesson will allow the user to get acquainted with different aspects of Scenario Management.  The different aspects include the lightweight nature of sandboxes on the cube; the process involved with initiating Scenario Management and adding sandboxes; as well as, the workflow supported by Scenario Management.  
+
+*	Scenarios are private work areas in which users can model different assumptions within the data and see the effect on aggregated results, without affecting the existing data.
+
+*	Each scenario is a virtual slice of a cube in which one or more users can model data and then commit or discard the changes.
+
+*	The sandbox dimension is flat, with one member called Base and up to 1000 other members, commonly referred to as sandbox members. Sandbox members are named sb0, sb1, and so on. 
+
+*	Each sandbox is a separate work area, whereas the Base holds the data currently contained in the cube. A specific scenario is associated with exactly one sandbox member.
+
+*	When first created, sandbox member intersections are all virtual and have no physical storage.
+
+## Part 1 -	Create a Scenario-Enabled Sample cube
+
+You can create a scenario-enabled cube by importing the scenario-enabled sample application workbook.
+
+1.	In the Essbase web interface, click Import.
+
+![](./images/image16_1.png "") 
+
+2.	Click Catalog.
  
-![](./images/image17_2.png "")
+![](./images/image16_2.png "")
 
-3. In the DSN, use the Essbase 19c URL [updated if using DEMO SSL certs ] as below :
-http://essbaseip/essbase
-The username and password are for the Essbase server credentials. [ This user must be already added to the Essbase UI ]
+3.	Drill down into the Gallery, Cubes, and General folders. Naviagte to All Files > gallery > Applications > Demo Samples > Block Storage
 
-![](./images/image17_3.png "")
+![](./images/image16_3.png "")
  
-4. Once the credentials are verified the CONNECTION SUCCESS message gets displayed and we can find the connection in the “Connections” tab.
+4.	Select `Sample_Basic_Scenario.xlsx` and click Select.
 
-![](./images/image17_4.png "")
+5.	Provide a unique name and click OK.
 
-## Essbase19c instances using DEMO CERTS.
+ ![](./images/image16_4.png "")
 
-As an Essbase administrator, when you are managing your Oracle Essbase stack on Oracle Cloud Infrastructure, you may need access to the WebLogic console to perform some administrative tasks. 
-
-The Essbase stack on Oracle Cloud Infrastructure runs from a managed WebLogic server. When you start or stop the Essbase stack, it starts and stops the WebLogic server as well as the Essbase applications. 
-
-To disable the DEMO SSL certificate verification we need to open port 80 on Essbase backend. To access it, 
-
-1.	Expose the port on the target compute node. To do this, SSH into the target machine  using any tool. [ Here PUTTY tool is being used ]
-
-2.	Enter the IP of the Essbase Node VM and click on “Auth” as shown below to provide the ppk file for the login access to backend Essbase server.
-
-![](./images/image17_5.png "")
-
-3.	Once we provide the corresponding SSH Private key file under “Auth” , click on OPEN.
-
-![](./images/image17_6.png "")
+ ![](./images/extrasmall_1.png "")
  
-4.	Execute the below commands as given below
+## Part 2	- Creating a Scenario
 
-``[opc@essbase-1 ~]$ sudo firewall-cmd --add-port=80/tcp --zone=public``
-          
-# To make this survive restarts of the firewall service
+**Adding a Scenario to a sandbox-enabled cube** 
 
-``[opc@essbase-1 ~]$ sudo firewall-cmd --add-port=80/tcp --zone=public –permanent``
+To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
 
-``[opc@essbase-1 ~]$ sudo systemctl restart firewalld``
+1.	In Essbase, login as a user with database update (or higher) permission to at least one application.
+2.	Click Scenarios.
+3.	Click Create Scenario.
 
-``[opc@essbase-1 ~]$ sudo firewall-cmd --list-all`` 
+  ![](./images/image16_5.png "")
+
+4.	On the General Information tab, enter a scenario name and select a Priority (optional), Due Date, Application, and Database (cube). You will only see applications for which you have minimum database update permission.
+
+  ![](./images/image16_6.png "")
   
-![](./images/image17_7.png "")
+5.	Turn on Use Calculated Values if you want to merge calculated values to base values when running calculation scripts on scenarios.
+6.	(Optional) Enter a description.
+7.	On the Users tab, click Add   for a list of users.
+8.	Add the users that you want.
+9.	Close the Add Users dialog box.
+10.	For each user, keep the default (Participant), or select Approver.
+11.	Select Approver. Scenario user roles determine the workflow for the scenario.
+ 
+![](./images/image16_7.png "")
+
+12.	Save your change.
+
+## Part 3	- Lightweight Sandboxes
+
+**Show that sandboxes are lightweight**  
+
+This exercise shows that creating sandboxes has little impact on resource usage such as disk space.
+
+1. Connect to `Sample_Scenario_Basic` in Smart View analysis.
+
+ ![](./images/image16_8.png "")
   
-5.  Enable the security list for the subnet where the Essbase Node VM resides to allow access to the port from a source network. This example enables access from the entire Internet. The quick start creates a virtual cloud network (VCN) named <prefix>-vcn, and a security list named <prefix>-app-security-list. Add an ingress rule as follows: 
-	
-![](./images/image17_8.png "")	
+2. Create a private connection to your environment, `http://<MachineIP>/essbase/smartview` If you are not already connected, log in.
+
+3. Refresh the data.
+
+**Questions:**
+
+1. Do you see Data for the sandboxes (sb#)? 
+    
+2. Is there a variance between any of the sb# members and Base?
+    
+3. If the loaded file contained no references to any sb# members how did the data get there?` 
+
+**Takeaway:**
+
+By default, all Sandboxes you create have the same values as the data loaded into the base. The data in the sandbox is dynamically queried and will not use any extra storage disk space. Only values that are modified as part of a scenario will be stored. This makes creating and using most scenarios a very light weight operation.  
+
+## Part 4 -	Model Data
+
+As a scenario user, you can model data slices in your own scenario.
+1.	In Essbase, click Scenario.
+2.	On the Scenarios page, locate the scenario in which you want to model data.
+3.	Launch Smart View by clicking the Excel   icon before the scenario name.
+4.	Make data changes and perform your what-if analysis in Smart View.
+
+ ![](./images/image16_9.png "")
+
+Or you can make use of provided Smart View analysis xls (use ‘Submit_Data’ tab in this excel file to submit data) to perform what if analysis.
+
+ ![](./images/extrasmall_2.png "")
  
-6. Now replace the URL with “HTTP” from “HTTPS” in IDCS confidential application.
+5.	Open the Scenario Comparison file and create connection with Sample Scenario – Basic.
+6.	Change the data value for the sandbox member sb0 Actual and submit data.
 
-![](./images/image17_9.png "")
+ ![](./images/image16_10.png "")
 
-## Create Data Sets from Essbase Cubes
+You will notice updated data will reflect only against sb0 dimension intersection.
 
-After you create Essbase connections, you can use those connections to create data sets. You must create the Essbase connection before you can create a data set for it.
+## Part 5 -	Scenario Workflow
 
-1.	On the Home page click Create and click Data Set. 
+You can review a scenario using an optional approval workflow.
 
-![](./images/image17_10.png "")
+ ![](./images/imagenew.png "")
+
+In the real use case, the scenario flow that we will simulate is:
+
+*	Participant user performs What-if analysis on base data within Sandbox.
+*	After analysis Participant user submits the data changes for approval.
+*	Approver user can review the data and decides to approve/reject.
+*	Once data is approved, Data can be applied to the Base by Participant.
+
+**Understand Scenario User Roles**
+
+*	Scenario user role assignments determine the workflow for scenarios. You must have at least one approver to enable the scenario workflow. Without an approver, participants do not have the option to submit the scenario for approval, for example, and there is no option to approve or reject the scenario.
+
+*	Participants can participate in a what-if analysis. They must have Database Update or Database Access user role. Adding participants is not mandatory.
+
+*	Approvers monitor the process and approve or reject scenarios. They must have Database Access or higher role. Scenarios can have multiple approvers, in which case each one must approve the scenario before it can be submitted.
+
+* Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. Since you are doing it by yourself, you will need to play roles of both participant and approver. 
+
+Let’s start:
+
+1.	Login to Essbase. (Consider yourself as participant user). Navigate to scenarios.
+2.	Highlight the scenario you created previously.
+3.	Select Actions->Submit, and enter a comment if needed
  
-2.	In the Create Data Set dialog, select an existing Essbase connection. 
+ ![](./images/image16_11.png "")
+  
+Tip: If you don’t have an Approver assigned for the scenario, the action Submit will not be available.
 
-![](./images/image17_11.png "")
+4.	Highlight the scenario created previously, select Actions->Approve, and enter a comment if needed. (Consider yourself an approver).
 
-3.	In the Add Data Set page, double-click the Essbase cube that you want to use as a data set. Essbase cube details are displayed.
+ ![](./images/image16_12.png "")
 
-![](./images/image17_12.png "")
+5.	Login to the Essbase. (Consider yourself a participant).
+6.	Highlight the scenario you created previously.
+7.	Select Actions->Apply
+ 
+ ![](./images/image16_13.png "")
 
-4.	If required, you can edit the Description, and select an Alias value. If you select an alias value other than the default, then values from the selected alias table are displayed in visualizations that use this Essbase data set. 
+8.	Go to Smart View and retrieve data into the Comparison tab (make sure you have an active connection in the ‘Comparison’ tab to the same application you connected to while submitting the data)
+ 
+ ![](./images/extrasmall_3.png "")
+ 
+You should see the changes have been applied to the Base.
 
-5.	Click Add to save the Essbase cube. [preview would not be available for Essbase Cube sourced data]
-
-6.	Now select “Create Project” option on the right-top of the screen.
-
-7.	Now add/drag-drop the corresponding fields from the left pane to the DV fields as below.
-[ In below visualization – we have fields “Profit_%”, “Total_Expenses”, “Profit” & “Sales” under Basic#1 [Measures] field & “Quarter” under Year field ]           
-
-![](./images/image17_13.png "")
-             
-8.	Now we can quickly see the distribution of sales across different states as below using MAP visualization.
-[ Convert the default MAP BACKGROUND settings ]
-
-![](./images/image17_14.png "")
-
-9.	In the similar fashion we can visualize an intriguing analysis summary of data possesses by creating a canvas.
-
-![](./images/image17_15.png "")
