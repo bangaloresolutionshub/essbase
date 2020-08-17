@@ -1,4 +1,4 @@
-# Lab 17: Essbase and Data Visualization
+# Lab 17: Essbase and Data Visualization 
 
 ## Introduction
 
