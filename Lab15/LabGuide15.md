@@ -1,447 +1,251 @@
-# Lab 15: Essbase and ADW
+## Part 6 - Data Load to Cube
+DataCorp IT group stores data in an Oracle Data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
+Loading data is the process of adding data values to a cube from any number of data sources or SQL database. Since data sources seldom are configured solely to support Essbase dimension build and data load processes, a rule file is generally used to create Essbase-compatible directives to be applied to the data source.
+
+Create a rule file that is based on sample file from the data warehouse.\
+
+1.	Create rules file.
+
+![](./images/image14_76.png "") 
+
+2.	Set the rule file to ignore extra fields.
+3.	Define the data load properties.
+4.	Validate and save the rule file as LoadCorp.
+5.	Load data to Sales and specify the following options.
+
+        a. Data Source: Data-Basic.txt
+        b. Rules file: LoadCorp.rul
+
+### Load Data Using a Rule File
+
+1.	Open the downloaded data file, data-basic.txt, in a formatted text editor. Notice that there's no header row and that the file delimiter is a comma.
+2.	Sign in to the Essbase web interface.
+3.	On the home page, expand the DynamicCorp application, and select the Sales cube.
+4.	Now create the load rule.
+
+      a.	From the Actions menu to the right of the Sales cube, launch the inspector.
+      
+      ![](./images/image14_77.png "") 
+      
+      b.	Select the Scripts tab, and then Rules. The Rules editor is displayed, showing currently defined rules.
+      c.	Click Create and select Data Load to define the load data rule.
+      
+      ![](./images/image14_78.png "") 
+      
+      d.	In the New Rule dialog box, enter LoadCorp as the name of the rule.
+      e.	Enter Measures as the data dimension.
+      f.	Under Preview Data, select File for flat file input.
+      g.	Click the browse icon to locate the file data-basic.txt that you downloaded, and click Open to select it.
+      h.	As you saw earlier, the first row of the flat file doesn't contain header values. Deselect the Header Row check box if it is selected. When the header row is present, the columns are mapped automatically.
+      i.	Select Comma as the Delimiter value, based on the file format.
+      j.	Click Proceed.
+      
+      ![](./images/image14_79.png "") 
+      
+      You can now see the preview of the data in the Rules editor, based on the input flat file.
+      
+      ![](./images/image14_80.png "")
+
+5.	The Global options toolbar, on the top right of the Rules editor allows you to modify file properties or the data source and to see the results in the Rules editor. The Field options toolbar on the left side of the Rules editor allows you map fields in the rule.
+6.	Because there were no headers in the input file, you need to map each column to the appropriate dimensions and members.
+7.	In the Rules editor, you can now set up the rule fields.
+
+ ![](./images/image14_81.png "")
+
+        a. Click Create drop-down menu, and start setting the field names.
+        Set Field (column) 1 to Product.
+        Set Field 2 to Market.
+        Set Field 3 to Year.
+        Set Field 4 to Scenario.
+        Set Field 5 to Sales.
+        Set Field 6 to COGS.
+        Set Field 7 to Marketing.
+        Set Field 8 to Payroll.
+        Set Field 9 to Misc.
+        Set Field 10 to Opening Inventory.
+        Set Field 11 to Additions.
+        All dimensions must be represented in the load data rule before any data can be loaded.
+        b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
+        c. After syntax is validated, click Save and Close.
+        d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then clicking Proceed.
+        e. Click Close to return to the Applications home page.
+
+Next, create a job to load the data using the rule.
+
+8.	On the home page, select Jobs, and then New Job.
+
+      a. Select Load Data.
+      b. In the Load Data dialog box, from the Application menu, select the DynamicCorp application.
+      c. In the Database list, select the Sales cube.
+      d. In the Script list, select the load data rule that you created, LoadCorp.rul.
+      e. For Load Type, select File.
+      f. Select the file Data-basic.txt from the Data File list. This file is located in the DataCorp > Sales folder.
+      g. Optional: select the Abort on error check box if you want the load to stop if an error occurs.
+      h. Click OK. The load data job is executed.
+        
+     ![](./images/image14_82.png "")
+        
+      i. On the Jobs page, click Refresh to monitor the job status.
+      
+      ![](./images/image14_83.png "")
+        
+9.	After the job is completed, verify that the input records were processed and loaded.
 
-## Introduction 
+        a.	On the Applications home page, click Actions to the right of the Sales cube in the DynamicCorp application.
+        b.	Select Job Details to check the load data job details.
+        c.	Click Close when done.
+        d.	On the Applications page, click the Actions menu on the cube row to the right of the Sample cube, and click Inspect.
+        e.	Select Statistics to view the resulting statistics for the Sales cube.
 
-In this lab, we will learn how to build an Essbase cube sourcing data from Autonomous Data Warehouse (ADW Database). We will build dimensions and load data using ADW data. We will use Essbase drill-through functionality to display additional detailed data that is retrieved from Autonomous Data Warehouse. Through Essbase Smart View for Office, we will interactively investigate the data in Essbase, slice and dice the data, and do ad hoc analysis on it.
+You have now completed loading data using a rule.
+        
+## Part 7 - Calculating Essbase Cube
 
-## Objectives
+A cube contains two types of values: values that you enter, called input data, and values that are calculated from input data.
 
-* Procuring ADW instance
-* Loading data to ADW instance
-* Create a connection from Essbase 19c to ADW
-* Build dimension using ADW data
-* Load data from ADW to Essbase cube
-* View / Analyze ADW data in Smart View
-* Drill through to ADW data from Smart View
+A cube can be calculated using one of two methods. Outline calculation, which is the simplest calculation method, bases the calculation of a cube on the relationships between members in the cube outline and on any formulas that are associated with members in the outline.
 
-## Required Artifacts 
+A calculation script, which contains a series of calculation commands, equations, and formulas, allows you to define calculations other than those defined by the database outline.
 
-* The following lab requires an Oracle Public Cloud account with an Essbase 19.3 instance and corresponding access to create a new Autonomous Database.
-*	Smart View plugin for Excel.
-*	The estimated time to complete this lab is 20 minutes.
+You create calculation scripts using a script editor in the Essbase web interface.
+Calculation scripts do not apply to aggregate storage applications.
+1.	On the Application page, expand the application.
+2.	From the Actions menu, to the right of the cube name, launch the inspector.
 
+![](./images/image14_84.png "")
 
-##  Part 1 - Provisioning an ADW Instance
+3.	Select the Scripts tab, and then select the Calculation Scripts tab.
 
-### Step 1: Sign in to Oracle Cloud
+![](./images/image14_85.png "")
 
-1. Go to [cloud.oracle.com](https://www.oracle.com/index.html), click on the **Person Icon**
+4.	Click Add   to create a new calculation script.
+5.	If member names are required in your calculation script, drill into the Member Tree to find the members you want to add.
+Right-click dimension or member names to insert them into the script.
+6.	If function names are required in your calculation script, use the Function Name menu to find calculation functions and add them to the script.
+See the Function description under the menu to read descriptions of each function.
+7.	The following calculation script, based on the DynamicCorp.Sales database, calculates the Actual values from the Year, Measures, Market, and Product dimensions:
 
-![](./images/image15_1.png "")
+FIX (Actual)
+CALC DIM(Year, Measures, Market, Product);
+ENDFIX
 
-2. Then click on **Sign in to Cloud** to sign in with your Oracle Cloud account.
+In the name field of script editor give the name to script as CalcActual
 
-![](./images/image15_2.png "")
+![](./images/image14_86.png "")
 
-3. Enter your **Cloud Account Name** and click **Next**.
+8.	Click Validate before saving your script.
+Validating a script verifies the script syntax. For example, incorrectly spelled function names and omitted end-of-line semicolons are identified. Validation also verifies dimension names and member names.
+9.	Correct any validation errors.
+10.	Click Save.
+11.	Click Close.
 
-![](./images/image15_3.png "")
+### Execute Calculations
 
-4. Enter your Oracle Cloud **username** and **password**, and click **Sign In**.
+After creating and saving calculation scripts, you use the Jobs page to execute them and perform the calculations on data loaded in your cube.
+1.	Create your calculation script, or upload an existing calculation script.
+2.	In Essbase, click Jobs.
+3.	On the Jobs page, click New Job and select Run Calculation.
 
-![](./images/image15_4.png "")
+![](./images/image14_87.png "")
 
-### Step 2: Create an ADW Instance
+4.	On the Run Calculation dialog box, select the application - DynamicCorp and cube – Sales.
+5.	Select the script – CalcActual.
 
-1. If after logging in, you are taken to the screen below, click on **Infrastructure Dashboard**. If you do not see the screen below when you login, skip this step and move on to the next step below.
+![](./images/image14_88.png "")
 
-![](./images/image15_5.png "")
+6.	Click OK to start the calculation.
+7.	Click Refresh to see the status of your calculation.
 
-2. Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**.
+## Part 8 - Migration Utilities
 
-![](./images/image15_6.png "")
+### Import Essbase application using CLI:
 
-3. This will bring up the Create Autonomous Data Warehouse screen where you will specify the configurations of the instance. Compartments are used to organize resources in Oracle Cloud Infrastructure. Using the drop down, select **EssbaseSalesPlay** from the compartment list.
+This exercise will introduce how to automate tasks using Essbase Command Line Interface.
+* Import base cube using Application Workbook structures sheet from CLI
 
-4. Specify a memorable display name for the instance and database's name, here **EssbaseADW**.
+Before you start, copy the provided file Sample_Basic.xlsx to your CLI directory.
 
-![](./images/image15_7.png "")
+![](./images/image14_89.png "")
 
-5. Then, scroll down and select the CPU core count and Storage (TB) size. Here, we use 1 CPU and 1 TB of storage.
+The file Sample_Basic.xlsx will be imported using CLI and form the starting point for the rest of the exercise   
 
-![](./images/image15_8.png "")
+1. Next deploy the the Sample cube using the Sample_Basic.xlsx file.  Call the application Sample01
+Command:  esscs.bat deploy --help
+Command:  esscs.bat deploy -a Sample01 -db Basic -file Sample_Basic.xlsx
 
-6. Uncheck Auto scaling for the purposes of this workshop.
+![](./images/image14_90.png "")
 
-7. Then, specify an ADMIN password for the instance, and a confirmation of it. Make a note of this password.
+2. Next, review the newly create cube from the Essbase Web Interface.
 
-![](./images/image15_9.png "")
+![](./images/image14_91.png "")
 
-8. For this lab, we will select **License Included** for the license type. If your organization owns Oracle Database licenses already, you may bring those licenses to your cloud service.
+### LcmExport: Back Up Cube Files:
 
-9. Make sure everything is filled out correctly, then proceed to click on **Create Autonomous Database**.
+* The LcmExport CLI command backs up cube artifacts to a Lifecycle Management (LCM) .zip file. 
+* To export Sample application deployed in last step use command.
 
-![](./images/image15_10.png "")
+**Syntax:**
 
-10. Your instance will begin provisioning. Once the state goes from Provisioning to Available, click on your ADW display name to see its details. Note: Here, the name is **EssbaseADW**.
+`lcmExport [-verbose] -application appname [-zipfilename filename] [-localDirectory path] [-threads threadscount] [-skipdata] [-overwrite] [-generateartifactlist] [-include-server-level]
+esscs lcmExport -application Sample -zipfilename Sample.zip`
 
-11. You now have created your first Autonomous Data Warehouse instance. Have a look at your instance's details here including its name, database version, CPU count and storage size.
+![](./images/image14_92.png "")
 
-![](./images/image15_11.png "")
+### LcmImport: Restore Cube Files
 
-### Step 3: Download the Connection Wallet
+* Restores cube artifacts from a Lifecycle Management (LCM) .zip file. 
 
-As ADW only accepts secure connections to the database, you need to download a wallet file containing your credentials. The wallet can be downloaded either from the instance's details page, or from the ADW service console. In this case, we will be showing you how to download the wallet file from the instance's details page. This wallet file can be used with a local version of software such as SQL Developer as well as others. It will also be used later in the lab so make note of where it is stored.
+**Syntax:**
 
-1. Go back to the Oracle Cloud Console and open the Instances screen. Find your database, click the action menu and select **DB Connection**.
+`lcmImport [-verbose] -zipfilename filename [-overwrite] [-targetappName targetApplicationName] [-artifactlist artifactList]
+Command example : esscs lcmImport -z  C:/cli/Sample.zip -o`
 
-![](./images/image15_13.png "")
+*NOTE:* The mentioned path should not contain spaces.
 
-2. Under Download Client Credentials (Wallet), click **Download Wallet**.
+![](./images/image14_93.png "")
 
-![](./images/image15_14.png "")
+## Part 9 - REST APIs
 
-3. Specify a password of your choice for the wallet. You will need this password when connecting to the database via SQL Developer later, and is also used as the JKS keystore password for JDBC applications that use JKS for security. Click **Download** to download the wallet file to your client machine. Download the wallet to a location you can easily access, because we will be using it in the next step.
+Using the REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over secured HTTP.
 
-**Note: If you are prevented from downloading your Connection Wallet, it may be due to your browser's pop-blocker. Please disable it or create an exception for Oracle Cloud domains.**
+You can view a list of all REST Endpoints.
 
-![](./images/image15_15.png "")
+**Explore the Swagger Interface**
 
-## Part 2 - Uploading data file to ADW 
+The Swagger interface for Essbase REST enables you to try out REST requests in a visual interface, even before you have set up cURL or another API implementation method.
+To use the Swagger interface,
 
-**This section demonstrates how to import a table to ADW instance.**
+1. In a web browser, enter the URL for the Essbase web interface. 
+For example: https://ip/essbase/jet
+2. Log in.
+3. In your browser address bar, select all of the URL string that immediately follows essbase, and replace it with /rest/doc/. 
 
-1. Navigate to Autonomous Database section and select ADW instance created in previous step.
+`For example, change the URL to:  https://ip/essbase/rest/doc/`
 
-2. In Autonomous Database select **Service Console**.
+4. On Swagger web interface, you will be presented with number of different REST APIs.  
 
-![](./images/image15_16.png "")
+**Download Application Logs using REST APIs –**
 
-3.	In the Development section of the Service console, click **SQL Developer Web**
+1.	Under Application logs, click on the second GET button (Download All Logs).
 
-![](./images/image15_17.png "")
+![](./images/image14_94.png "")
 
-4. Provide ADW instance username and password.
+![](./images/image14_95.png "")
 
-![](./images/image15_18.png "")
+2.	Click the Try it Out button.
 
-5. Import data file ``Sample_Basic_Table.txt`` containing data column to ADW instance.
+![](./images/image14_96.png "")
 
-![](./images/image15_19.png "")
+3.	Enter the name of application. 
 
-6. Select horizontal ellipsis icon, then select **Data Loading** -> **Upload Data Into New Table**
+![](./images/image14_97.png "")
 
-![](./images/image15_20.png "")
+4.	Click the Execute button.
 
-7. Browse to file location and select ``Sample_Basic_Table.txt`` file. 
+5.	Look under the Server Response section. If the request was successful, then you should see a 200 response with a body such as the following:
 
-![](./images/image15_21.png "")
+![](./images/image14_98.png "")
 
-8. In the Data preview screen, verify that columns are getting populated from the uploaded txt file.
+6.	Click on the Download File link to download zip file containing application log.
 
-![](./images/image15_22.png "")
-
-9. Map the columns from text file to table.  
-
-![](./images/image15_23.png "")
-
-10. Verify data loaded into the table by executing a select query.
-
-![](./images/image15_24.png "")
-
-## Part 3 - Create a Connection and Datasource for Oracle Autonomous Data Warehouse
-
-For reference - [Click Here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/ugess/create-connection-and-datasource-access-oracle-autonomous-data-warehouse.html)
-
-### Step 1 - Define a connection and Datasource between Essbase and Autonomous Data Warehouse.
-
-1.	In the Essbase web interface, click **Sources**.
-
-![](./images/image15_25.png "")
-
-2. Click **Create Connection** and select **Oracle Database**.
-
-3. Select **Autonomous** using the toggle switch.
-
-4. Enter a connection name: ``essbaseADW`` and a service name: ``essbaseADW_medium`` 
-
-5. Drag and drop a wallet file or click to upload. Upload the wallet file downloaded in Step 1 procuring ADW.
-
-6. Enter your Autonomous Data Warehouse username, password, and optionally, a description.
-
-7. Click **Test** to validate the connection, and if successful, click Create.
-
-![](./images/image15_26.png "")
-
-8. Verify that the connection was created successfully and appears in the list of connections. Next, you will create a Datasource for the Autonomous Data Warehouse connection.
-
-![](./images/image15_27.png "")
-
-9. Click **Datasources** and click **Create Datasource**. In this step we will create two datasources which are required in next sections.
-
-10. From the Connection drop-down box, select the name of the connection you just created - ``EssbaseADW`` 
-
-11. Provide a name for the Datasource; for example, ``ADW_Datasource``
-
-12. Optionally enter a description of the Datasource; for example, **Autonomous Data Warehouse Datasource**.
-
-13. In the **Query** field, provide the SQL query as :
-
-``Select distinct market, statename from SAMPLE_BASIC_TABLE``
-
-![](./images/image15_28.png "")
-
-14. Click **Next**. If the SQL statement was correct to query an Autonomous Data Warehouse area, you should see the queried columns populated.
-
-![](./images/image15_29.png "")
-
-15. Leave parameters section as-is and click **Next**.
-
-16. Review the preview panel. You should see the results of the SQL query fetching columns of data from Autonomous Data Warehouse.
-
-![](./images/image15_30.png "")
-
-17. If the preview looks correct, click **Create** to finish creating the Datasource.
-
-18. Following similar steps create another datasource with name ``ADW_Dataload``
-
-19. In the query section of ADW_Dataload Datasource use:
-
-``Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE``
-
-![](./images/image15_31.png "")
-
-20.	The Preview tab for the ADW_ Datasource should look similar to the following:
-
-![](./images/image15_32.png "")
-
-## Part 4 - Build Dimensions Using SQL Datasource with ADW
-
-1. We will delete some members from Sample Basic, and then create a load rule to rebuild the Market dimension from the ADW table. 
-
-2. In the Essbase web interface, on the Applications page, expand the Sample application, and select the cube, Basic.
-
-![](./images/image15_33.png "")
-
-3. From the Actions menu to the right of Basic, select Outline.
-
-![](./images/image15_34.png "")
-
-4. Click the Market dimension, and then click member East.
-
-![](./images/image15_35.png "")
-
-5. Click Edit to lock the outline for editing.
-
-6. Delete some of the states from the East market. For example, delete Connecticut, New Hampshire, and Massachusetts.
-
-7. Click Save, and then verify that East now contains only the states Florida and New York. Next, you will create dimension build rules and repopulate the Market dimension, from the SQL table, with the states you have removed.
-
-8. Close the Outline browser tab.
-
-9. On the Applications page, from the Actions menu to the right of Basic, launch the inspector, click Scripts, then choose the Rules tab.
-
-![](./images/image15_36.png "")
-
-![](./images/image15_37.png "")
-
-10. Click Create > Dimension Build (Regular) to begin defining new dimension build rules.
-
-![](./images/image15_38.png "")
-
-11. In the Name field, enter the name of the rules file as ``MarketSQLDimbuild``. In Datasource field select ADW_Datasource from dropdown.
-
-![](./images/image15_39.png "")
-
-12. Dimension columns should be automatically populated from the Datasource selected.
-
-![](./images/image15_40.png "")
-
-13. On the New Rule - ``MarketSQLDimbuild`` page, click the Dimension drop-down field and select Market.
-
-14. Click the Type drop-down field and select Generation. Increment the generation number to 2.
-
-15. Click the Generation Name field and type **REGION**.
-
-![](./images/image15_41.png "")
-
-16. Click **Create > Regular** to create a second dimension build rule field.
-
-![](./images/image15_42.png "")
-
-17. Name the field STATE and associate it with dimension Market, at generation 3.
-
-![](./images/image15_43.png "")
-
-![](./images/image15_44.png "")
-
-18. Click the **Source** button to begin associating a data source with the dimension build rules.
-
-19. Keep the fields in **General** tab as-is.
-
-20. Back in the Edit Source dialog for your dimension build rule, in the SQL/Datasource Properties group select Datasource radio button. Select Datasource as ADW_Datasource from dropdown.
-
-![](./images/image15_45.png "")
-
-21. Click OK, then Verify, Save and Close, to save and close the ``MarketSQLDimbuild`` rule.
-
-22. Refresh the list of rules in the Scripts list to ensure that ``MarketSQLDimbuild`` has been added to the list of rule files for the cube Sample Basic.
-
-![](./images/image15_46.png "")
-
-23. Click **Close**. Next, you will use this rule file to load the members back into the Market dimension.
-
-24. Click Jobs, and click **New Job > Build Dimension**.
-
-25. Enter **Sample** as the application name, and Basic as the database name.
-
-26. For the script name, select the name of the dimension build rule file you created, ``MarketSQLDimbuild``
-
-27. Select Datasource as the load type.
-
-![](./images/image15_47.png "")
- 
-28. From the Restructure Options drop-down list, select Preserve All Data.
-
-29. Click OK to begin the job. The dimension build begins. Click the Refresh symbol to watch the status, and when it completes, click Job Details from the Actions menu.
-
-30. Inspect the outline to verify that your dimensions were built (verify that Connecticut, New Hampshire, and Massachusetts exist as children under East).
-
-## Part 5 - Load ADW Data to Essbase Using SQL Datasource
-
-This task flow demonstrates how to clear data from a cube, create data load rules, load data (using SQL) from an ADW instance, and verify in Smart View that the data was loaded. 
-
-After building the dimensions, you will clear data from the cube, and then load the data again from a table. In Essbase, click **Jobs**, and click **New Job**.
-
-1. Select **Clear Data** as the job type. Select application Sample and database Basic and click OK.
-
-2. Click **OK** to confirm that you want to clear data. The job begins. Click the **Refresh** symbol to watch the status, and when it completes, click **Job Details** from the Actions menu.
-
-3. Connect to the **Sample Basic cube** from Smart View and do an ad hoc analysis.
-
-4. Notice that data was cleared. For example:
-
-![](./images/image15_48.png "")
- 
-Keep the worksheet open. Next, you will create load rules that use SQL to repopulate the Sales data from the table.
-
-5. On the Applications page, expand the Sample application, and select the cube, Basic.
-
-6. From the **Actions** menu to the right of Basic, launch the inspector, click **Scripts**, then choose the **Rules** tab.
-
-7. Click **Create > Data** Load to begin defining new load rules.
-
-8. In the **Name** field, enter the name of the rule file as ``SalesSQLDataload``.
-
-9. In the **Data Dimension** drop-down box, select the Measures dimension.
-
-10. Leave the other options as-is and click **Proceed**.
-
-![](./images/image15_49.png "")
-
-11. In ADW instance write and test a SELECT statement selecting some columns from the table ``SAMPLE_BASIC_TABLE`` : 
-
-``Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE;``
-
-12. Ensure that the SQL query is valid and returns a result in your SQL tool. If the SQL query is valid, it should return the requested table columns, PRODUCT, SCENARIO, STATENAME, MONTHS and SALES, from the database to which your SQL tool is connected.
-
-13. In Essbase, in the **New Rule** browser tab for your ``SalesSQLDataload`` rule, select Sales from the Select drop-down box.
-
-14.	Click **Create > Regular** to continue adding fields. Notice that the build rule has automatically picked fields from the Datasource.
-
-15. Verify all the fields are properly mapped to columns in table.
-
-16. From the third column **Select** drop-down box, select Market (which maps to Statename in your SQL query).
-
-17. From the fourth column **Select** drop-down box, select Year (which maps to Months in your SQL query).
-
-Your load rule fields should now be arranged like this:
-
-![](./images/image15_50.png "")
-
-18. Click the **Source** button to begin associating a data source with the load rules.
-
-19. In the **General** tab, leave fields empty. Navigate to SQL/Datasource Properties section and select Datasource radio button.
-
-![](./images/image15_51.png "")
-
-20. Verify, save, and close the ``SalesSQLDataload`` rule.
-
-21. Refresh the list of rules in the Scripts list to ensure that ``SalesSQLDataload`` has been added to the list of rule files for the cube Sample Basic, and then close the database inspector.
-
-**Next, you will load the data from Jobs.**
-
-22. Click **Jobs**, and click **New Job > Load Data**.
-
-23. Enter **Sample** as the application name, and **Basic** as the database name.
-
-24. For the script name, select the name of the dimension build rule file you created, ``SalesSQLDataload``.
-
-25. Select **Datasource** as the load type.
-
-![](./images/image15_52.png "")
- 
-26. Click **OK** to begin the job.
-
-The data load begins. Click the **Refresh** symbol to watch the status, and when it completes, click **Job Details** from the Actions menu.
-
-27. Go back to the worksheet in Smart View, and refresh it to verify that the data was loaded from the table.
-
-28. Run the calc script to perform data aggregation.
-
-![](./images/image15_53.png "")
-
-29. Verify data load in Smart View by performing data analysis.
-
-![](./images/image15_54.png "")
-
-## Part 6 - Create Drill Through Reports with ADW data
-
-When you want more information than what you can see in the Essbase cube, you can use drill through reports to access external data sources.
-
-Drill through refers to linking the Essbase cube to further data, for example, transactional-level data stored in a relational database.
-
-You can drill through to data from any other Oracle application, an external database, a file (delimited or Excel), or a URL-based target.
-
-### Define Report Columns and Drillable Regions
-
-After defining the connection and data source, the next step to define the report.
-
-1.	Open Database inspector for ‘Basic’ Database under Sample Application.
-2.	Select the Scripts page.
-3.	Select Drill Through Reports.
-4.	Click Create. 
-
-![](./images/image15_55.png "")
- 
-5.	Select Datasource type drill through report:
-
-a.	Enter a name for the report.
-
-b.	Select the data source that we created earlier – ADW_Dataload. 
-
-c.	Select the columns that you want in the report, map them to dimensions, and designate the appropriate generation or level. 
-
-d.	Select PRODUCT, map it to Product, and select Level0. Repeat for more columns: 
-
-``MONTHS/Year/Months, SCENARIO/Scenario/Level0``
-
-Select SALES and STATENAME but leave them mapped to None.
- 
-![](./images/image15_56.png "")
-
-6.	Click Drillable Regions to define regions that should access ("drill through to") the ADW data source. Click + to add a region based on actual sales. 
-7.	Double click in the empty row, and add this Essbase calculation expression to define its area:
-
-``Sales,Actual,Year,@DESCENDANTS(Year),Product``
-
-![](./images/image15_57.png "")
-
-8.	When finished, click Save and Close.
-
-### Execute Drill Through Reports
-
-Now that you have set up an application and cube for drill through, and created a report, you are ready to execute the report and analyze data. 
-
-1.	Use the Sample Smart View analysis file provided below.
- 
-![](./images/image15_58.png "")
- 
-2.	Drill through one of the cells to see the data source for the cell, for example, select a cell D3 and click Drill Through. Select the drill-through you created.
-
-![](./images/image15_59.png "")
-
-3.	In the new sheet, examine the drill through report. 
-4.	You have drilled through to the ADW data source to see the next level data.
-5.	You can verify numbers from new sheet. This number matches the value of the cell you drilled through from.
-
+You can integrate REST APIs with cURL in order to automate various Essbase tasks. cURL is a command-line data transfer tool you can use for making HTTP requests and other requests.
