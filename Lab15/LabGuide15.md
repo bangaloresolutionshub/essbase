@@ -1,5 +1,9 @@
 # Lab 15: Advanced Essbase Feature functionalities
 
+## Introduction
+
+This lab shows the advanced feature functionalities of Essbase.
+
 ## Part 1 - Data Load to Cube
 
 DataCorp IT group stores data in an Oracle Data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
@@ -36,11 +40,17 @@ Create a rule file that is based on sample file from the data warehouse.\
       ![](./images/image14_78.png "") 
       
       d.	In the New Rule dialog box, enter LoadCorp as the name of the rule.
+      
       e.	Enter Measures as the data dimension.
+      
       f.	Under Preview Data, select File for flat file input.
+      
       g.	Click the browse icon to locate the file data-basic.txt that you downloaded, and click Open to select it.
+      
       h.	As you saw earlier, the first row of the flat file doesn't contain header values. Deselect the Header Row check box if it is selected. When the header row is present, the columns are mapped automatically.
+      
       i.	Select Comma as the Delimiter value, based on the file format.
+      
       j.	Click Proceed.
       
       ![](./images/image14_79.png "") 
@@ -78,12 +88,19 @@ Next, create a job to load the data using the rule.
 8.	On the home page, select Jobs, and then New Job.
 
       a. Select Load Data.
+      
       b. In the Load Data dialog box, from the Application menu, select the DynamicCorp application.
+      
       c. In the Database list, select the Sales cube.
+      
       d. In the Script list, select the load data rule that you created, LoadCorp.rul.
+      
       e. For Load Type, select File.
+      
       f. Select the file Data-basic.txt from the Data File list. This file is located in the DataCorp > Sales folder.
+      
       g. Optional: select the Abort on error check box if you want the load to stop if an error occurs.
+      
       h. Click OK. The load data job is executed.
         
      ![](./images/image14_82.png "")
@@ -173,8 +190,9 @@ Before you start, copy the provided file Sample_Basic.xlsx to your CLI directory
 The file Sample_Basic.xlsx will be imported using CLI and form the starting point for the rest of the exercise   
 
 1. Next deploy the the Sample cube using the Sample_Basic.xlsx file.  Call the application Sample01
-Command:  esscs.bat deploy --help
-Command:  esscs.bat deploy -a Sample01 -db Basic -file Sample_Basic.xlsx
+
+``Command:  esscs.bat deploy --help
+Command:  esscs.bat deploy -a Sample01 -db Basic -file Sample_Basic.xlsx``
 
 ![](./images/image14_90.png "")
 
@@ -189,8 +207,8 @@ Command:  esscs.bat deploy -a Sample01 -db Basic -file Sample_Basic.xlsx
 
 **Syntax:**
 
-`lcmExport [-verbose] -application appname [-zipfilename filename] [-localDirectory path] [-threads threadscount] [-skipdata] [-overwrite] [-generateartifactlist] [-include-server-level]
-esscs lcmExport -application Sample -zipfilename Sample.zip`
+``lcmExport [-verbose] -application appname [-zipfilename filename] [-localDirectory path] [-threads threadscount] [-skipdata] [-overwrite] [-generateartifactlist] [-include-server-level]
+esscs lcmExport -application Sample -zipfilename Sample.zip``
 
 ![](./images/image14_92.png "")
 
@@ -200,8 +218,8 @@ esscs lcmExport -application Sample -zipfilename Sample.zip`
 
 **Syntax:**
 
-`lcmImport [-verbose] -zipfilename filename [-overwrite] [-targetappName targetApplicationName] [-artifactlist artifactList]
-Command example : esscs lcmImport -z  C:/cli/Sample.zip -o`
+``lcmImport [-verbose] -zipfilename filename [-overwrite] [-targetappName targetApplicationName] [-artifactlist artifactList]
+Command example : esscs lcmImport -z  C:/cli/Sample.zip -o``
 
 *NOTE:* The mentioned path should not contain spaces.
 
