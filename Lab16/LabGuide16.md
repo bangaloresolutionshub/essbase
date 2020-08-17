@@ -18,13 +18,17 @@ To understand the following:
  
 ## Overview – Understand Scenario
 
-* he exercises in this lesson allow you to get acquainted with different aspects of scenario  management. The different aspects include the lightweight nature of sandboxes on the cube, the process involved with initiating Scenario Management and adding sandboxes, as well as the workflow supported by Scenario Management. 
+The exercises contained within this lesson will allow the user to get acquainted with different aspects of Scenario Management.  The different aspects include the lightweight nature of sandboxes on the cube; the process involved with initiating Scenario Management and adding sandboxes; as well as, the workflow supported by Scenario Management.  
 
-* Scenarios are private work areas in which users can model different assumptions within the data and see the effect on aggregated results, without affecting the existing data.
+*	Scenarios are private work areas in which users can model different assumptions within the data and see the effect on aggregated results, without affecting the existing data.
 
-* Each scenario is a virtual slice of a cube in which one or more users can model data and then commit or discard the changes.
+*	Each scenario is a virtual slice of a cube in which one or more users can model data and then commit or discard the changes.
 
-The following exercises demonstrate the lightweight nature of sandboxes.. In this exercise, we are going to learn about the sandbox dimension that is created when sandboxing is enabled in an application.
+*	The sandbox dimension is flat, with one member called Base and up to 1000 other members, commonly referred to as sandbox members. Sandbox members are named sb0, sb1, and so on. 
+
+*	Each sandbox is a separate work area, whereas the Base holds the data currently contained in the cube. A specific scenario is associated with exactly one sandbox member.
+
+*	When first created, sandbox member intersections are all virtual and have no physical storage.
 
 ## Part 1 -	Create a Scenario-Enabled Sample cube
 
@@ -114,7 +118,7 @@ As a scenario user, you can model data slices in your own scenario.
 
  ![](./images/image16_9.png "")
 
-Or you can make use of the provided Smart View analysis Excel workbook to perform what if analysis.
+Or you can make use of provided Smart View analysis xls (use ‘Submit_Data’ tab in this excel file to submit data) to perform what if analysis.
 
  ![](./images/extrasmall_2.png "")
  
@@ -123,17 +127,30 @@ Or you can make use of the provided Smart View analysis Excel workbook to perfor
 
  ![](./images/image16_10.png "")
 
-7. Notice that the updated data value is reflected only in the sb0 intersection.
+You will notice updated data will reflect only against sb0 dimension intersection.
 
 ## Part 5 -	Scenario Workflow
 
-Now we will use the scenario workflow to submit, and ultimately merge the scenario data with the base. In the real case, the scenario flow that we will simulate is:
+You can review a scenario using an optional approval workflow.
 
-*	The participant user  submits the data for approval
-*	The approver user can review the data and decide to approve
-*	Once data is approved, it can be applied to the base by the participant user.
+ ![](./images/imagenew.png "")
 
-Since you are doing it by yourself, you will need to play roles of both participant and approver. 
+In the real use case, the scenario flow that we will simulate is:
+
+*	Participant user performs What-if analysis on base data within Sandbox.
+*	After analysis Participant user submits the data changes for approval.
+*	Approver user can review the data and decides to approve/reject.
+*	Once data is approved, Data can be applied to the Base by Participant.
+
+**Understand Scenario User Roles**
+
+*	Scenario user role assignments determine the workflow for scenarios. You must have at least one approver to enable the scenario workflow. Without an approver, participants do not have the option to submit the scenario for approval, for example, and there is no option to approve or reject the scenario.
+
+*	Participants can participate in a what-if analysis. They must have Database Update or Database Access user role. Adding participants is not mandatory.
+
+*	Approvers monitor the process and approve or reject scenarios. They must have Database Access or higher role. Scenarios can have multiple approvers, in which case each one must approve the scenario before it can be submitted.
+
+* Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. Since you are doing it by yourself, you will need to play roles of both participant and approver. 
 
 Let’s start:
 
@@ -160,21 +177,4 @@ Tip: If you don’t have an Approver assigned for the scenario, the action Submi
  ![](./images/extrasmall_3.png "")
  
 You should see the changes have been applied to the Base.
-
-## Part 6 - Understand Scenario User Roles and Workflow
-
-* You can review a scenario using an optional approval workflow.
-
-* Scenario user role assignments determine the workflow for scenarios. You must have at least one approver to enable the scenario workflow. Without an approver, participants do not have the option to submit the scenario for approval, for example, and there is no option to approve or reject the scenario.
-
-* The only action for scenarios without at least one approver is Apply. Without an approver, the scenario owner can still change data values in the scenario and apply data changes to the cube (or reject them), without going through an approval process.
-
-* Participants can participate in a what-if analysis. They must have Database Update or Database Access user role. Adding participants is not mandatory.
-Approvers monitor the process, and approve or reject scenarios. They must have Database Access or higher role. Scenarios can have multiple approvers, in which case each one must approve the scenario before it can be submitted.
-
-* Participants and approvers with the Database Access user role cannot write to a scenario until they are granted write access through a filter.
-
-* Participants and approvers are not mandatory. The scenario owner can change data values in the scenario and commit data changes to the cube (or reject them) without designating participants or approvers.
-
- ![](./images/image16_14.png "")
 
