@@ -1,4 +1,4 @@
-# Lab 17: Essbase and Data Visualization 
+# Lab 18: Essbase and Data Visualization 
 
 ## Introduction
 
@@ -24,21 +24,21 @@ This lab will require the following -
 
 1. In OAC, create a new connection.
 
-![](./images/image17_1.png "")
+![](./images/image18_1.png "")
  
 2. Select 'Oracle Essbase' as the connection type.
  
-![](./images/image17_2.png "")
+![](./images/image18_2.png "")
 
 3. In the DSN, use the Essbase 19c URL [updated if using DEMO SSL certs ] as below :
 http://essbaseip/essbase
 The username and password are for the Essbase server credentials. [ This user must be already added to the Essbase UI ]
 
-![](./images/image17_3.png "")
+![](./images/image18_3.png "")
  
 4. Once the credentials are verified the CONNECTION SUCCESS message gets displayed and we can find the connection in the “Connections” tab.
 
-![](./images/image17_4.png "")
+![](./images/image18_4.png "")
 
 ## Essbase19c instances using DEMO CERTS.
 
@@ -52,11 +52,11 @@ To disable the DEMO SSL certificate verification we need to open port 80 on Essb
 
 2.	Enter the IP of the Essbase Node VM and click on “Auth” as shown below to provide the ppk file for the login access to backend Essbase server.
 
-![](./images/image17_5.png "")
+![](./images/image18_5.png "")
 
 3.	Once we provide the corresponding SSH Private key file under “Auth” , click on OPEN.
 
-![](./images/image17_6.png "")
+![](./images/image18_6.png "")
  
 4.	Execute the below commands as given below
 
@@ -70,15 +70,15 @@ To disable the DEMO SSL certificate verification we need to open port 80 on Essb
 
 ``[opc@essbase-1 ~]$ sudo firewall-cmd --list-all`` 
   
-![](./images/image17_7.png "")
+![](./images/image18_7.png "")
   
 5.  Enable the security list for the subnet where the Essbase Node VM resides to allow access to the port from a source network. This example enables access from the entire Internet. The quick start creates a virtual cloud network (VCN) named <prefix>-vcn, and a security list named <prefix>-app-security-list. Add an ingress rule as follows: 
 	
-![](./images/image17_8.png "")	
+![](./images/image18_8.png "")	
  
 6. Now replace the URL with “HTTP” from “HTTPS” in IDCS confidential application.
 
-![](./images/image17_9.png "")
+![](./images/image18_9.png "")
 
 ## Create Data Sets from Essbase Cubes
 
@@ -86,15 +86,15 @@ After you create Essbase connections, you can use those connections to create da
 
 1.	On the Home page click Create and click Data Set. 
 
-![](./images/image17_10.png "")
+![](./images/image18_10.png "")
  
 2.	In the Create Data Set dialog, select an existing Essbase connection. 
 
-![](./images/image17_11.png "")
+![](./images/image18_11.png "")
 
 3.	In the Add Data Set page, double-click the Essbase cube that you want to use as a data set. Essbase cube details are displayed.
 
-![](./images/image17_12.png "")
+![](./images/image18_12.png "")
 
 4.	If required, you can edit the Description, and select an Alias value. If you select an alias value other than the default, then values from the selected alias table are displayed in visualizations that use this Essbase data set. 
 
@@ -105,13 +105,13 @@ After you create Essbase connections, you can use those connections to create da
 7.	Now add/drag-drop the corresponding fields from the left pane to the DV fields as below.
 [ In below visualization – we have fields “Profit_%”, “Total_Expenses”, “Profit” & “Sales” under Basic#1 [Measures] field & “Quarter” under Year field ]           
 
-![](./images/image17_13.png "")
+![](./images/image18_13.png "")
              
 8.	Now we can quickly see the distribution of sales across different states as below using MAP visualization.
 [ Convert the default MAP BACKGROUND settings ]
 
-![](./images/image17_14.png "")
+![](./images/image18_14.png "")
 
 9.	In the similar fashion we can visualize an intriguing analysis summary of data possesses by creating a canvas.
 
-![](./images/image17_15.png "")
+![](./images/image18_15.png "")
