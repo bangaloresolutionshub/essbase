@@ -27,57 +27,57 @@ In this lab, we will learn how to build an Essbase cube sourcing data from Auton
 
 1. Go to [cloud.oracle.com](https://www.oracle.com/index.html), click on the **Person Icon**
 
-![](./images/image15_1.png "")
+![](./images/image16_1.png "")
 
 2. Then click on **Sign in to Cloud** to sign in with your Oracle Cloud account.
 
-![](./images/image15_2.png "")
+![](./images/image16_2.png "")
 
 3. Enter your **Cloud Account Name** and click **Next**.
 
-![](./images/image15_3.png "")
+![](./images/image16_3.png "")
 
 4. Enter your Oracle Cloud **username** and **password**, and click **Sign In**.
 
-![](./images/image15_4.png "")
+![](./images/image16_4.png "")
 
 ### Step 2: Create an ADW Instance
 
 1. If after logging in, you are taken to the screen below, click on **Infrastructure Dashboard**. If you do not see the screen below when you login, skip this step and move on to the next step below.
 
-![](./images/image15_5.png "")
+![](./images/image16_5.png "")
 
 2. Once you are logged in, you are taken to the OCI Console. Click **Create a data warehouse**.
 
-![](./images/image15_6.png "")
+![](./images/image16_6.png "")
 
 3. This will bring up the Create Autonomous Data Warehouse screen where you will specify the configurations of the instance. Compartments are used to organize resources in Oracle Cloud Infrastructure. Using the drop down, select **EssbaseSalesPlay** from the compartment list.
 
 4. Specify a memorable display name for the instance and database's name, here **EssbaseADW**.
 
-![](./images/image15_7.png "")
+![](./images/image16_7.png "")
 
 5. Then, scroll down and select the CPU core count and Storage (TB) size. Here, we use 1 CPU and 1 TB of storage.
 
-![](./images/image15_8.png "")
+![](./images/image16_8.png "")
 
 6. Uncheck Auto scaling for the purposes of this workshop.
 
 7. Then, specify an ADMIN password for the instance, and a confirmation of it. Make a note of this password.
 
-![](./images/image15_9.png "")
+![](./images/image16_9.png "")
 
 8. For this lab, we will select **License Included** for the license type. If your organization owns Oracle Database licenses already, you may bring those licenses to your cloud service.
 
 9. Make sure everything is filled out correctly, then proceed to click on **Create Autonomous Database**.
 
-![](./images/image15_10.png "")
+![](./images/image16_10.png "")
 
 10. Your instance will begin provisioning. Once the state goes from Provisioning to Available, click on your ADW display name to see its details. Note: Here, the name is **EssbaseADW**.
 
 11. You now have created your first Autonomous Data Warehouse instance. Have a look at your instance's details here including its name, database version, CPU count and storage size.
 
-![](./images/image15_11.png "")
+![](./images/image16_11.png "")
 
 ### Step 3: Download the Connection Wallet
 
@@ -85,17 +85,17 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 1. Go back to the Oracle Cloud Console and open the Instances screen. Find your database, click the action menu and select **DB Connection**.
 
-![](./images/image15_13.png "")
+![](./images/image16_13.png "")
 
 2. Under Download Client Credentials (Wallet), click **Download Wallet**.
 
-![](./images/image15_14.png "")
+![](./images/image16_14.png "")
 
 3. Specify a password of your choice for the wallet. You will need this password when connecting to the database via SQL Developer later, and is also used as the JKS keystore password for JDBC applications that use JKS for security. Click **Download** to download the wallet file to your client machine. Download the wallet to a location you can easily access, because we will be using it in the next step.
 
 **Note: If you are prevented from downloading your Connection Wallet, it may be due to your browser's pop-blocker. Please disable it or create an exception for Oracle Cloud domains.**
 
-![](./images/image15_15.png "")
+![](./images/image16_15.png "")
 
 ## Part 2 - Uploading data file to ADW 
 
@@ -105,39 +105,39 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 2. In Autonomous Database select **Service Console**.
 
-![](./images/image15_16.png "")
+![](./images/image16_16.png "")
 
 3.	In the Development section of the Service console, click **SQL Developer Web**
 
-![](./images/image15_17.png "")
+![](./images/image16_17.png "")
 
 4. Provide ADW instance username and password.
 
-![](./images/image15_18.png "")
+![](./images/image16_18.png "")
 
 5. Import data file ``Sample_Basic_Table.txt`` containing data column to ADW instance.
 
-![](./images/image15_19.png "")
+![](./images/image16_19.png "")
 
 6. Select horizontal ellipsis icon, then select **Data Loading** -> **Upload Data Into New Table**
 
-![](./images/image15_20.png "")
+![](./images/image16_20.png "")
 
 7. Browse to file location and select ``Sample_Basic_Table.txt`` file. 
 
-![](./images/image15_21.png "")
+![](./images/image16_21.png "")
 
 8. In the Data preview screen, verify that columns are getting populated from the uploaded txt file.
 
-![](./images/image15_22.png "")
+![](./images/image16_22.png "")
 
 9. Map the columns from text file to table.  
 
-![](./images/image15_23.png "")
+![](./images/image16_23.png "")
 
 10. Verify data loaded into the table by executing a select query.
 
-![](./images/image15_24.png "")
+![](./images/image16_24.png "")
 
 ## Part 3 - Create a Connection and Datasource for Oracle Autonomous Data Warehouse
 
@@ -161,11 +161,11 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
 7. Click **Test** to validate the connection, and if successful, click Create.
 
-![](./images/image15_26.png "")
+![](./images/image16_26.png "")
 
 8. Verify that the connection was created successfully and appears in the list of connections. Next, you will create a Datasource for the Autonomous Data Warehouse connection.
 
-![](./images/image15_27.png "")
+![](./images/image16_27.png "")
 
 9. Click **Datasources** and click **Create Datasource**. In this step we will create two datasources which are required in next sections.
 
@@ -179,17 +179,17 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
 ``Select distinct market, statename from SAMPLE_BASIC_TABLE``
 
-![](./images/image15_28.png "")
+![](./images/image16_28.png "")
 
 14. Click **Next**. If the SQL statement was correct to query an Autonomous Data Warehouse area, you should see the queried columns populated.
 
-![](./images/image15_29.png "")
+![](./images/image16_29.png "")
 
 15. Leave parameters section as-is and click **Next**.
 
 16. Review the preview panel. You should see the results of the SQL query fetching columns of data from Autonomous Data Warehouse.
 
-![](./images/image15_30.png "")
+![](./images/image16_30.png "")
 
 17. If the preview looks correct, click **Create** to finish creating the Datasource.
 
@@ -199,11 +199,11 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
 ``Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE``
 
-![](./images/image15_31.png "")
+![](./images/image16_31.png "")
 
 20.	The Preview tab for the ADW_ Datasource should look similar to the following:
 
-![](./images/image15_32.png "")
+![](./images/image16_32.png "")
 
 ## Part 4 - Build Dimensions Using SQL Datasource with ADW
 
@@ -211,15 +211,15 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
 2. In the Essbase web interface, on the Applications page, expand the Sample application, and select the cube, Basic.
 
-![](./images/image15_33.png "")
+![](./images/image16_33.png "")
 
 3. From the Actions menu to the right of Basic, select Outline.
 
-![](./images/image15_34.png "")
+![](./images/image16_34.png "")
 
 4. Click the Market dimension, and then click member East.
 
-![](./images/image15_35.png "")
+![](./images/image16_35.png "")
 
 5. Click Edit to lock the outline for editing.
 
@@ -231,21 +231,21 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
 9. On the Applications page, from the Actions menu to the right of Basic, launch the inspector, click Scripts, then choose the Rules tab.
 
-![](./images/image15_36.png "")
+![](./images/image16_36.png "")
 
-![](./images/image15_37.png "")
+![](./images/image16_37.png "")
 
 10. Click Create > Dimension Build (Regular) to begin defining new dimension build rules.
 
-![](./images/image15_38.png "")
+![](./images/image16_38.png "")
 
 11. In the Name field, enter the name of the rules file as ``MarketSQLDimbuild``. In Datasource field select ADW_Datasource from dropdown.
 
-![](./images/image15_39.png "")
+![](./images/image16_39.png "")
 
 12. Dimension columns should be automatically populated from the Datasource selected.
 
-![](./images/image15_40.png "")
+![](./images/image16_40.png "")
 
 13. On the New Rule - ``MarketSQLDimbuild`` page, click the Dimension drop-down field and select Market.
 
@@ -253,17 +253,17 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
 15. Click the Generation Name field and type **REGION**.
 
-![](./images/image15_41.png "")
+![](./images/image16_41.png "")
 
 16. Click **Create > Regular** to create a second dimension build rule field.
 
-![](./images/image15_42.png "")
+![](./images/image16_42.png "")
 
 17. Name the field STATE and associate it with dimension Market, at generation 3.
 
-![](./images/image15_43.png "")
+![](./images/image16_43.png "")
 
-![](./images/image15_44.png "")
+![](./images/image16_44.png "")
 
 18. Click the **Source** button to begin associating a data source with the dimension build rules.
 
@@ -271,13 +271,13 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
 20. Back in the Edit Source dialog for your dimension build rule, in the SQL/Datasource Properties group select Datasource radio button. Select Datasource as ADW_Datasource from dropdown.
 
-![](./images/image15_45.png "")
+![](./images/image16_45.png "")
 
 21. Click OK, then Verify, Save and Close, to save and close the ``MarketSQLDimbuild`` rule.
 
 22. Refresh the list of rules in the Scripts list to ensure that ``MarketSQLDimbuild`` has been added to the list of rule files for the cube Sample Basic.
 
-![](./images/image15_46.png "")
+![](./images/image16_46.png "")
 
 23. Click **Close**. Next, you will use this rule file to load the members back into the Market dimension.
 
@@ -289,7 +289,7 @@ For reference - [Click Here](https://docs.oracle.com/en/database/other-databases
 
 27. Select Datasource as the load type.
 
-![](./images/image15_47.png "")
+![](./images/image16_47.png "")
  
 28. From the Restructure Options drop-down list, select Preserve All Data.
 
@@ -311,7 +311,7 @@ After building the dimensions, you will clear data from the cube, and then load 
 
 4. Notice that data was cleared. For example:
 
-![](./images/image15_48.png "")
+![](./images/image16_48.png "")
  
 Keep the worksheet open. Next, you will create load rules that use SQL to repopulate the Sales data from the table.
 
@@ -327,7 +327,7 @@ Keep the worksheet open. Next, you will create load rules that use SQL to repopu
 
 10. Leave the other options as-is and click **Proceed**.
 
-![](./images/image15_49.png "")
+![](./images/image16_49.png "")
 
 11. In ADW instance write and test a SELECT statement selecting some columns from the table ``SAMPLE_BASIC_TABLE`` : 
 
@@ -347,13 +347,13 @@ Keep the worksheet open. Next, you will create load rules that use SQL to repopu
 
 Your load rule fields should now be arranged like this:
 
-![](./images/image15_50.png "")
+![](./images/image16_50.png "")
 
 18. Click the **Source** button to begin associating a data source with the load rules.
 
 19. In the **General** tab, leave fields empty. Navigate to SQL/Datasource Properties section and select Datasource radio button.
 
-![](./images/image15_51.png "")
+![](./images/image16_51.png "")
 
 20. Verify, save, and close the ``SalesSQLDataload`` rule.
 
@@ -369,7 +369,7 @@ Your load rule fields should now be arranged like this:
 
 25. Select **Datasource** as the load type.
 
-![](./images/image15_52.png "")
+![](./images/image16_52.png "")
  
 26. Click **OK** to begin the job.
 
@@ -379,11 +379,11 @@ The data load begins. Click the **Refresh** symbol to watch the status, and when
 
 28. Run the calc script to perform data aggregation.
 
-![](./images/image15_53.png "")
+![](./images/image16_53.png "")
 
 29. Verify data load in Smart View by performing data analysis.
 
-![](./images/image15_54.png "")
+![](./images/image16_54.png "")
 
 ## Part 6 - Create Drill Through Reports with ADW data
 
@@ -402,7 +402,7 @@ After defining the connection and data source, the next step to define the repor
 3.	Select Drill Through Reports.
 4.	Click Create. 
 
-![](./images/image15_55.png "")
+![](./images/image16_55.png "")
  
 5.	Select Datasource type drill through report:
 
@@ -418,14 +418,14 @@ d.	Select PRODUCT, map it to Product, and select Level0. Repeat for more columns
 
 Select SALES and STATENAME but leave them mapped to None.
  
-![](./images/image15_56.png "")
+![](./images/image16_56.png "")
 
 6.	Click Drillable Regions to define regions that should access ("drill through to") the ADW data source. Click + to add a region based on actual sales. 
 7.	Double click in the empty row, and add this Essbase calculation expression to define its area:
 
 ``Sales,Actual,Year,@DESCENDANTS(Year),Product``
 
-![](./images/image15_57.png "")
+![](./images/image16_57.png "")
 
 8.	When finished, click Save and Close.
 
@@ -435,11 +435,11 @@ Now that you have set up an application and cube for drill through, and created 
 
 1.	Use the Sample Smart View analysis file provided below.
  
-![](./images/image15_58.png "")
+![](./images/image16_58.png "")
  
 2.	Drill through one of the cells to see the data source for the cell, for example, select a cell D3 and click Drill Through. Select the drill-through you created.
 
-![](./images/image15_59.png "")
+![](./images/image16_59.png "")
 
 3.	In the new sheet, examine the drill through report. 
 4.	You have drilled through to the ADW data source to see the next level data.
