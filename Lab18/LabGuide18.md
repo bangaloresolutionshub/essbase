@@ -1,4 +1,4 @@
-
+# Lab 18: Essbase and Data Visualization 
 
 ## Introduction
 
@@ -62,7 +62,7 @@ To disable the DEMO SSL certificate verification we need to open port 80 on Essb
 
 ``[opc@essbase-1 ~]$ sudo firewall-cmd --add-port=80/tcp --zone=public``
           
-# To make this survive restarts of the firewall service
+## To make this survive restarts of the firewall service
 
 ``[opc@essbase-1 ~]$ sudo firewall-cmd --add-port=80/tcp --zone=public –permanent``
 
