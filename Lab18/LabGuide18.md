@@ -1,4 +1,4 @@
-# Lab 18: Essbase and Data Visualization 
+
 
 ## Introduction
 
