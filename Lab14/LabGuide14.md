@@ -16,9 +16,9 @@ This lab walks you through the major features of Essbase-19c and their functiona
 
 This lab requires 
 
-*       An Oracle Public Cloud account-Essbase 19c instance
-*	Service administrator role
-*	Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
+* An Oracle Public Cloud account-Essbase 19c instance
+* Service administrator role
+* Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
 
 `NOTE: Whenever there is a “Name” being assigned to any Resource / Application / Cube or to any database in this lab please follow the naming convention as “Sample_<FIRST_NAME>” to avoid duplication.`
 
