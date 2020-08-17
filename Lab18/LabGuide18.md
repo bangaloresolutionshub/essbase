@@ -112,6 +112,7 @@ After you create Essbase connections, you can use those connections to create da
 
 ![](./images/image18_14.png "")
 
+
 9.	In the similar fashion we can visualize an intriguing analysis summary of data possesses by creating a canvas.
 
 ![](./images/image18_15.png "")
