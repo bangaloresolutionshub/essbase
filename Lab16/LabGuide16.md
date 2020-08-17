@@ -3,11 +3,11 @@
 
 ## Introduction
 
-Using scenario management, scenario participants can perform what-if analysis to model data in their own private work areas. These scenarios can optionally be subject to an approval workflow which includes a scenario owner and one or more approvers. In the workflow, scenario owners merge scenario data with the final cube data only after it is approved.
+Using scenario management, scenario participants can perform what-if analysis to model data in their own private work areas. These scenarios can optionally be subject to an approval workflow, which includes a scenario owner and one or more approvers. In the workflow, scenario owners merge scenario data with the final cube data only after it is approved.
 
 ## Objective
 
-To understand the following -
+To understand the following:
 
 *	Scenario Management Overview
 *	Creating a cube with Sandboxes	
@@ -18,13 +18,13 @@ To understand the following -
  
 ## Overview – Understand Scenario
 
-* The exercises contained within this lesson will allow the user to get acquainted with different aspects of Scenario Management.  The different aspects include the lightweight nature of sandboxes on the cube; the process involved with initiating Scenario Management and adding sandboxes; as well as, the workflow supported by Scenario Management. 
+* he exercises in this lesson allow you to get acquainted with different aspects of scenario  management. The different aspects include the lightweight nature of sandboxes on the cube, the process involved with initiating Scenario Management and adding sandboxes, as well as the workflow supported by Scenario Management. 
 
 * Scenarios are private work areas in which users can model different assumptions within the data and see the effect on aggregated results, without affecting the existing data.
 
 * Each scenario is a virtual slice of a cube in which one or more users can model data and then commit or discard the changes.
 
-In the following exercises, the lightweight nature of a sandbox will be on display.  In this exercise we are going to learn about the sandbox dimension that is created when sandboxing is enabled in an application.
+The following exercises demonstrate the lightweight nature of sandboxes.. In this exercise, we are going to learn about the sandbox dimension that is created when sandboxing is enabled in an application.
 
 ## Part 1 -	Create a Scenario-Enabled Sample cube
 
@@ -38,7 +38,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
  
 ![](./images/image16_2.png "")
 
-3.	Drill down into the Gallery, Cubes, and General folders. Naviagte to `All Files > gallery > Applications > Demo Samples > Block Storage`
+3.	Drill down into the Gallery, Cubes, and General folders. Naviagte to All Files > gallery > Applications > Demo Samples > Block Storage
 
 ![](./images/image16_3.png "")
  
@@ -52,7 +52,9 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
  
 ## Part 2	- Creating a Scenario
 
-**Adding a Scenario to a Sandbox enabled cube:** To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
+**Adding a Scenario to a sandbox-enabled cube** 
+
+To create a scenario, you specify general information about your scenario, including creating a scenario name, selecting a due date, selecting an application and cube, and choosing whether to use calculated values. Then you add users and define whether each user is a participant or an approver.
 
 1.	In Essbase, login as a user with database update (or higher) permission to at least one application.
 2.	Click Scenarios.
@@ -78,24 +80,29 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 ## Part 3	- Lightweight Sandboxes
 
-**Show that sandboxes are lightweight** - 
+**Show that sandboxes are lightweight**  
 
-1. In this exercise you will be introduced to the concept that creating sandboxes has little impact on resource usage such as disk space. Connect to `Sample_Scenario_Basic` in smartview analysis.
+This exercise shows that creating sandboxes has little impact on resource usage such as disk space.
+
+1. Connect to `Sample_Scenario_Basic` in Smart View analysis.
 
  ![](./images/image16_8.png "")
   
-2. Create a private connection to your environment, `http://<MachineIP>/essbase/smartview` Login with user.  If you are not already connected..
+2. Create a private connection to your environment, `http://<MachineIP>/essbase/smartview` If you are not already connected, log in.
+
 3. Refresh the data.
 
 **Questions:**
 
-    1. Do you see Data for the sandboxes (sb#)? 
-    2. Is there a variance between any of the sb# members and Base?
-    3. If the loaded file contained no references to any sb# members how did the data get there?` 
+1. Do you see Data for the sandboxes (sb#)? 
+    
+2. Is there a variance between any of the sb# members and Base?
+    
+3. If the loaded file contained no references to any sb# members how did the data get there?` 
 
 **Takeaway:**
 
-By default, all created Sandboxes will have the same values as the data loaded into the base.  The data in the sandbox is dynamically queried and will not use any extra storage disk space.  Only values that are modified as part of a scenario will be stored.  This makes creating and using most scenarios a very light weight operation. 
+By default, all Sandboxes you create have the same values as the data loaded into the base. The data in the sandbox is dynamically queried and will not use any extra storage disk space. Only values that are modified as part of a scenario will be stored. This makes creating and using most scenarios a very light weight operation.  
 
 ## Part 4 -	Model Data
 
@@ -107,44 +114,44 @@ As a scenario user, you can model data slices in your own scenario.
 
  ![](./images/image16_9.png "")
 
-Or you can make use of provided smartview analysis xls to perform what if analysis.
+Or you can make use of the provided Smart View analysis Excel workbook to perform what if analysis.
 
  ![](./images/extrasmall_2.png "")
  
-5. Open Scenario_Comparison file and create connection with Sample_Scenario – Basic.
-6. Make changes to sandbox member sb0 Actual data and submit data.
+5.	Open the Scenario Comparison file and create connection with Sample Scenario – Basic.
+6.	Change the data value for the sandbox member sb0 Actual and submit data.
 
  ![](./images/image16_10.png "")
 
-7. You will notice updated data will reflect only against sb0 dimension intersection.
+7. Notice that the updated data value is reflected only in the sb0 intersection.
 
 ## Part 5 -	Scenario Workflow
 
-Now we will use the Scenario workflow to submit and ultimately merge the scenario data with the base. In the real case, the scenario flow that we will simulate is:
+Now we will use the scenario workflow to submit, and ultimately merge the scenario data with the base. In the real case, the scenario flow that we will simulate is:
 
-*	Participant user is submitting the data for approval
-*	Approver user can review the data and decides to approve
-*	Once data is approved, Data can be applied to the Base by Participant.
+*	The participant user  submits the data for approval
+*	The approver user can review the data and decide to approve
+*	Once data is approved, it can be applied to the base by the participant user.
 
 Since you are doing it by yourself, you will need to play roles of both participant and approver. 
 
 Let’s start:
 
-1. Login to Essbase on cloud. (Consider yourself as Participant user). Navigate to scenarios.
-2. Highlight the scenario created previously.
-3. Select Actions->Submit, enter a comment if needed
+1.	Login to Essbase. (Consider yourself as participant user). Navigate to scenarios.
+2.	Highlight the scenario you created previously.
+3.	Select Actions->Submit, and enter a comment if needed
  
  ![](./images/image16_11.png "")
   
-Tip:  If you don’t have an Approver assigned for the scenario the Action Submit will not be available
+Tip: If you don’t have an Approver assigned for the scenario, the action Submit will not be available.
 
-4.	Highlight the scenario created previously, select Actions->Approve, enter a comment if needed. (Consider yourself as an Approver).
- 
+4.	Highlight the scenario created previously, select Actions->Approve, and enter a comment if needed. (Consider yourself an approver).
+
  ![](./images/image16_12.png "")
 
-5. 	Login to the Essbase cloud. (Consider yourself as Participant).
-6. 	Highlight the scenario created previously.
-7. 	Select Actions->Apply
+5.	Login to the Essbase. (Consider yourself a participant).
+6.	Highlight the scenario you created previously.
+7.	Select Actions->Apply
  
  ![](./images/image16_13.png "")
 
