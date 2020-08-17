@@ -2,7 +2,7 @@
 
 ## Introduction 
 
-In this lab we will learn how to Build a Essbase cube sourcing data from Autonomous Data Warehouse (ADW Database).  We will build dimension and load data using ADW data. We will use Essbase drill-through functionality to display additional detailed data that is retrieved from Autonomous Data Warehouse. Through Essbase Smart View for Office, we will interactively investigate the data in Essbase, slice and dice the data and do ad hoc analysis on it. 
+In this lab, we will learn how to build an Essbase cube sourcing data from Autonomous Data Warehouse (ADW Database). We will build dimensions and load data using ADW data. We will use Essbase drill-through functionality to display additional detailed data that is retrieved from Autonomous Data Warehouse. Through Essbase Smart View for Office, we will interactively investigate the data in Essbase, slice and dice the data, and do ad hoc analysis on it.
 
 ## Objectives
 
@@ -11,14 +11,15 @@ In this lab we will learn how to Build a Essbase cube sourcing data from Autonom
 * Create a connection from Essbase 19c to ADW
 * Build dimension using ADW data
 * Load data from ADW to Essbase cube
-* View / Analyze ADW data in smart view
-* Drill Thru to ADW data from smartview
+* View / Analyze ADW data in Smart View
+* Drill through to ADW data from Smart View
 
 ## Required Artifacts 
 
-* The following lab requires an Oracle Public Cloud account with an Essbase 19c Instance and corresponding access to create new Autonomous Database.
-* Smartview plugin for MS-Excel.
-* The estimated time to complete this lab is 20 minutes.
+* The following lab requires an Oracle Public Cloud account with an Essbase 19.3 instance and corresponding access to create a new Autonomous Database.
+*	Smart View plugin for Excel.
+*	The estimated time to complete this lab is 20 minutes.
+
 
 ##  Part 1 - Provisioning an ADW Instance
 
@@ -50,7 +51,7 @@ In this lab we will learn how to Build a Essbase cube sourcing data from Autonom
 
 ![](./images/image15_6.png "")
 
-3. This will bring up the Create Autonomous Data Warehouse screen where you will specify the configurations of the instance. Compartments are used to organize resources in the Cloud. Using the drop down, select **EssbaseSalesPlay** from the compartment list.
+3. This will bring up the Create Autonomous Data Warehouse screen where you will specify the configurations of the instance. Compartments are used to organize resources in Oracle Cloud Infrastructure. Using the drop down, select **EssbaseSalesPlay** from the compartment list.
 
 4. Specify a memorable display name for the instance and database's name, here **EssbaseADW**.
 
@@ -68,7 +69,7 @@ In this lab we will learn how to Build a Essbase cube sourcing data from Autonom
 
 8. For this lab, we will select **License Included** for the license type. If your organization owns Oracle Database licenses already, you may bring those licenses to your cloud service.
 
-9. Make sure everything is filled out correctly, then proceed to click on **Create Autonomous Data Warehouse**.
+9. Make sure everything is filled out correctly, then proceed to click on **Create Autonomous Database**.
 
 ![](./images/image15_10.png "")
 
@@ -80,13 +81,13 @@ In this lab we will learn how to Build a Essbase cube sourcing data from Autonom
 
 ### Step 3: Download the Connection Wallet
 
-As ADW only accepts secure connections to the database, you need to download a wallet file containing your credentials first. The wallet can be downloaded either from the instance's details page, or from the ADW service console. In this case, we will be showing you how to download the wallet file from the instance's details page. This wallet file can be used with a local version of software such as SQL Developer as well as others. It will also be used later in the lab so make note of where it is stored.
+As ADW only accepts secure connections to the database, you need to download a wallet file containing your credentials. The wallet can be downloaded either from the instance's details page, or from the ADW service console. In this case, we will be showing you how to download the wallet file from the instance's details page. This wallet file can be used with a local version of software such as SQL Developer as well as others. It will also be used later in the lab so make note of where it is stored.
 
 1. Go back to the Oracle Cloud Console and open the Instances screen. Find your database, click the action menu and select **DB Connection**.
 
 ![](./images/image15_13.png "")
 
-2. Under Download a Connection Wallet, click **Download**.
+2. Under Download Client Credentials (Wallet), click **Download Wallet**.
 
 ![](./images/image15_14.png "")
 
@@ -102,11 +103,11 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 1. Navigate to Autonomous Database section and select ADW instance created in previous step.
 
-2. In Autonomous Database select Service Console.
+2. In Autonomous Database select **Service Console**.
 
 ![](./images/image15_16.png "")
 
-3. In Development section in Service console.
+3.	In the Development section of the Service console, click **SQL Developer Web**
 
 ![](./images/image15_17.png "")
 
@@ -118,15 +119,15 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 ![](./images/image15_19.png "")
 
-6. Select horizontal ellipsis icon select Data loading -> Upload Data into New table.
+6. Select horizontal ellipsis icon, then select **Data Loading** -> **Upload Data Into New Table**
 
 ![](./images/image15_20.png "")
 
-7. Browse to file location and select sample_basic_table.txt file. 
+7. Browse to file location and select ``Sample_Basic_Table.txt`` file. 
 
 ![](./images/image15_21.png "")
 
-8.Verify in Data preview screen columns are getting populated from uploaded txt file.
+8. In the Data preview screen, verify that columns are getting populated from the uploaded txt file.
 
 ![](./images/image15_22.png "")
 
@@ -134,17 +135,17 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 ![](./images/image15_23.png "")
 
-10. Verify data loaded in to table by executing select query.
+10. Verify data loaded into the table by executing a select query.
 
 ![](./images/image15_24.png "")
 
 ## Part 3 - Create a Connection and Datasource for Oracle Autonomous Data Warehouse
 
-For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/create-connection-and-datasource-access-oracle-autonomous-data-warehouse.html)
+For reference - [Click Here](https://docs.oracle.com/en/database/other-databases/essbase/19.3/ugess/create-connection-and-datasource-access-oracle-autonomous-data-warehouse.html)
 
 ### Step 1 - Define a connection and Datasource between Essbase and Autonomous Data Warehouse.
 
-1. In Essbase UI from home page, click **Sources**.
+1.	In the Essbase web interface, click **Sources**.
 
 ![](./images/image15_25.png "")
 
@@ -194,13 +195,13 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 18. Following similar steps create another datasource with name ``ADW_Dataload``
 
-19. In the query section of ADW_Dataload datasource use:
+19. In the query section of ADW_Dataload Datasource use:
 
 ``Select Product, Scenario, Statename, months, Sales from SAMPLE_BASIC_TABLE``
 
 ![](./images/image15_31.png "")
 
-20. Preview tab for ADW_Dataload datasource should look similar to mentioned below.
+20.	The Preview tab for the ADW_ Datasource should look similar to the following:
 
 ![](./images/image15_32.png "")
 
@@ -242,7 +243,7 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 ![](./images/image15_39.png "")
 
-12. Dimension columns should be automatically populated from datasource selected.
+12. Dimension columns should be automatically populated from the Datasource selected.
 
 ![](./images/image15_40.png "")
 
@@ -272,7 +273,7 @@ For reference - [Click Here](https://docs.oracle.com/en/cloud/paas/analytics-clo
 
 ![](./images/image15_45.png "")
 
-21. Click OK, then Verify, Save and Close. to save and close the ``MarketSQLDimbuild`` rule.
+21. Click OK, then Verify, Save and Close, to save and close the ``MarketSQLDimbuild`` rule.
 
 22. Refresh the list of rules in the Scripts list to ensure that ``MarketSQLDimbuild`` has been added to the list of rule files for the cube Sample Basic.
 
@@ -336,7 +337,7 @@ Keep the worksheet open. Next, you will create load rules that use SQL to repopu
 
 13. In Essbase, in the **New Rule** browser tab for your ``SalesSQLDataload`` rule, select Sales from the Select drop-down box.
 
-14. Click **Create > Regular** to continue adding fields ,you will notice build rule has automatically picked fields from datasource.
+14.	Click **Create > Regular** to continue adding fields. Notice that the build rule has automatically picked fields from the Datasource.
 
 15. Verify all the fields are properly mapped to columns in table.
 
@@ -347,8 +348,6 @@ Keep the worksheet open. Next, you will create load rules that use SQL to repopu
 Your load rule fields should now be arranged like this:
 
 ![](./images/image15_50.png "")
-
-**Your load rule fields should now be arranged like this:**
 
 18. Click the **Source** button to begin associating a data source with the load rules.
 
@@ -378,10 +377,10 @@ The data load begins. Click the **Refresh** symbol to watch the status, and when
 
 27. Go back to the worksheet in Smart View, and refresh it to verify that the data was loaded from the table.
 
-28. Run **Calc script** to perform data aggregation.
+28. Run the calc script to perform data aggregation.
 
 ![](./images/image15_53.png "")
 
-29. Verify data load in smartview by performing data analysis.
+29. Verify data load in Smart View by performing data analysis.
 
 ![](./images/image15_54.png "")
