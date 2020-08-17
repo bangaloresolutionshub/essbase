@@ -384,3 +384,50 @@ The data load begins. Click the **Refresh** symbol to watch the status, and when
 29. Verify data load in Smart View by performing data analysis.
 
 ![](./images/image15_54.png "")
+
+## Part 6 - Create Drill Through Reports with ADW data
+
+When you want more information than what you can see in the Essbase cube, you can use drill through reports to access external data sources.
+
+Drill through refers to linking the Essbase cube to further data, for example, transactional-level data stored in a relational database.
+
+You can drill through to data from any other Oracle application, an external database, a file (delimited or Excel), or a URL-based target.
+
+### Define Report Columns and Drillable Regions
+
+After defining the connection and data source, the next step to define the report.
+
+1.	Open Database inspector for ‘Basic’ Database under Sample Application.
+2.	Select the Scripts page.
+3.	Select Drill Through Reports.
+4.	Click Create. 
+
+ 
+5.	Select Datasource type drill through report:
+a.	Enter a name for the report.
+b.	Select the data source that we created earlier – ADW_Dataload. 
+c.	Select the columns that you want in the report, map them to dimensions, and designate the appropriate generation or level. 
+d.	Select PRODUCT, map it to Product, and select Level0. Repeat for more columns: MONTHS/Year/Months, SCENARIO/Scenario/Level0. Select SALES and STATENAME but leave them mapped to None.
+ 
+
+6.	Click Drillable Regions to define regions that should access ("drill through to") the ADW data source. Click + to add a region based on actual sales. 
+7.	Double click in the empty row, and add this Essbase calculation expression to define its area:
+
+``Sales,Actual,Year,@DESCENDANTS(Year),Product``
+
+ 
+
+8.	When finished, click Save and Close.
+
+### Execute Drill Through Reports
+
+Now that you have set up an application and cube for drill through, and created a report, you are ready to execute the report and analyze data. 
+
+1.	Use the Sample Smart View analysis file provided below.
+ 
+2.	Drill through one of the cells to see the data source for the cell, for example, select a cell D3 and click Drill Through. Select the drill-through you created.
+ 
+3.	In the new sheet, examine the drill through report. 
+4.	You have drilled through to the ADW data source to see the next level data.
+5.	You can verify numbers from new sheet. This number matches the value of the cell you drilled through from.
+
