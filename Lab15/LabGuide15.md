@@ -1,4 +1,7 @@
-## Part 6 - Data Load to Cube
+# Lab 15: Advanced Essbase Feature functionalities
+
+## Part 1 - Data Load to Cube
+
 DataCorp IT group stores data in an Oracle Data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
 Loading data is the process of adding data values to a cube from any number of data sources or SQL database. Since data sources seldom are configured solely to support Essbase dimension build and data load processes, a rule file is generally used to create Essbase-compatible directives to be applied to the data source.
 
@@ -99,7 +102,7 @@ Next, create a job to load the data using the rule.
 
 You have now completed loading data using a rule.
         
-## Part 7 - Calculating Essbase Cube
+## Part 2 - Calculating Essbase Cube
 
 A cube contains two types of values: values that you enter, called input data, and values that are calculated from input data.
 
@@ -156,7 +159,7 @@ After creating and saving calculation scripts, you use the Jobs page to execute 
 6.	Click OK to start the calculation.
 7.	Click Refresh to see the status of your calculation.
 
-## Part 8 - Migration Utilities
+## Part 3 - Migration Utilities
 
 ### Import Essbase application using CLI:
 
@@ -204,7 +207,7 @@ Command example : esscs lcmImport -z  C:/cli/Sample.zip -o`
 
 ![](./images/image14_93.png "")
 
-## Part 9 - REST APIs
+## Part 4 - REST APIs
 
 Using the REST API for Oracle Essbase enables you to automate management of Essbase resources and operations. All requests and responses are communicated over secured HTTP.
 
