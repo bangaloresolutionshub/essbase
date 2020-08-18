@@ -16,13 +16,13 @@ This lab provides detailed instructions for deploying Essbase on OCI using the M
 * The following lab requires an Oracle Public Cloud account with IDCS and OCI Administrator Access for the whole process of deployment of Essbase19c on OCI without any hassles.
 * The estimated time to complete this lab is 45 minutes.
 
-** Note:  Whenever there is a “Name” being assigned for any resource creation in this lab please follow the naming convention as “<Resource_Name>_<FIRST_NAME>” to avoid duplication.**
+**Note:  Whenever there is a “Name” being assigned for any resource creation in this lab please follow the naming convention as “<Resource_Name>_<FIRST_NAME>” to avoid duplication.**
 
 ## Part 1 - Essbase 19c - Basic Topology
 
 ![](./images/image13_1.png "")
 
-### Network Topology Description
+### **Network Topology Description**
 
 Above is the basic topology of Essbase19c architecture on Oracle Cloud Infrastructure.
 
