@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This lab shows the advanced feature functionalities of Essbase.
+This lab walks you through some of the advanced features on Essbase 19c platform such as data load  to cubes and execution of Calculation scripts followed by utilities for Migration to Cloud and brief overview of automation using REST APIs.
 
 ## Part 1 - Data Load to Cube
 
@@ -159,7 +159,7 @@ Validating a script verifies the script syntax. For example, incorrectly spelled
 10.	Click Save.
 11.	Click Close.
 
-### Execute Calculations
+### **Execute Calculations**
 
 After creating and saving calculation scripts, you use the Jobs page to execute them and perform the calculations on data loaded in your cube.
 1.	Create your calculation script, or upload an existing calculation script.
