@@ -20,6 +20,8 @@ This lab will require the following -
 
 2. [Smartview Plugin](https://docs.oracle.com/en/cloud/paas/analytics-cloud/essug/download-and-run-smart-view-installer.html) (Steps provided in this lab)
 
+3. The estimated time to complete this lab is 15 minutes.
+
 
 ## Part 1 - Features of Oracle Essbase
 
