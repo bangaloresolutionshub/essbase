@@ -62,8 +62,10 @@ Create a rule file that is based on sample file from the data warehouse.\
 5.	The Global options toolbar, on the top right of the Rules editor allows you to modify file properties or the data source and to see the results in the Rules editor. The Field options toolbar on the left side of the Rules editor allows you map fields in the rule.
 6.	Because there were no headers in the input file, you need to map each column to the appropriate dimensions and members.
 7. In the Rules editor, you can now set up the rule fields.
- ![](./images/image14_81.png "")
-        a. Click Create drop-down menu, and start setting the field names.
+
+![](./images/image14_81.png "")
+
+   a. Click Create drop-down menu, and start setting the field names.
         Set Field (column) 1 to Product.
         Set Field 2 to Market.
         Set Field 3 to Year.
