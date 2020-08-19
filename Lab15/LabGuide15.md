@@ -61,11 +61,9 @@ Create a rule file that is based on sample file from the data warehouse.\
 
 5.	The Global options toolbar, on the top right of the Rules editor allows you to modify file properties or the data source and to see the results in the Rules editor. The Field options toolbar on the left side of the Rules editor allows you map fields in the rule.
 6.	Because there were no headers in the input file, you need to map each column to the appropriate dimensions and members.
-7.	In the Rules editor, you can now set up the rule fields.
-
+7. In the Rules editor, you can now set up the rule fields.
  ![](./images/image14_81.png "")
-
-a. Click Create drop-down menu, and start setting the field names.
+        a. Click Create drop-down menu, and start setting the field names.
         Set Field (column) 1 to Product.
         Set Field 2 to Market.
         Set Field 3 to Year.
@@ -76,21 +74,13 @@ a. Click Create drop-down menu, and start setting the field names.
         Set Field 8 to Payroll.
         Set Field 9 to Misc.
         Set Field 10 to Opening Inventory.
-        Set Field 11 to Additions.
- 
-All dimensions must be represented in the load data rule before any data can be loaded.
- 
-b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
- 
-c. After syntax is validated, click Save and Close.
- 
-d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then    clicking Proceed.
-
-e. Click Close to return to the Applications home page.
-
-Next, create a job to load the data using the rule.
-
-8.	On the home page, select Jobs, and then New Job.
+        Set Field 11 to Additions. All dimensions must be represented in the load data rule before any data can be loaded.
+        b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
+        c. After syntax is validated, click Save and Close.
+        d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then    clicking Proceed.
+        e. Click Close to return to the Applications home page. Next, create a job to load the data using the rule.
+        
+8. On the home page, select Jobs, and then New Job.
 
       a. Select Load Data.
       
@@ -114,7 +104,7 @@ Next, create a job to load the data using the rule.
       
       ![](./images/image14_83.png "")
         
-9.	After the job is completed, verify that the input records were processed and loaded.
+9. After the job is completed, verify that the input records were processed and loaded.
 
       a.	On the Applications home page, click Actions to the right of the Sales cube in the DynamicCorp application.
       
