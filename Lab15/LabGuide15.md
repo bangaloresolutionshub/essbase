@@ -75,9 +75,13 @@ Create a rule file that is based on sample file from the data warehouse.\
         Set Field 9 to Misc.
         Set Field 10 to Opening Inventory.
         Set Field 11 to Additions. All dimensions must be represented in the load data rule before any data can be loaded.
+        
         b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
+        
         c. After syntax is validated, click Save and Close.
+        
         d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then    clicking Proceed.
+        
         e. Click Close to return to the Applications home page. Next, create a job to load the data using the rule.
         
 8. On the home page, select Jobs, and then New Job.
