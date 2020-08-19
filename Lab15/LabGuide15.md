@@ -65,7 +65,7 @@ Create a rule file that is based on sample file from the data warehouse.\
 
  ![](./images/image14_81.png "")
 
-        a. Click Create drop-down menu, and start setting the field names.
+a. Click Create drop-down menu, and start setting the field names.
         Set Field (column) 1 to Product.
         Set Field 2 to Market.
         Set Field 3 to Year.
@@ -77,11 +77,16 @@ Create a rule file that is based on sample file from the data warehouse.\
         Set Field 9 to Misc.
         Set Field 10 to Opening Inventory.
         Set Field 11 to Additions.
-        All dimensions must be represented in the load data rule before any data can be loaded.
-        b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
-        c. After syntax is validated, click Save and Close.
-        d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then clicking Proceed.
-        e. Click Close to return to the Applications home page.
+ 
+All dimensions must be represented in the load data rule before any data can be loaded.
+ 
+b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
+ 
+c. After syntax is validated, click Save and Close.
+ 
+d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then    clicking Proceed.
+
+e. Click Close to return to the Applications home page.
 
 Next, create a job to load the data using the rule.
 
@@ -111,11 +116,15 @@ Next, create a job to load the data using the rule.
         
 9.	After the job is completed, verify that the input records were processed and loaded.
 
-        a.	On the Applications home page, click Actions to the right of the Sales cube in the DynamicCorp application.
-        b.	Select Job Details to check the load data job details.
-        c.	Click Close when done.
-        d.	On the Applications page, click the Actions menu on the cube row to the right of the Sample cube, and click Inspect.
-        e.	Select Statistics to view the resulting statistics for the Sales cube.
+      a.	On the Applications home page, click Actions to the right of the Sales cube in the DynamicCorp application.
+      
+      b.	Select Job Details to check the load data job details.
+    
+      c.	Click Close when done.
+      
+      d.	On the Applications page, click the Actions menu on the cube row to the right of the Sample cube, and click Inspect.
+      
+      e.	Select Statistics to view the resulting statistics for the Sales cube.
 
 You have now completed loading data using a rule.
         
@@ -129,7 +138,9 @@ A calculation script, which contains a series of calculation commands, equations
 
 You create calculation scripts using a script editor in the Essbase web interface.
 Calculation scripts do not apply to aggregate storage applications.
+
 1.	On the Application page, expand the application.
+
 2.	From the Actions menu, to the right of the cube name, launch the inspector.
 
 ![](./images/image14_84.png "")
@@ -139,10 +150,13 @@ Calculation scripts do not apply to aggregate storage applications.
 ![](./images/image14_85.png "")
 
 4.	Click Add   to create a new calculation script.
+
 5.	If member names are required in your calculation script, drill into the Member Tree to find the members you want to add.
 Right-click dimension or member names to insert them into the script.
+
 6.	If function names are required in your calculation script, use the Function Name menu to find calculation functions and add them to the script.
 See the Function description under the menu to read descriptions of each function.
+
 7.	The following calculation script, based on the DynamicCorp.Sales database, calculates the Actual values from the Year, Measures, Market, and Product dimensions:
 
 FIX (Actual)
@@ -155,8 +169,11 @@ In the name field of script editor give the name to script as CalcActual
 
 8.	Click Validate before saving your script.
 Validating a script verifies the script syntax. For example, incorrectly spelled function names and omitted end-of-line semicolons are identified. Validation also verifies dimension names and member names.
+
 9.	Correct any validation errors.
+
 10.	Click Save.
+
 11.	Click Close.
 
 ### **Execute Calculations**
