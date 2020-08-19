@@ -65,7 +65,7 @@ Create a rule file that is based on sample file from the data warehouse.\
 
 ![](./images/image14_81.png "")
 
-   a. Click Create drop-down menu, and start setting the field names.
+a. Click Create drop-down menu, and start setting the field names.
         Set Field (column) 1 to Product.
         Set Field 2 to Market.
         Set Field 3 to Year.
@@ -78,49 +78,49 @@ Create a rule file that is based on sample file from the data warehouse.\
         Set Field 10 to Opening Inventory.
         Set Field 11 to Additions. All dimensions must be represented in the load data rule before any data can be loaded.
         
-   b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
+b. When you are finished defining the rule, with global and field options, click Verify on the Global toolbar to validate the syntax and click Close.
         
-   c. After syntax is validated, click Save and Close.
+c. After syntax is validated, click Save and Close.
         
-   d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then    clicking Proceed.
+d. Click Refresh. See that your created rule is now listed in the Rules pane of the Scripts tab. You can edit your rule by clicking the rule name and then    clicking Proceed.
         
-   e. Click Close to return to the Applications home page. Next, create a job to load the data using the rule.
+e. Click Close to return to the Applications home page. Next, create a job to load the data using the rule.
         
 8. On the home page, select Jobs, and then New Job.
 
-      a. Select Load Data.
+a. Select Load Data.
       
-      b. In the Load Data dialog box, from the Application menu, select the DynamicCorp application.
+b. In the Load Data dialog box, from the Application menu, select the DynamicCorp application.
       
-      c. In the Database list, select the Sales cube.
+c. In the Database list, select the Sales cube.
       
-      d. In the Script list, select the load data rule that you created, LoadCorp.rul.
+d. In the Script list, select the load data rule that you created, LoadCorp.rul.
       
-      e. For Load Type, select File.
+e. For Load Type, select File.
       
-      f. Select the file Data-basic.txt from the Data File list. This file is located in the DataCorp > Sales folder.
+f. Select the file Data-basic.txt from the Data File list. This file is located in the DataCorp > Sales folder.
       
-      g. Optional: select the Abort on error check box if you want the load to stop if an error occurs.
+g. Optional: select the Abort on error check box if you want the load to stop if an error occurs.
       
-      h. Click OK. The load data job is executed.
+h. Click OK. The load data job is executed.
         
-     ![](./images/image14_82.png "")
+![](./images/image14_82.png "")
         
-      i. On the Jobs page, click Refresh to monitor the job status.
+i. On the Jobs page, click Refresh to monitor the job status.
       
-      ![](./images/image14_83.png "")
+![](./images/image14_83.png "")
         
 9. After the job is completed, verify that the input records were processed and loaded.
 
-      a.	On the Applications home page, click Actions to the right of the Sales cube in the DynamicCorp application.
+a.	On the Applications home page, click Actions to the right of the Sales cube in the DynamicCorp application.
       
-      b.	Select Job Details to check the load data job details.
+b.	Select Job Details to check the load data job details.
     
-      c.	Click Close when done.
+c.	Click Close when done.
       
-      d.	On the Applications page, click the Actions menu on the cube row to the right of the Sample cube, and click Inspect.
+d.	On the Applications page, click the Actions menu on the cube row to the right of the Sample cube, and click Inspect.
       
-      e.	Select Statistics to view the resulting statistics for the Sales cube.
+e.	Select Statistics to view the resulting statistics for the Sales cube.
 
 You have now completed loading data using a rule.
         
