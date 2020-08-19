@@ -270,3 +270,8 @@ For example: https://ip/essbase/jet
 6.	Click on the Download File link to download zip file containing application log.
 
 You can integrate REST APIs with cURL in order to automate various Essbase tasks. cURL is a command-line data transfer tool you can use for making HTTP requests and other requests.
+
+## Acknowledgements
+
+* Author - NATD Cloud Engineering - Bnagalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
