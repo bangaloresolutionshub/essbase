@@ -107,3 +107,8 @@ Note: The steps going forward will have to followed in a Windows operating syste
 * Soon after requesting your trial you will receive an activation email. Once that email is received and you have logged in to your environment you can begind the lab.
 
 Access the Essbase labs using our web-friendly interface [here](https://bangaloresolutionshub.github.io/essbase-workshop) 
+
+## Acknowledgements
+
+* Author - NATD Cloud Engineering - Bnagalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Last Updated By/Date - 
