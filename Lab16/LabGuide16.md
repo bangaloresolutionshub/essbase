@@ -445,3 +445,7 @@ Now that you have set up an application and cube for drill through, and created 
 4.	You have drilled through to the ADW data source to see the next level data.
 5.	You can verify numbers from new sheet. This number matches the value of the cell you drilled through from.
 
+## Acknowledgements
+
+* Author - NATD Cloud Engineering - Bnagalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
