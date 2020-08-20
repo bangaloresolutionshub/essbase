@@ -16,7 +16,7 @@ In this lab, we will learn how to build an Essbase cube sourcing data from Auton
 
 ## Required Artifacts 
 
-* The following lab requires an Oracle Public Cloud account with an Essbase 19.3 instance and corresponding access to create a new Autonomous Database.
+* The following lab requires an Oracle Public Cloud account with an Essbase 19c instance and corresponding access to create a new Autonomous Database.
 *	Smart View plugin for Excel.
 *	The estimated time to complete this lab is 20 minutes.
 
