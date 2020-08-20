@@ -446,7 +446,7 @@ Now that you have set up an application and cube for drill through, and created 
 5.	You can verify numbers from new sheet. This number matches the value of the cell you drilled through from.
 
 ## Acknowledgements
-
-* Author - NATD Cloud Engineering - Bangalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Author - NATD Cloud Engineering - Bangalore Analytics (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Reviewed by - Ashish Jain, Product Management
 * Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
 
