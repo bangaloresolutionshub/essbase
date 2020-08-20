@@ -110,5 +110,5 @@ Access the Essbase labs using our web-friendly interface [here](https://bangalor
 
 ## Acknowledgements
 
-* Author - NATD Cloud Engineering - Bnagalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Author - NATD Cloud Engineering - Bangalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
 * Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
