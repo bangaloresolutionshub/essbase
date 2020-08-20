@@ -447,5 +447,6 @@ Now that you have set up an application and cube for drill through, and created 
 
 ## Acknowledgements
 
-* Author - NATD Cloud Engineering - Bnagalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Author - NATD Cloud Engineering - Bangalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
 * Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
+
