@@ -15,6 +15,12 @@ To understand the following:
 *	Lightweight Sandboxes		
 *	Changing Sandbox Data	
 *	Scenario Workflow
+
+## Required Artifacts
+
+* An Oracle Public Cloud account-Essbase 19c instance with Service administrator role
+* Windows Operating System for Essbase add-ins (Smart View and Cube Designer)
+* Smart View plugin enabled for Excel.
 * The estimated time to complete this lab is 15 minutes.
 
 ## Overview – Understand Scenario
