@@ -386,5 +386,7 @@ By getting this screen, we confirm that we have successfully deployed Essbase19c
 
 ## Acknowledgements
 
-* Author - NATD Cloud Engineering - Bangalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Author - NATD Cloud Engineering - Bangalore Analytics (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Reviewed by - Ashish Jain, Product Management
 * Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
+
