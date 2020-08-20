@@ -15,7 +15,8 @@ To understand the following:
 *	Lightweight Sandboxes		
 *	Changing Sandbox Data	
 *	Scenario Workflow
- 
+* The estimated time to complete this lab is 15 minutes.
+
 ## Overview – Understand Scenario
 
 The exercises contained within this lesson will allow the user to get acquainted with different aspects of Scenario Management.  The different aspects include the lightweight nature of sandboxes on the cube; the process involved with initiating Scenario Management and adding sandboxes; as well as, the workflow supported by Scenario Management.  
