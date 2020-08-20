@@ -180,5 +180,6 @@ You should see the changes have been applied to the Base.
 
 ## Acknowledgements
 
-* Author - NATD Cloud Engineering - Bnagalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
+* Author - NATD Cloud Engineering - Bangalore Hub (Aparana Gupta, Sushil Mule, Sakethvishnu D, Mitsu Mehta, Fabian Reginold, Srikrishna Kambar)
 * Last Updated By/Date - Mitsu Mehta, Cloud Engineer, Aug 2020
+
