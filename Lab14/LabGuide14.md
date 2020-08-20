@@ -1,4 +1,4 @@
-# Lab 14: Essbase Feature Functionalities
+# Lab 14: Essbase Features: Basic
 
 ## Introduction
 
