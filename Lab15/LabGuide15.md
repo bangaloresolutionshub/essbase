@@ -1,4 +1,4 @@
-# Lab 15: Advanced Essbase Feature functionalities
+# Lab 15: Essbase Features: Advanced
 
 ## Introduction
 
