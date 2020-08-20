@@ -5,12 +5,13 @@
 This lab walks you through some of the advanced features on Essbase 19c platform such as data load to cubes and execution of Calculation scripts followed by utilities for Migration to Cloud and brief overview of automation using REST APIs.
 
 ## Objectives
-    Learn how to build rules/calculations and run corresponding jobs.
-    Learn the migration process between Cloud environments.
-    Understand the Essbase REST API functionality.
+
+* Learn how to build rules/calculations and run corresponding jobs.
+* Learn the migration process between Cloud environments.
+* Understand the Essbase REST API functionality.
 	
 ## Required Artifacts
-This lab requires
+This lab requires -
 
 * An Oracle Public Cloud account-Essbase 19c instance
 * Service administrator role
