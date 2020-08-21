@@ -53,7 +53,7 @@ You can create a scenario-enabled cube by importing the scenario-enabled sample 
 
 ![](./images/image17_3.png "")
  
-4.	Select `Sample_Basic_Scenario.xlsx` and click Select.
+4.	Download the [Sample_Basic_Scenario.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/SnwdapEvpeFJVEahs5vIqgjd-tPBAhSKXX8OluI_IQ4/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Sample_Basic_Scenario.xlsx) file. Select `Sample_Basic_Scenario.xlsx` and click Select.
 
 5.	Provide a unique name and click OK.
 
