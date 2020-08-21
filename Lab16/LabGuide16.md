@@ -115,7 +115,7 @@ As ADW only accepts secure connections to the database, you need to download a w
 
 ![](./images/image16_18.png "")
 
-5. Import data file ``Sample_Basic_Table.txt`` containing data column to ADW instance.
+5. Import data file [Sample_Basic_Table.txt](https://objectstorage.us-ashburn-1.oraclecloud.com/p/z604rlGq_zp4JEA2uU3loO6DewbsS5R3z1by4Wq43Dg/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/sample_basic_table.txt) containing data column to ADW instance.
 
 ![](./images/image16_19.png "")
 
@@ -433,7 +433,7 @@ Select SALES and STATENAME but leave them mapped to None.
 
 Now that you have set up an application and cube for drill through, and created a report, you are ready to execute the report and analyze data. 
 
-1.	Use the Sample Smart View analysis file provided below.
+1.	Use the Sample Smart View analysis file that you can download from [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/gE7tm__2qZ4Zkp8tDqloFKwAv9s-SOjzmfd0Uu6cnNE/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/DT_Analysis_Sample_report.xlsx)
  
 ![](./images/image16_58.png "")
  
