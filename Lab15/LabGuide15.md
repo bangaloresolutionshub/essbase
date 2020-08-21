@@ -25,9 +25,9 @@ This lab requires -
 DataCorp IT group stores data in an Oracle Data warehouse that is being used to normalize the data. The IT group extracts data in flat files on a regular basis.
 Loading data is the process of adding data values to a cube from any number of data sources or SQL database. Since data sources seldom are configured solely to support Essbase dimension build and data load processes, a rule file is generally used to create Essbase-compatible directives to be applied to the data source.
 
-Create a rule file that is based on sample file from the data warehouse.\
+Create a rule file that is based on sample file from the data warehouse.
 
-1.	Create rules file.
+1.	Download the rules file [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/Pnp9bHy2Ja5o7FQILaBFhCd02G4LM9Z1buBnCIjhW84/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Data_Basic.txt)
 
 ![](./images/image14_76.png "") 
 
@@ -212,7 +212,7 @@ After creating and saving calculation scripts, you use the Jobs page to execute 
 This exercise will introduce how to automate tasks using Essbase Command Line Interface.
 * Import base cube using Application Workbook structures sheet from CLI
 
-Before you start, copy the provided file Sample_Basic.xlsx to your CLI directory.
+Before you start, copy the provided file [Sample_Basic.xlsx](https://objectstorage.us-ashburn-1.oraclecloud.com/p/84mR3q7KTI_8Fnno0QzJRAMX4HsPPTmU2863GqOo-ok/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Sample_Basic.xlsx) to your CLI directory.
 
 ![](./images/image14_89.png "")
 
