@@ -125,7 +125,7 @@ As a scenario user, you can model data slices in your own scenario.
 
  ![](./images/image17_9.png "")
 
-Or you can make use of [this](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx) Smart View analysis xls file (use ‘Submit_Data’ tab in this excel file to submit data) to perform what if analysis.
+Or you can make use of [this Smart View analysis xls file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx). (Use ‘Submit_Data’ tab in this excel file to submit data) to perform what if analysis.
 
  ![](./images/extrasmall_2.png "")
  
@@ -179,7 +179,7 @@ Tip: If you don’t have an Approver assigned for the scenario, the action Submi
  
  ![](./images/image17_13.png "")
 
-8. Download the file by clicking [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx)	Go to Smart View and retrieve data into the Comparison tab (make sure you have an active connection in the ‘Comparison’ tab to the same application you connected to while submitting the data) 
+8. Download the file by clicking [here](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx). Go to Smart View and retrieve data into the Comparison tab (make sure you have an active connection in the ‘Comparison’ tab to the same application you connected to while submitting the data) 
  
  ![](./images/extrasmall_3.png "")
  
