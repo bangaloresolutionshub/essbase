@@ -125,7 +125,7 @@ As a scenario user, you can model data slices in your own scenario.
 
  ![](./images/image17_9.png "")
 
-Or you can make use of [this Smart View analysis xls file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx). (Use ‘Submit_Data’ tab in this excel file to submit data) to perform what if analysis.
+Or you can make use of [this excel file](https://objectstorage.us-ashburn-1.oraclecloud.com/p/i5MLTlyY7whIRIc-BGSgQq7vNPHPeDshyrQVaxqJ61c/n/natdsepltfrmanalyticshrd1/b/Essbase-Workshop/o/Scenario_Comparision.xlsx). (Use ‘Submit_Data’ tab in this excel file to submit data) to perform what if analysis.
 
  ![](./images/extrasmall_2.png "")
  
